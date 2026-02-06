@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MIDI Command Studio | Data and Privacy</title>
+    <meta name="description" content="Data and privacy information for MIDI Command Studio." />
+    <link rel="icon" href="assets/mcs_exact.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="site-logo">MIDI Command Studio</div>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="free-vs-full.html">Free vs Full</a>
+          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
+          <a class="active" href="privacy.html">Data &amp; Privacy</a>
+          <a href="contact.html">Contact</a>
+          <a href="download.html">Download</a>
+        </nav>
+      </header>
+      <main>
+        <section class="section">
+          <div class="section-head">
+            <h2>Data and Privacy</h2>
+            <p>Summary of what the app sends (and does not send).</p>
+          </div>
+          <p class="body-copy">
+            MIDI Command Studio sends data only for licensing and when you choose to send feedback or crash reports.
+            It does not include analytics or background telemetry.
+          </p>
+          <p class="body-copy">
+            <strong>Licensing &amp; activation:</strong> The app makes network requests for license actions
+            (activate/status/deactivate). These requests include your license key and non-identifying device/install
+            identifiers (a non-reversible machine hash and an install ID) used to manage activations. In full‑license
+            mode, a status check may run on startup. No usage tracking or MIDI input data is transmitted. If a licensing
+            response includes an email address, it is displayed locally only.
+          </p>
+          <p class="body-copy">
+            <strong>Feedback &amp; crash reports (optional):</strong> If you choose to send feedback or a crash report,
+            the app sends the report content to help diagnose issues. This can include app version, device/preset labels,
+            stack traces, and a log tail (from <code>error_log.txt</code>, up to 200 KB). The log redacts your Windows
+            user path (e.g., <code>C:\Users\&lt;redacted&gt;\...</code>). The feedback form can prefill a non‑reversible
+            machine hash and (optionally) the log text. No license keys are included unless you manually add them.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
