@@ -175,13 +175,6 @@ body {
   margin: 0;
 }
 
-.test-note {
-  margin: 18px 0 0;
-  color: var(--accent);
-  font-size: 1.02rem;
-  line-height: 1.6;
-}
-
 .test-image {
   display: block;
   width: 100%;
@@ -255,6 +248,30 @@ body {
   border-radius: 14px;
   padding: 18px 20px;
   color: var(--text);
+}
+
+.faq-list {
+  margin-top: 22px;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .compare-wrap {
