@@ -240,6 +240,7 @@
     <li><a href="#preset-bar-buttons">Preset bar buttons</a></li>
     <li><a href="#preset-files-location-and-backup">Preset files location and backup</a></li>
     <li><a href="#preset-switching-from-your-controller">Preset switching from your controller</a></li>
+    <li><a href="#audio-presets">Audio Presets</a></li>
     </ul>
     </li>
     <li><a href="#mappings-and-the-editor">Mappings and the editor</a>
@@ -539,6 +540,45 @@
 </ul>
 <p>
   If the button is already used for another mapping, the app will ask if you want to reassign it to preset switching.
+</p>
+
+<h3 id="audio-presets">Audio Presets</h3>
+<p>Audio presets and audio mappings are available in the <strong>Full version only</strong>.</p>
+<p>
+  Audio mappings let you trigger samples, stop playback quickly, and control playback level from your controller.
+  For best control, set up all three: <strong>Trigger button</strong>, <strong>Stop button</strong>, and
+  <strong>Audio Volume fader</strong>.
+</p>
+
+<h4 id="trigger-button-mapping">Trigger button mapping</h4>
+<p>Learn a button, choose an audio file, set gain, then choose <strong>Button mode</strong>:</p>
+<ul>
+  <li><strong>Play full sample</strong>: plays once on press.</li>
+  <li><strong>Play only while held</strong>: plays while held, stops on release.</li>
+  <li>
+    <strong>Repeat</strong>: plays multiple times from one press (set count 1 to 25). In Repeat mode, playback is
+    forced to <strong>Cut and play</strong>.
+  </li>
+</ul>
+
+<h4 id="when-pressed-audio">When pressed</h4>
+<p>This setting controls what happens if the same sample is triggered again while it is already playing:</p>
+<ul>
+  <li><strong>Play over current</strong>: starts a new playback on top of the current one (layers/overlaps).</li>
+  <li><strong>Cut and play</strong>: stops the current playback and restarts from the beginning.</li>
+</ul>
+<p>
+  <strong>Note:</strong> In Repeat button mode, this is forced to <strong>Cut and play</strong> to keep repeats
+  predictable and avoid overlap buildup.
+</p>
+
+<h4 id="stop-button-mapping">Stop button mapping</h4>
+<p>Learn another button and enable <strong>Use this button as Stop All</strong> for immediate stop control.</p>
+
+<h4 id="audio-volume-fader">Audio Volume fader</h4>
+<p>
+  Learning a fader for audio volume has no extra dialog options. It is added to the mapping list automatically and
+  controls the relative level of all samples together.
 </p>
 
 <hr />
