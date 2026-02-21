@@ -376,6 +376,7 @@
 <ul>
   <li>Multiple devices active at the same time</li>
   <li>Unlimited presets and mappings</li>
+  <li>Simple audio sample playback</li>
 </ul>
 <p>
   For pricing and licensing, visit:<br>
@@ -504,7 +505,8 @@
   Use it to switch between presets quickly, without affecting your other devices.
 </p>
 <ul>
-  <li><strong>New</strong> creates a new empty preset for the selected device.</li>
+  <li><strong>New</strong> creates a new empty <strong>standard</strong> preset for the selected device.</li>
+  <li><strong>Audio presets</strong> are created from <strong>Settings &rarr; Audio Preset &rarr; Create Audio Preset</strong>.</li>
   <li><strong>Rename</strong> renames the current preset (this renames the underlying preset file).</li>
   <li><strong>Delete</strong> deletes the current preset file for the selected device.</li>
   <li>
@@ -545,6 +547,14 @@
 <h3 id="audio-presets">Audio Presets</h3>
 <p>Audio presets and audio mappings are available in the <strong>Full version only</strong>.</p>
 <p>
+  Audio preset creation is managed in <strong>Settings &rarr; Audio Preset</strong>. Choose a device, enter a preset name,
+  and click <strong>Create Audio Preset</strong>. The app switches to the new audio preset automatically.
+</p>
+<p>
+  <strong>Important:</strong> only one audio preset can exist at a time. If an audio preset already exists, the app will
+  ask you to delete the existing one before creating another.
+</p>
+<p>
   Audio mappings let you trigger samples, stop playback quickly, and control playback level from your controller.
   For best control, set up all three: <strong>Trigger button</strong>, <strong>Stop button</strong>, and
   <strong>Audio Volume fader</strong>.
@@ -579,6 +589,9 @@
 <p>
   Learning a fader for audio volume has no extra dialog options. It is added to the mapping list automatically and
   controls the relative level of all samples together.
+</p>
+<p>
+  The audio volume level is saved with the audio preset and restored when that preset is loaded again.
 </p>
 
 <hr />
