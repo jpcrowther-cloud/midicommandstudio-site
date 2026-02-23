@@ -501,12 +501,32 @@ body {
   font-size: 0.86rem;
 }
 
+.contact-note#contact-status {
+  margin-top: 6px;
+  min-height: 1.45rem;
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
 .contact-note.is-success {
-  color: var(--accent);
+  color: #7ff0ac;
+  background: rgba(13, 170, 74, 0.14);
+  border-color: rgba(13, 170, 74, 0.4);
 }
 
 .contact-note.is-error {
-  color: #cf6b6b;
+  color: #ffb8b8;
+  background: rgba(207, 63, 63, 0.14);
+  border-color: rgba(207, 63, 63, 0.4);
+}
+
+.contact-note.is-pending {
+  color: #b7d9ff;
+  background: rgba(78, 201, 255, 0.1);
+  border-color: rgba(78, 201, 255, 0.35);
 }
 
 .contact-submit:disabled {
