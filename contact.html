@@ -102,13 +102,6 @@
         var fallbackTimer = null;
         function isContactResultMessage(event) {
           if (!event) return null;
-          try {
-            if (submitFrame && submitFrame.contentWindow && event.source !== submitFrame.contentWindow) {
-              return null;
-            }
-          } catch (_e) {
-            return null;
-          }
           var data = event.data;
           if (typeof data === "string") {
             try {
@@ -203,7 +196,7 @@
                 "Could not verify send status. Please wait a moment and try again.",
                 false
               );
-            }, 2000);
+            }, 4000);
           });
         }
 
