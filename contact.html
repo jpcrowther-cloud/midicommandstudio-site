@@ -101,16 +101,24 @@
         var pending = false;
         var fallbackTimer = null;
         var actionOrigin = "";
-        var allowedOrigins = {
-          "https://script.google.com": true,
-          "https://script.googleusercontent.com": true
-        };
         try {
           actionOrigin = new URL(form.getAttribute("action") || "", window.location.href).origin;
-          if (actionOrigin) {
-            allowedOrigins[actionOrigin] = true;
-          }
         } catch (_e) {}
+
+        function isAllowedMessageOrigin(origin) {
+          if (!origin) return false;
+          try {
+            var u = new URL(origin);
+            var host = (u.hostname || "").toLowerCase();
+            if (host === "script.google.com") return true;
+            if (host === "script.googleusercontent.com") return true;
+            if (host.endsWith(".script.googleusercontent.com")) return true;
+            if (actionOrigin && origin === actionOrigin) return true;
+          } catch (_e) {
+            return false;
+          }
+          return false;
+        }
 
         function setStatus(message, cls) {
           if (!status) return;
@@ -198,7 +206,7 @@
 
         window.addEventListener("message", function (event) {
           if (!pending) return;
-          if (!allowedOrigins[event.origin]) return;
+          if (!isAllowedMessageOrigin(event.origin)) return;
           var data = event.data || {};
           if (data.type !== "mcs_contact_result") return;
           if (data.ok) {
