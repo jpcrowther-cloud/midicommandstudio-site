@@ -98,12 +98,18 @@
         var siteKey = (widget && widget.getAttribute("data-sitekey")) || "";
         var endpointMissing = (form.getAttribute("action") || "").indexOf(endpointPlaceholder) !== -1;
         var turnstileMissing = siteKey.indexOf(turnstilePlaceholder) !== -1;
-        var ready = !(endpointMissing || turnstileMissing);
         var pending = false;
         var fallbackTimer = null;
         var actionOrigin = "";
+        var allowedOrigins = {
+          "https://script.google.com": true,
+          "https://script.googleusercontent.com": true
+        };
         try {
           actionOrigin = new URL(form.getAttribute("action") || "", window.location.href).origin;
+          if (actionOrigin) {
+            allowedOrigins[actionOrigin] = true;
+          }
         } catch (_e) {}
 
         function setStatus(message, cls) {
@@ -161,14 +167,14 @@
               pending = false;
               setSubmitEnabled(true);
               resetTurnstile();
-              setStatus("Submission finished. If no confirmation appears, please try again.", "is-error");
+              setStatus("Submission complete. If you do not get a response, please try again.", "is-success");
             }, 600);
           });
         }
 
         window.addEventListener("message", function (event) {
           if (!pending) return;
-          if (actionOrigin && event.origin !== actionOrigin) return;
+          if (!allowedOrigins[event.origin]) return;
           var data = event.data || {};
           if (data.type !== "mcs_contact_result") return;
           pending = false;
