@@ -98,8 +98,11 @@
         var siteKey = (widget && widget.getAttribute("data-sitekey")) || "";
         var endpointMissing = (form.getAttribute("action") || "").indexOf(endpointPlaceholder) !== -1;
         var turnstileMissing = siteKey.indexOf(turnstilePlaceholder) !== -1;
+        var COOLDOWN_MS = 60 * 1000;
+        var COOLDOWN_KEY = "mcs_contact_cooldown_until";
         var pending = false;
         var fallbackTimer = null;
+        var cooldownTicker = null;
         function isContactResultMessage(event) {
           if (!event) return null;
           var data = event.data;
@@ -114,6 +117,55 @@
             return null;
           }
           return data;
+        }
+        function getCooldownRemainingMs() {
+          try {
+            var until = Number(localStorage.getItem(COOLDOWN_KEY) || "0");
+            if (!Number.isFinite(until) || until <= 0) return 0;
+            return Math.max(0, until - Date.now());
+          } catch (_e) {
+            return 0;
+          }
+        }
+
+        function setCooldown() {
+          try {
+            localStorage.setItem(COOLDOWN_KEY, String(Date.now() + COOLDOWN_MS));
+          } catch (_e) {}
+        }
+
+        function formatCooldown(ms) {
+          return Math.max(1, Math.ceil(ms / 1000));
+        }
+
+        function setCooldownStatus() {
+          var remaining = getCooldownRemainingMs();
+          if (pending) return;
+          if (remaining > 0) {
+            setSubmitEnabled(false);
+            setStatus("Please wait " + formatCooldown(remaining) + " seconds before sending another message.", "is-pending");
+          } else if (status && status.classList.contains("is-pending")) {
+            setSubmitEnabled(true);
+            setStatus("", "");
+          } else {
+            setSubmitEnabled(true);
+          }
+        }
+
+        function startCooldownTicker() {
+          if (cooldownTicker) {
+            clearInterval(cooldownTicker);
+            cooldownTicker = null;
+          }
+          cooldownTicker = setInterval(function () {
+            var remaining = getCooldownRemainingMs();
+            if (remaining <= 0) {
+              clearInterval(cooldownTicker);
+              cooldownTicker = null;
+            }
+            setCooldownStatus();
+          }, 1000);
+          setCooldownStatus();
         }
 
         function setStatus(message, cls) {
@@ -143,17 +195,22 @@
           } catch (_e) {}
         }
 
-        function finalize(ok, message, clearForm) {
+        function finalize(ok, message, clearForm, applyCooldown) {
           pending = false;
           if (fallbackTimer) {
             clearTimeout(fallbackTimer);
             fallbackTimer = null;
           }
-          setSubmitEnabled(true);
           if (clearForm) {
             clearFormAndReset();
           } else {
             resetTurnstile();
+          }
+          if (applyCooldown) {
+            setCooldown();
+            startCooldownTicker();
+          } else {
+            setSubmitEnabled(true);
           }
           setStatus(message, ok ? "is-success" : "is-error");
         }
@@ -167,9 +224,15 @@
           return;
         }
 
-        setSubmitEnabled(true);
+        setCooldownStatus();
 
-        form.addEventListener("submit", function () {
+        form.addEventListener("submit", function (event) {
+          var remaining = getCooldownRemainingMs();
+          if (remaining > 0) {
+            event.preventDefault();
+            setCooldownStatus();
+            return;
+          }
           pending = true;
           setSubmitEnabled(false);
           setStatus("Sending message...", "is-pending");
@@ -180,7 +243,8 @@
             if (!pending) return;
             finalize(
               false,
-              "Could not verify send status. Please wait a moment and try again.",
+              "Submission timed out. Please try again.",
+              false,
               false
             );
           }, 20000);
@@ -192,11 +256,12 @@
             setTimeout(function () {
               if (!pending) return;
               finalize(
-                false,
-                "Could not verify send status. Please wait a moment and try again.",
-                false
+                true,
+                "Message sent. Thank you - we will get back to you as soon as we can.",
+                true,
+                true
               );
-            }, 4000);
+            }, 300);
           });
         }
 
@@ -205,9 +270,9 @@
           var data = isContactResultMessage(event);
           if (!data) return;
           if (data.ok) {
-            finalize(true, data.message || "Message sent.", true);
+            finalize(true, data.message || "Message sent.", true, true);
           } else {
-            finalize(false, data.message || "Could not send. Please try again.", false);
+            finalize(false, data.message || "Could not send. Please try again.", false, false);
           }
         });
       })();
