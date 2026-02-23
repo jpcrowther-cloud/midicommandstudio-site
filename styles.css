@@ -501,11 +501,26 @@ body {
   font-size: 0.86rem;
 }
 
+.contact-note.is-success {
+  color: var(--accent);
+}
+
+.contact-note.is-error {
+  color: #cf6b6b;
+}
+
 .contact-submit:disabled {
   opacity: 0.55;
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
+}
+
+.contact-frame {
+  display: none;
+  width: 0;
+  height: 0;
+  border: 0;
 }
 
 .footer {

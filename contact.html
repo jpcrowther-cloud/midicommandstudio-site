@@ -40,6 +40,7 @@
               class="contact-form"
               action="https://script.google.com/macros/s/AKfycbxZoAbJy1pin8oX2TKt1QJv9eCv4GilHUfmXvMsWcz5WtrqrYhdOPH0Us-dzP4FjEReOw/exec"
               method="post"
+              target="contact-submit-frame"
             >
               <label for="contact-name">Name</label>
               <input id="contact-name" name="name" type="text" required maxlength="80" />
@@ -67,10 +68,16 @@
 
               <button class="btn primary contact-submit" type="submit">Send Message</button>
               <p class="contact-note">
-                Protected by Cloudflare Turnstile. Submitting opens a confirmation page.
+                Protected by Cloudflare Turnstile. You will stay on this page after submit.
               </p>
-              <p id="contact-status" class="contact-note"></p>
+              <p id="contact-status" class="contact-note" role="status" aria-live="polite"></p>
             </form>
+            <iframe
+              id="contact-submit-frame"
+              name="contact-submit-frame"
+              class="contact-frame"
+              title="Contact form response"
+            ></iframe>
           </div>
         </section>
       </main>
@@ -87,16 +94,98 @@
         var status = document.getElementById("contact-status");
         var submit = form.querySelector(".contact-submit");
         var widget = form.querySelector(".cf-turnstile");
+        var submitFrame = document.getElementById("contact-submit-frame");
         var siteKey = (widget && widget.getAttribute("data-sitekey")) || "";
         var endpointMissing = (form.getAttribute("action") || "").indexOf(endpointPlaceholder) !== -1;
         var turnstileMissing = siteKey.indexOf(turnstilePlaceholder) !== -1;
-        if (endpointMissing || turnstileMissing) {
-          if (submit) submit.disabled = true;
-          if (status) {
-            status.textContent =
-              "Contact form is being configured. Add Apps Script URL and Turnstile site key, then refresh.";
-          }
+        var ready = !(endpointMissing || turnstileMissing);
+        var pending = false;
+        var fallbackTimer = null;
+        var actionOrigin = "";
+        try {
+          actionOrigin = new URL(form.getAttribute("action") || "", window.location.href).origin;
+        } catch (_e) {}
+
+        function setStatus(message, cls) {
+          if (!status) return;
+          status.textContent = message || "";
+          status.classList.remove("is-success", "is-error", "is-pending");
+          if (cls) status.classList.add(cls);
         }
+
+        function setSubmitEnabled(enabled) {
+          if (!submit) return;
+          submit.disabled = !enabled;
+        }
+
+        function resetTurnstile() {
+          try {
+            if (window.turnstile && typeof window.turnstile.reset === "function") {
+              window.turnstile.reset();
+            }
+          } catch (_e) {}
+        }
+
+        if (endpointMissing || turnstileMissing) {
+          setSubmitEnabled(false);
+          setStatus(
+            "Contact form is being configured. Add Apps Script URL and Turnstile site key, then refresh.",
+            "is-error"
+          );
+          return;
+        }
+
+        setSubmitEnabled(true);
+
+        form.addEventListener("submit", function () {
+          pending = true;
+          setSubmitEnabled(false);
+          setStatus("Sending message...", "is-pending");
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+          }
+          fallbackTimer = setTimeout(function () {
+            if (!pending) return;
+            pending = false;
+            setSubmitEnabled(true);
+            resetTurnstile();
+            setStatus("Submission timed out. Please try again.", "is-error");
+          }, 20000);
+        });
+
+        if (submitFrame) {
+          submitFrame.addEventListener("load", function () {
+            if (!pending) return;
+            setTimeout(function () {
+              if (!pending) return;
+              pending = false;
+              setSubmitEnabled(true);
+              resetTurnstile();
+              setStatus("Submission finished. If no confirmation appears, please try again.", "is-error");
+            }, 600);
+          });
+        }
+
+        window.addEventListener("message", function (event) {
+          if (!pending) return;
+          if (actionOrigin && event.origin !== actionOrigin) return;
+          var data = event.data || {};
+          if (data.type !== "mcs_contact_result") return;
+          pending = false;
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+          }
+          setSubmitEnabled(true);
+          resetTurnstile();
+          if (data.ok) {
+            setStatus(data.message || "Message sent.", "is-success");
+            try {
+              form.reset();
+            } catch (_e) {}
+          } else {
+            setStatus(data.message || "Could not send. Please try again.", "is-error");
+          }
+        });
       })();
     </script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
