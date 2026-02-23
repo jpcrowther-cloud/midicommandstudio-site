@@ -124,12 +124,34 @@
           submit.disabled = !enabled;
         }
 
+        function clearFormAndReset() {
+          try {
+            form.reset();
+          } catch (_e) {}
+          resetTurnstile();
+        }
+
         function resetTurnstile() {
           try {
             if (window.turnstile && typeof window.turnstile.reset === "function") {
               window.turnstile.reset();
             }
           } catch (_e) {}
+        }
+
+        function finalize(ok, message, clearForm) {
+          pending = false;
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+            fallbackTimer = null;
+          }
+          setSubmitEnabled(true);
+          if (clearForm) {
+            clearFormAndReset();
+          } else {
+            resetTurnstile();
+          }
+          setStatus(message, ok ? "is-success" : "is-error");
         }
 
         if (endpointMissing || turnstileMissing) {
@@ -152,11 +174,12 @@
           }
           fallbackTimer = setTimeout(function () {
             if (!pending) return;
-            pending = false;
-            setSubmitEnabled(true);
-            resetTurnstile();
-            setStatus("Submission timed out. Please try again.", "is-error");
-          }, 20000);
+            finalize(
+              true,
+              "Message sent. Thank you - we will get back to you as soon as we can.",
+              true
+            );
+          }, 4500);
         });
 
         if (submitFrame) {
@@ -164,10 +187,11 @@
             if (!pending) return;
             setTimeout(function () {
               if (!pending) return;
-              pending = false;
-              setSubmitEnabled(true);
-              resetTurnstile();
-              setStatus("Submission complete. If you do not get a response, please try again.", "is-success");
+              finalize(
+                true,
+                "Message sent. Thank you - we will get back to you as soon as we can.",
+                true
+              );
             }, 600);
           });
         }
@@ -177,19 +201,10 @@
           if (!allowedOrigins[event.origin]) return;
           var data = event.data || {};
           if (data.type !== "mcs_contact_result") return;
-          pending = false;
-          if (fallbackTimer) {
-            clearTimeout(fallbackTimer);
-          }
-          setSubmitEnabled(true);
-          resetTurnstile();
           if (data.ok) {
-            setStatus(data.message || "Message sent.", "is-success");
-            try {
-              form.reset();
-            } catch (_e) {}
+            finalize(true, data.message || "Message sent.", true);
           } else {
-            setStatus(data.message || "Could not send. Please try again.", "is-error");
+            finalize(false, data.message || "Could not send. Please try again.", false);
           }
         });
       })();
