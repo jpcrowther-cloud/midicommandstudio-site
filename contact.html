@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,14 +28,78 @@
         <section class="section">
           <div class="section-head">
             <h1>Contact</h1>
-            <p>Support is handled inside the app to keep requests organized.</p>
+            <p>In-app feedback is the fastest path, but you can also send a website message below.</p>
           </div>
           <p class="body-copy">
-            Please use <strong>Settings &gt; Feedback</strong> in the app to contact support. This route lets you
-            include diagnostics when needed and helps us respond faster.
+            For app issues, please use <strong>Settings &gt; Feedback</strong> so diagnostics can be included when
+            needed. For general questions, use this contact form.
           </p>
+          <div class="contact-card">
+            <h2>Send a Message</h2>
+            <form
+              class="contact-form"
+              action="https://script.google.com/macros/s/AKfycbxZoAbJy1pin8oX2TKt1QJv9eCv4GilHUfmXvMsWcz5WtrqrYhdOPH0Us-dzP4FjEReOw/exec"
+              method="post"
+              target="_blank"
+            >
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" required maxlength="80" />
+
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" required maxlength="120" />
+
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" required maxlength="4000"></textarea>
+
+              <input
+                class="contact-honeypot"
+                type="text"
+                name="website"
+                autocomplete="off"
+                tabindex="-1"
+                aria-hidden="true"
+              />
+
+              <div
+                class="cf-turnstile"
+                data-sitekey="0x4AAAAAACgqHtr4KJl-kL-a"
+                data-theme="dark"
+              ></div>
+
+              <button class="btn primary contact-submit" type="submit">Send Message</button>
+              <p class="contact-note">
+                Protected by Cloudflare Turnstile. Submitting opens a confirmation page in a new tab.
+              </p>
+              <p id="contact-status" class="contact-note"></p>
+            </form>
+          </div>
         </section>
       </main>
+      <footer class="footer">
+        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
+      </footer>
     </div>
+    <script>
+      (function () {
+        var form = document.querySelector(".contact-form");
+        if (!form) return;
+        var endpointPlaceholder = "PASTE_APPS_SCRIPT_WEB_APP_URL_HERE";
+        var turnstilePlaceholder = "PASTE_TURNSTILE_SITE_KEY_HERE";
+        var status = document.getElementById("contact-status");
+        var submit = form.querySelector(".contact-submit");
+        var widget = form.querySelector(".cf-turnstile");
+        var siteKey = (widget && widget.getAttribute("data-sitekey")) || "";
+        var endpointMissing = (form.getAttribute("action") || "").indexOf(endpointPlaceholder) !== -1;
+        var turnstileMissing = siteKey.indexOf(turnstilePlaceholder) !== -1;
+        if (endpointMissing || turnstileMissing) {
+          if (submit) submit.disabled = true;
+          if (status) {
+            status.textContent =
+              "Contact form is being configured. Add Apps Script URL and Turnstile site key, then refresh.";
+          }
+        }
+      })();
+    </script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </body>
 </html>
