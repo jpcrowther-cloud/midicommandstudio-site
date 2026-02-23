@@ -100,24 +100,27 @@
         var turnstileMissing = siteKey.indexOf(turnstilePlaceholder) !== -1;
         var pending = false;
         var fallbackTimer = null;
-        var actionOrigin = "";
-        try {
-          actionOrigin = new URL(form.getAttribute("action") || "", window.location.href).origin;
-        } catch (_e) {}
-
-        function isAllowedMessageOrigin(origin) {
-          if (!origin) return false;
+        function isContactResultMessage(event) {
+          if (!event) return null;
           try {
-            var u = new URL(origin);
-            var host = (u.hostname || "").toLowerCase();
-            if (host === "script.google.com") return true;
-            if (host === "script.googleusercontent.com") return true;
-            if (host.endsWith(".script.googleusercontent.com")) return true;
-            if (actionOrigin && origin === actionOrigin) return true;
+            if (submitFrame && submitFrame.contentWindow && event.source !== submitFrame.contentWindow) {
+              return null;
+            }
           } catch (_e) {
-            return false;
+            return null;
           }
-          return false;
+          var data = event.data;
+          if (typeof data === "string") {
+            try {
+              data = JSON.parse(data);
+            } catch (_e) {
+              return null;
+            }
+          }
+          if (!data || data.type !== "mcs_contact_result") {
+            return null;
+          }
+          return data;
         }
 
         function setStatus(message, cls) {
@@ -200,15 +203,14 @@
                 "Could not verify send status. Please wait a moment and try again.",
                 false
               );
-            }, 600);
+            }, 2000);
           });
         }
 
         window.addEventListener("message", function (event) {
           if (!pending) return;
-          if (!isAllowedMessageOrigin(event.origin)) return;
-          var data = event.data || {};
-          if (data.type !== "mcs_contact_result") return;
+          var data = isContactResultMessage(event);
+          if (!data) return;
           if (data.ok) {
             finalize(true, data.message || "Message sent.", true);
           } else {
