@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://midicommandstudio.com/</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-24</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/features.html</loc>
-    <lastmod>2026-02-07</lastmod>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/guides.html</loc>
+    <lastmod>2026-02-24</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/free-vs-full.html</loc>
@@ -21,7 +25,39 @@
     <lastmod>2026-02-07</lastmod>
   </url>
   <url>
+    <loc>https://midicommandstudio.com/faq.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
     <loc>https://midicommandstudio.com/contact.html</loc>
+    <lastmod>2026-02-07</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/send-midi-shortcuts-windows.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/control-windows-volume-with-midi.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/midi-controller-macros-windows.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/midi-audio-sample-playback-windows.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/behringer-x-touch-one-volume-control.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/behringer-x-touch-one-windows-setup.html</loc>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/help/index.html</loc>
     <lastmod>2026-02-07</lastmod>
   </url>
   <url>

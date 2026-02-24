@@ -119,9 +119,15 @@
     h1, h2, h3, h4, h5, h6 {
       font-weight: 600;
       line-height: 1.25;
-      color: #0daa4a;
+      color: #e4e9f2;
       margin-top: 2rem;
       margin-bottom: 0.75rem;
+    }
+
+    h2.toc-heading,
+    h3.toc-heading,
+    h4.toc-heading {
+      color: #0daa4a;
     }
 
     h1 {
@@ -139,12 +145,12 @@
 
     h3 {
       font-size: 1.25rem;
-      color: #d8ffe8;
+      color: #e4e9f2;
     }
 
     h4 {
       font-size: 1.05rem;
-      color: #e4fff0;
+      color: #d7dde9;
       text-transform: none;
       letter-spacing: 0.01em;
     }
@@ -232,11 +238,8 @@
     </div>
     <ul id="toc">
     <li><a href="#what-midi-command-studio-does">What MIDI Command Studio Does</a></li>
-    <li><a href="#midi-compatibility">A quick guide to MIDI and compatibility with MCS on Windows</a></li>
-    <li><a href="#free-vs-full-version">Free vs Full Version</a></li>
-    <li><a href="#activation">Activation</a></li>
-    <li><a href="#data-and-privacy">Data and privacy</a></li>
     <li><a href="#quick-start">Quick start</a></li>
+    <li><a href="#midi-compatibility">A quick guide to MIDI and compatibility with MCS on Windows</a></li>
     <li><a href="#devices">Devices</a>
     <ul>
     <li><a href="#add-a-new-device">Add a new device</a></li>
@@ -265,10 +268,15 @@
     </ul>
     </li>
     <li><a href="#how-the-app-icons-work-mappings-panel">App icons in the Mappings panel</a></li>
-    <li><a href="#faders">Faders</a></li>
+    <li><a href="#faders">Faders</a>
+    <ul>
+    <li><a href="#windows-input-control-advanced">Windows Input Control (Advanced)</a></li>
+    </ul>
+    </li>
     <li><a href="#encoders-and-jog-wheels">Encoders and jog wheels</a></li>
     <li><a href="#led-feedback">LED feedback</a></li>
     <li><a href="#preset-lcd-optional">LCD Feedback (sysex data)</a></li>
+    <li><a href="#motorised-faders">Motorised Faders</a></li>
     <li><a href="#midi-thru--virtual-port-setup">MIDI Thru</a>
     <ul>
     <li><a href="#midi-thru--virtual-port-setup">Virtual port setup</a></li>
@@ -282,11 +290,15 @@
     <li><a href="#how-to-run-microsoft-store-apps">How to run Microsoft Store apps</a></li>
     </ul>
     </li>
+    <li><a href="#free-vs-full-version">Free vs Full Version</a></li>
+    <li><a href="#activation">Activation</a></li>
+    <li><a href="#data-and-privacy">Data and privacy</a></li>
+    <li><a href="#feedback-and-error-log">Feedback and error log</a></li>
     <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ul>
   </aside>
   <main class="help-main">
-<h2 id="what-midi-command-studio-does">What MIDI Command Studio Does</h2>
+<h2 id="what-midi-command-studio-does" class="toc-heading" style="color: #0daa4a;">What MIDI Command Studio Does</h2>
 <p>
   MIDI Command Studio turns any MIDI controller into a powerful, fully customisable control surface for
   <strong>any Windows application</strong>. It is designed to be <strong>quick to map</strong>, <strong>easy to use</strong>,
@@ -324,14 +336,37 @@
   <em>(requires a virtual MIDI port such as loopMIDI)</em> &mdash; great for recording without having to reach for a mouse on every take.
 </p>
 
-<h2 id="midi-compatibility">A quick guide to MIDI and compatibility with MCS on Windows</h2>
+<h2 id="quick-start" class="toc-heading" style="color: #0daa4a;">Quick start</h2>
+<ol>
+  <li><strong>Add your device</strong> in the Devices panel.</li>
+  <li>
+    In the Mappings panel, click the correct <strong>Learn</strong> button, then move/press the control on your MIDI device.
+  </li>
+  <li>
+    In the editor window, choose what the control should do (shortcut, volume control, macro, etc.).
+  </li>
+  <li>
+    If needed, set <strong>App Targeting</strong> so the mapping only runs for a specific application.
+    (The target application must be running at the time you select it for targeting.)
+  </li>
+  <li>
+    Click <strong>Save</strong> and test the control.
+  </li>
+</ol>
+<p>
+  Tip: for <strong>Volume &ndash; App Target</strong>, the target application must be running and currently producing audio
+  so Windows creates an audio session for it.
+</p>
+
+
+<h2 id="midi-compatibility" class="toc-heading" style="color: #0daa4a;">A quick guide to MIDI and compatibility with MCS on Windows</h2>
 <p>
   Windows handling of MIDI devices can be a bit unreliable at times. MIDI Command Studio is designed
   to work around as many naming issues and device conflicts as possible, but there are still a few
   things to be aware of.
 </p>
 <p>
-  DAWs and other audio software can “steal” MIDI devices so they are no longer available to MCS.
+  DAWs and other audio software can &ldquo;steal&rdquo; MIDI devices so they are no longer available to MCS.
   It is recommended to start MCS before any other programs that might take control of your MIDI devices.
   This can avoid a lot of confusion if devices are not appearing or connecting in MCS.
 </p>
@@ -344,11 +379,11 @@
   MCS should work with most MIDI controllers that send standard MIDI data. However, some devices send
   data that is not supported. If your device is set to send <strong>Mackie</strong> or <strong>HUI</strong>
   data, some controls may behave unexpectedly. Where possible, switch the device output mode to standard
-  MIDI — most Mackie-style control surfaces support this.
+  MIDI &mdash; most Mackie-style control surfaces support this.
 </p>
 <p>
   MCS does not currently support some Mackie MCU devices where faders send <strong>pitch wheel</strong>
-  data instead of simple 0–127 values. Standard MIDI note and CC messages from devices are compatible,
+  data instead of simple 0&ndash;127 values. Standard MIDI note and CC messages from devices are compatible,
   so please ensure your device is in the correct mode.
 </p>
 <p>
@@ -372,90 +407,8 @@
 </p>
 <hr />
 
-<h2 id="free-vs-full-version">Free vs Full Version</h2>
-<h3 id="free-version">Free version</h3>
-<ul>
-  <li>Up to 2 presets per device</li>
-  <li>Up to 6 mappings per preset</li>
-  <li>Multiple devices can be added, with one active at a time</li>
-  <li>MIDI Thru included (requires a virtual MIDI port)</li>
-</ul>
-
-<h3 id="full-version">Full version</h3>
-<ul>
-  <li>Multiple devices active at the same time</li>
-  <li>Unlimited presets and mappings</li>
-  <li>Simple audio sample playback</li>
-</ul>
-<p>
-  For pricing and licensing, visit:<br>
-  <a href="https://midicommandstudio.com">https://midicommandstudio.com</a>
-</p>
-
-<h2 id="activation">Activation</h2>
-<p>Activation requires an internet connection.</p>
-<p>A license allows up to 2 activations.</p>
-
-<h3 id="how-to-activate">How to activate</h3>
-<ol>
-  <li>Open <strong>Settings</strong>.</li>
-  <li>In the <strong>Licensing</strong> panel, click <strong>Activate</strong>.</li>
-  <li>Paste your license key and confirm.</li>
-  <li>Restart the app so all changes take effect.</li>
-</ol>
-
-<h3 id="check-activation-status">Check activation status</h3>
-<p>Go to <strong>Settings</strong> &rarr; <strong>Licensing</strong> &rarr; <strong>Check status</strong>.</p>
-
-<h3 id="deactivate">Deactivate</h3>
-<p>
-  Use Deactivate if you plan to reinstall Windows, change machines, or need to move an activation.
-</p>
-<p>
-  Go to <strong>Settings</strong> &rarr; <strong>Licensing</strong> &rarr; <strong>Deactivate</strong>.
-  You will be asked to confirm, and the app will switch back to Free mode.
-</p>
-
-<h2 id="data-and-privacy">Data and privacy</h2>
-<p>
-  MIDI Command Studio does not send any data automatically. If you choose to send an error log when submitting feedback,
-  the app only sends the contents of <code>error_log.txt</code> (up to 200 KB) to help diagnose issues and support development.
-  The log contains timestamps, a short context label, and exception/stack trace details, with your Windows user path
-  redacted (e.g., <code>C:\Users\&lt;redacted&gt;\...</code>). The report also includes a non-reversible machine hash used only
-  to correlate reports (it does not expose your actual hardware ID). No license keys, activation data, email address, or MIDI
-  input data are sent unless you manually add them to the log.
-</p>
-<p>
-  Licensing &amp; activation: The app makes network requests only for licensing actions (activate/status/deactivate). These
-  requests include your license key and non-identifying device/install identifiers used to manage activations. No usage
-  tracking, MIDI input, or personal information is transmitted. The app does not send your email address (if Gumroad returns
-  an email, it&rsquo;s shown locally only).
-</p>
-
-<h2 id="quick-start">Quick start</h2>
-<ol>
-  <li><strong>Add your device</strong> in the Devices panel.</li>
-  <li>
-    In the Mappings panel, click the correct <strong>Learn</strong> button, then move/press the control on your MIDI device.
-  </li>
-  <li>
-    In the editor window, choose what the control should do (shortcut, volume control, macro, etc.).
-  </li>
-  <li>
-    If needed, set <strong>App Targeting</strong> so the mapping only runs for a specific application.
-    (The target application must be running at the time you select it for targeting.)
-  </li>
-  <li>
-    Click <strong>Save</strong> and test the control.
-  </li>
-</ol>
-<p>
-  Tip: for <strong>Volume – App Target</strong>, the target application must be running and currently producing audio
-  so Windows creates an audio session for it.
-</p>
-
-<h2 id="devices">Devices</h2>
-<h3 id="add-a-new-device">Add a new device</h3>
+<h2 id="devices" class="toc-heading" style="color: #0daa4a;">Devices</h2>
+<h3 id="add-a-new-device" class="toc-heading" style="color: #0daa4a;">Add a new device</h3>
 <p>Click <strong>Add</strong> in the Devices panel.</p>
 <p>Select your MIDI device from the dropdown list and click <strong>OK</strong>.</p>
 <p>The device will appear in the Devices panel already enabled:</p>
@@ -471,17 +424,17 @@
 <p>The tray icon will show an exclamation mark if any enabled device is red, so you can see at a glance that something needs attention.</p>
 <p>You can add multiple devices to the Devices panel in the same way - each one will be monitored independently and can be enabled/disabled as needed.</p>
 <hr>
-<h2 id="presets-and-autosave">Presets and Autosave</h2>
+<h2 id="presets-and-autosave" class="toc-heading" style="color: #0daa4a;">Presets and Autosave</h2>
 <p>MIDI Command Studio uses a simple but powerful preset system.</p>
 
-<h3 id="autosave">Autosave</h3>
+<h3 id="autosave" class="toc-heading" style="color: #0daa4a;">Autosave</h3>
 <p>
   The app automatically saves your current preset as you make changes.
   Once a mapping or macro is added, it autosaves - your mappings, device states,
   and macro steps are always kept up to date.
 </p>
 
-<h3 id="quick-preset-switching">Quick preset switching</h3>
+<h3 id="quick-preset-switching" class="toc-heading" style="color: #0daa4a;">Quick preset switching</h3>
 <p>
   Presets let you build completely different control layouts for different software.
   They are also <strong>device-specific</strong>, so you can have multiple presets for each individual device.
@@ -508,7 +461,7 @@
   even across multiple programs running at the same time.
 </p>
 
-<h3 id="preset-bar-buttons">Preset bar buttons</h3>
+<h3 id="preset-bar-buttons" class="toc-heading" style="color: #0daa4a;">Preset bar buttons</h3>
 <p>
   The preset bar at the top of the app is scoped to the currently selected device.
   Use it to switch between presets quickly, without affecting your other devices.
@@ -524,7 +477,7 @@
   </li>
 </ul>
 
-<h3 id="preset-files-location-and-backup">Preset files location and backup</h3>
+<h3 id="preset-files-location-and-backup" class="toc-heading" style="color: #0daa4a;">Preset files location and backup</h3>
 <p>
   Presets are saved as <strong>JSON files</strong> inside your user profile, under:
   <code>%LOCALAPPDATA%\MIDI Command Studio\presets</code>
@@ -538,7 +491,7 @@
   <strong>Settings &rarr; Preset files location</strong>.
 </p>
 
-<h3 id="preset-switching-from-your-controller">Preset switching from your controller</h3>
+<h3 id="preset-switching-from-your-controller" class="toc-heading" style="color: #0daa4a;">Preset switching from your controller</h3>
 <p>
   If you want to change presets without using the mouse, open <strong>Settings</strong> and use the
   <strong>Preset switching</strong> panel.
@@ -553,7 +506,7 @@
   If the button is already used for another mapping, the app will ask if you want to reassign it to preset switching.
 </p>
 
-<h3 id="audio-presets">Audio Presets</h3>
+<h3 id="audio-presets" class="toc-heading" style="color: #0daa4a;">Audio Presets</h3>
 <p>Audio presets and audio mappings are available in the <strong>Full version only</strong>.</p>
 <p>
   Audio preset creation is managed in <strong>Settings &rarr; Audio Preset</strong>. Choose a device, enter a preset name,
@@ -604,8 +557,8 @@
 </p>
 
 <hr />
-<h2 id="mappings-and-the-editor">Mappings and the editor</h2>
-<h3 id="learn-buttons-and-midi-control-types">Learn buttons and MIDI control types</h3>
+<h2 id="mappings-and-the-editor" class="toc-heading" style="color: #0daa4a;">Mappings and the editor</h2>
+<h3 id="learn-buttons-and-midi-control-types" class="toc-heading" style="color: #0daa4a;">Learn buttons and MIDI control types</h3>
 <p>
   MIDI Command Studio uses different Learn buttons for different MIDI control types.
   If the wrong one is used, the mapping can behave unpredictably.
@@ -634,14 +587,20 @@
   <li>Use only if the device sends a separate touch event when you touch the fader.</li>
 </ul>
 <p><strong>Tip</strong>: If you're unsure, open the Log window and move the control. The values there will show you what data is being received.</p>
-<h3 id="learn-a-control">Learn a control</h3>
+<h3 id="learn-a-control" class="toc-heading" style="color: #0daa4a;">Learn a control</h3>
 <p>In the Devices panel, make sure the device you want to map is selected (green box around the row) and its status is green (connected).</p>
 <p>In the Mappings panel, click the <strong>Learn</strong> button that matches the type of control. Follow the onscreen prompt. The editor window will open once a control is learnt.</p>
-<h3 id="open-the-editor">Open the editor</h3>
+<p><strong>Mute setup tip:</strong> You can set up mute in two ways:</p>
+<ul>
+<li><strong>When learning a button:</strong> click <strong>Use as mute control...</strong> to make that button a mute button.</li>
+<li><strong>When learning a fader:</strong> turn on <strong>Add mute control</strong> to add a mute button linked to that fader.</li>
+</ul>
+<p><strong>Mute methods:</strong> You can either send a normal app shortcut (if that app has its own mute shortcut), or use mute control mapping to mute the actual Windows audio stream directly.</p>
+<h3 id="open-the-editor" class="toc-heading" style="color: #0daa4a;">Open the editor</h3>
 <p>The editor window opens automatically after Learn.</p>
 <p>Or later, click the green pen next to an existing mapping to edit it.</p>
 <hr>
-<h2 id="app-targeting-for-buttons-encoders-and-shortcut-based-mappings">App Targeting (for buttons, encoders and shortcut-based mappings)</h2>
+<h2 id="app-targeting-for-buttons-encoders-and-shortcut-based-mappings" class="toc-heading" style="color: #0daa4a;">App Targeting (for buttons, encoders and shortcut-based mappings)</h2>
 <p>In the editor window there's an <strong>App Targeting</strong> panel.<br>
 This controls which app shortcuts are sent to, or whether they're global.</p>
 <p>You'll see:</p>
@@ -674,15 +633,15 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </li>
 </ul>
 <hr>
-<h3 id="choose-a-shortcut-with-the-shortcut-palette">Choose a shortcut with the Shortcut Palette</h3>
+<h3 id="choose-a-shortcut-with-the-shortcut-palette" class="toc-heading" style="color: #0daa4a;">Choose a shortcut with the Shortcut Palette</h3>
 <p>Click in the shortcut box you want to set (for example: <strong>On</strong>, <strong>Off</strong>, <strong>Hold</strong>, <strong>Clockwise</strong>, <strong>Anticlockwise</strong>).</p>
 <ul>
-<li><strong>On</strong> – send a shortcut when the button is pressed.</li>
-<li><strong>Off</strong> – send a shortcut when the button is released.</li>
-<li><strong>Both</strong> – send one shortcut on press, and another on release.</li>
-<li><strong>Hold</strong> – send a shortcut while the button is held.
+<li><strong>On</strong> &ndash; send a shortcut when the button is pressed.</li>
+<li><strong>Off</strong> &ndash; send a shortcut when the button is released.</li>
+<li><strong>Both</strong> &ndash; send one shortcut on press, and another on release.</li>
+<li><strong>Hold</strong> &ndash; send a shortcut while the button is held.
 <ul>
-<li>Good for modifiers like Ctrl+Shift – press and hold the pad to hold the modifier, then use other controls, release to stop holding it.</li>
+<li>Good for modifiers like Ctrl+Shift &ndash; press and hold the pad to hold the modifier, then use other controls, release to stop holding it.</li>
 </ul>
 </li>
 </ul>
@@ -699,21 +658,21 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <p>Shortcut lists are stored in the data folder: <code>%LOCALAPPDATA%\\MIDI Command Studio\\shortcut_lists</code>.<br>
 Use <strong>Settings</strong> &rarr; <strong>Data folder location</strong> to open it.</p>
 <p>The shortcut will be sent back to the editor and the description will update automatically.</p>
-<h3 id="capture-your-own-shortcut-optional">Capture your own shortcut (optional)</h3>
-<p>If you can’t find the shortcut you want in the list, click <strong>Capture from keyboard</strong> in the Shortcut Palette.</p>
+<h3 id="capture-your-own-shortcut-optional" class="toc-heading" style="color: #0daa4a;">Capture your own shortcut (optional)</h3>
+<p>If you can&rsquo;t find the shortcut you want in the list, click <strong>Capture from keyboard</strong> in the Shortcut Palette.</p>
 <p>Press the keys you want.</p>
 <p>The captured shortcut will be sent back to the editor.</p>
 <p>You can edit the description text if you want.</p>
-<h3 id="save-the-mapping">Save the mapping</h3>
+<h3 id="save-the-mapping" class="toc-heading" style="color: #0daa4a;">Save the mapping</h3>
 <p>Repeat for any other shortcut boxes you want to fill for this control.</p>
 <p>Click <strong>Save</strong> to store the mapping.</p>
-<h4 id="conflict-handling">Conflict handling</h4>
+<h4 id="conflict-handling" class="toc-heading" style="color: #0daa4a;">Conflict handling</h4>
 <p>
   If a control is already assigned (as a mapping, preset switch, or encoder modifier), the app will warn you
   when you try to learn it again and offer to reassign it. Choosing reassign removes the previous assignment
   so the control is only used in one place. This keeps mappings predictable and avoids accidental duplicates.
 </p>
-<h2 id="how-the-app-icons-work-mappings-panel">How the app icons work (Mappings panel)</h2>
+<h2 id="how-the-app-icons-work-mappings-panel" class="toc-heading" style="color: #0daa4a;">How the app icons work (Mappings panel)</h2>
 <p>In the Mappings panel, there's an <strong>App</strong> column showing an icon for each mapping:</p>
 <h3 id="global">Global</h3>
 <p>Shows a small globe icon.</p>
@@ -729,37 +688,50 @@ Use <strong>Settings</strong> &rarr; <strong>Data folder location</strong> to op
 </ul>
 <p>Icons will update status only when sending shortcuts.</p>
 <hr>
-<h2 id="faders">Faders</h2>
+<h2 id="faders" class="toc-heading" style="color: #0daa4a;">Faders</h2>
 <h3 id="fader-settings-editor-window">Fader settings (editor window)</h3>
 <p>When you learn a fader and the editor window opens, look for the <strong>Controls</strong> dropdown.</p>
 <p>Under <strong>Controls</strong> select either:</p>
 <ul>
 <li>
-<p><strong>Volume – System</strong><br>
+<p><strong>Volume &ndash; System</strong><br>
 Controls the current main output for Windows (your master system volume).</p>
 </li>
 <li>
-<p><strong>Volume – App Target</strong><br>
+<p><strong>Volume &ndash; App Target</strong><br>
 Controls the volume for a specific app instead of the whole system.</p>
 </li>
 </ul>
-<h3 id="volume--app-target-per-app-volume--app-targeting">Volume – App Target (per-app volume + app targeting)</h3>
-<p>When you choose <strong>Volume – App Target</strong>:</p>
+<h3 id="volume--windows-input-default">Volume &ndash; Input (Default)</h3>
+<p>When you choose <strong>Volume &ndash; Input (Default)</strong>, the fader controls the Windows default recording input level. If you add a paired mute control, it toggles that same Windows default input mute state.</p>
+<p><strong>Mute setup tip:</strong> Mute can be set up either when learning a button (<strong>Use as mute control...</strong>) or when learning a fader (<strong>Add mute control</strong>).</p>
+<p><strong>Common apps that usually follow this Windows input level:</strong> OBS / Streamlabs Desktop, Discord, Zoom, Microsoft Teams, and Skype.</p>
+<p><strong>Important:</strong> Interface direct monitoring/hardware monitor mix is not controlled by Windows input level or Windows input mute.</p>
+<p><strong>Compatibility note:</strong> Some ASIO, exclusive-mode, or vendor-specific paths can bypass Windows input controls. In those cases both Windows input <strong>volume</strong> and Windows input <strong>mute</strong> may be ignored by that app.</p>
+<h3 id="windows-input-control-advanced" class="toc-heading" style="color: #0daa4a;">Windows Input Control (Advanced)</h3>
+<p>Use this when you want a fader or mute button to control Windows input streams (for example individual mic inputs) in software.</p>
+<p>Input volume and mute mappings control the Windows input stream used by software, so they change what your audience hears in apps like OBS, Streamlabs Desktop, Discord, Zoom, and Teams.</p>
+<p>They do not change direct hardware monitoring on your audio interface.</p>
+<p>To show specific input devices in the target list, enable <strong>Settings &rarr; General &rarr; Advanced &rarr; Show specific Windows input devices in mapping targets</strong>.</p>
+<p>If a selected input device is unavailable (for example unplugged or renamed), that mapping may not apply until you reselect it.</p>
+<p>Some ASIO, exclusive-mode, or vendor-specific routing paths may ignore Windows input volume and mute controls.</p>
+<h3 id="volume--app-target-per-app-volume--app-targeting">Volume &ndash; App Target (per-app volume + app targeting)</h3>
+<p>When you choose <strong>Volume &ndash; App Target</strong>:</p>
 <p>Use the <strong>App</strong> dropdown (in the App Targeting panel at the bottom of the editor) to pick the app you want this fader to control<br>
 (to make sure your app appears in the dropdown, run the program and have audio playing).</p>
 <h4 id="how-it-works">How it works: </h4>
 <ul>
 <li>The fader will only adjust the volume for the app you selected, based on its audio session in Windows.</li>
-<li>All fader movements are sent to that app’s volume, not the system master volume.</li>
+<li>All fader movements are sent to that app&rsquo;s volume, not the system master volume.</li>
 <li>If you change the selected app in this dropdown, the same fader will control a different app instead.</li>
 </ul>
-<h3 id="app-targeting-options-for-volume--app-target">App Targeting options (for Volume – App Target)</h3>
+<h3 id="app-targeting-options-for-volume--app-target">App Targeting options (for Volume &ndash; App Target)</h3>
 <p>In the App Targeting panel you can choose how strictly the app selection is used:</p>
 <ul>
 <li>
 <p><strong>Normal (recommended)</strong><br>
-Changes the targeted app’s volume whether it is in focus or not.<br>
-Simplest option – works as long as the app is running and has an audio session.</p>
+Changes the targeted app&rsquo;s volume whether it is in focus or not.<br>
+Simplest option &ndash; works as long as the app is running and has an audio session.</p>
 </li>
 <li>
 <p><strong>Only when app has focus</strong><br>
@@ -777,12 +749,13 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <h4 id="in-short">In short: </h4>
 <ul>
 <li><strong>Volume - System</strong> &rarr; one fader that always controls your main Windows volume.</li>
+<li><strong>Volume - Input (Default)</strong> &rarr; controls the Windows default capture input level (and paired mute) for apps that use Windows input controls.</li>
 <li><strong>Volume - App Target + Normal</strong> &rarr; per-app fader that works even when the app isn't focused.</li>
 <li><strong>Volume - App Target + Only when app has focus</strong> &rarr; per-app fader that only works when you're actively in that app.</li>
 <li><strong>Volume - App Target + Force focus then send</strong> &rarr; per-app fader that brings the app to the front and then changes its volume.</li>
 </ul>
 <hr>
-<h2 id="encoders-and-jog-wheels">Encoders and jog wheels</h2>
+<h2 id="encoders-and-jog-wheels" class="toc-heading" style="color: #0daa4a;">Encoders and jog wheels</h2>
 <p>Encoders and jog wheels are great for up/down style actions like scrolling, zooming, nudging, skipping forward/backward in videos or stepping through tracks.</p>
 <p>They can also use a modifier key, effectively turning one encoder into two:</p>
 <ul>
@@ -793,9 +766,9 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <h4 id="learn-the-control-and-check-direction">Learn the control and check direction </h4>
 <p>In the Mappings panel, click <strong>Learn encoder/jogwheel</strong> and follow the onscreen prompt.</p>
 <p>Turn the encoder/jogwheel and check encoder direction with the animation, flipping (<strong>invert</strong>) if required.</p>
-<p>The editor window will open once it’s learnt.</p>
+<p>The editor window will open once it&rsquo;s learnt.</p>
 <h4 id="set-clockwise--anticlockwise-shortcuts">Set clockwise / anticlockwise shortcuts </h4>
-<p>In the editor you’ll see shortcut boxes for:</p>
+<p>In the editor you&rsquo;ll see shortcut boxes for:</p>
 <ul>
 <li><strong>Clockwise</strong></li>
 <li><strong>Anticlockwise</strong></li>
@@ -806,13 +779,13 @@ Windows can sometimes block background apps from taking focus. Force focus works
 (the modifier should be a button on the device you are currently using).</p>
 <p>Add extra shortcuts for when the modifier is pressed.</p>
 <p>When that modifier is held, the encoder can trigger a different behaviour<br>
-(for example: normal = zoom horizontally, with modifier = zoom vertically — some DAWs let you scroll the timeline with shortcuts on the encoder, then use the modifier to drag over areas to make a selection, etc.).</p>
+(for example: normal = zoom horizontally, with modifier = zoom vertically &mdash; some DAWs let you scroll the timeline with shortcuts on the encoder, then use the modifier to drag over areas to make a selection, etc.).</p>
 <h4 id="save">Save</h4>
 <p>Click <strong>Save</strong> to store the mapping.</p>
 <p>Now turning the encoder clockwise sends the Clockwise shortcut, and turning it the other way sends the Anticlockwise shortcut; with a modifier, you effectively get a "second mode" for the same encoder.</p>
 <p>You can experiment with <strong>Rate limit</strong>. To fine-tune the response of an encoder - for example, setting <strong>Rate limit</strong> to around 120ms may stop it from feeling like it's "buffering" lots of commands. <strong>Rate limit</strong> is set to 50ms by default and is usually ok for most situations.</p>
 <hr>
-<h2 id="led-feedback">LED feedback </h2>
+<h2 id="led-feedback" class="toc-heading" style="color: #0daa4a;">LED feedback </h2>
 <p>
   LED feedback lets MIDI Command Studio control the lights on supported buttons and pads
   on your MIDI controller. It does not change how the mapping behaves - it simply gives
@@ -825,18 +798,18 @@ Windows can sometimes block background apps from taking focus. Force focus works
   You choose an LED mode per button mapping in the editor window:
 </p>
 <ul>
-  <li><strong>Off</strong> – LEDs are not controlled by the app. The controller behaves as it normally would.</li>
+  <li><strong>Off</strong> &ndash; LEDs are not controlled by the app. The controller behaves as it normally would.</li>
   <li>
-    <strong>Momentary</strong> – the light turns on when the button is pressed and turns off when it is released.
-    This is useful for things that are only “active” while you hold the button (for example modifier buttons).
+    <strong>Momentary</strong> &ndash; the light turns on when the button is pressed and turns off when it is released.
+    This is useful for things that are only &ldquo;active&rdquo; while you hold the button (for example modifier buttons).
   </li>
   <li>
-    <strong>Toggle</strong> – each press flips the light on or off and keeps that state until the next press.
+    <strong>Toggle</strong> &ndash; each press flips the light on or off and keeps that state until the next press.
     This is useful for on/off style actions (mute, loop, record arm, etc.) when you want the LED to act like a latch.
     The LED state is based on button presses, not the true state inside the target app.
   </li>
   <li>
-    <strong>Always on</strong> – the light is kept on while the preset is active, regardless of how many times the
+    <strong>Always on</strong> &ndash; the light is kept on while the preset is active, regardless of how many times the
     button is pressed. This mode is usually the most useful, because it lets you see at a glance which buttons are
     mapped and available on the device.
   </li>
@@ -855,8 +828,12 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <p>
   For devices that need specific LED values, you can also adjust the MIDI on/off values
   used for the LEDs. By default the app sends <code>0</code> for off and <code>127</code> for on,
-  but some controllers use different values. For example, the Behringer X-Touch One uses
-  <code>1</code> for off and <code>127</code> for on.
+  but some controllers use different values.
+</p>
+<p>
+  <strong>Send Note On (vel 0) for LED off (recommended)</strong> changes how LED-off is sent for
+  note-based LEDs. When enabled, LED-off is sent as <code>Note On</code> with velocity <code>0</code>
+  instead of <code>Note Off</code>. Some controllers expect this behavior.
 </p>
 <h3 id="testing-leds">Testing LEDs</h3>
 <p>
@@ -866,15 +843,19 @@ Windows can sometimes block background apps from taking focus. Force focus works
   set correctly. If LED feedback is disabled for the device selected, the test function is also
   disabled.
 </p>
-<h3 id="preset-lcd-optional">LCD Feedback (sysex data)</h3>
+<h3 id="preset-lcd-optional" class="toc-heading" style="color: #0daa4a;">LCD Feedback (sysex data)</h3>
 <p>Only the Behringer Xtouch One is currently supported for this feature.</p>
 <p>More devices may be added in future updates.</p>
 <p>
-  This setting lets you send the current preset name and a colour to the device&lsquo;s LCD display. So when switching
+  This setting lets you send the current preset name and a colour to the device&rsquo;s LCD display. So when switching
   presets, the screen will update and display the preset name and the colour chosen. Useful for knowing which preset is
   currently loaded for that device without checking the app.
 </p>
-<h2 id="midi-thru--virtual-port-setup">MIDI Thru – virtual port setup</h2>
+<h3 id="motorised-faders" class="toc-heading" style="color: #0daa4a;">Motorised Faders</h3>
+<p>Only the Behringer Xtouch One is currently supported for this feature.</p>
+<p>If <strong>Motorised fader feedback</strong> is enabled in settings, switching presets sends a one-time fader position update for the mapped volume target in that preset (System, App Target, Windows Input (Default), or Audio Volume).</p>
+<p>To refresh app-target fader feedback, make sure the targeted app is running and producing audio, then press the preset button so the fader can read the current app volume and adjust to it.</p>
+<h2 id="midi-thru--virtual-port-setup" class="toc-heading" style="color: #0daa4a;">MIDI Thru &ndash; virtual port setup</h2>
 <p>To use MIDI Thru, you need one virtual MIDI port with a specific name:</p>
 <ul>
 <li>Install a virtual MIDI tool such as <strong>loopMIDI</strong>.</li>
@@ -884,7 +865,7 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </ul>
 <p>MIDI Command Studio will look for a port called <strong>MCS MIDI Thru</strong> and use it as the Thru output.</p>
 <hr>
-<h2 id="what-midi-thru-does">What MIDI Thru does </h2>
+<h2 id="what-midi-thru-does" class="toc-heading" style="color: #0daa4a;">What MIDI Thru does </h2>
 <p>When MIDI Thru is enabled for a device:</p>
 <ul>
 <li>Any controls mapped with shortcuts/macros still function as intended.</li>
@@ -892,8 +873,8 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </ul>
 <p>This means you can, for example, use a few lower keys on a MIDI keyboard for play/stop/record/undo/redo, and still use the rest of the keys to play a virtual instrument in your DAW.</p>
 <hr>
-<h2 id="macros--when-shortcuts-arent-enough">Macros – when shortcuts aren’t enough</h2>
-<p>Macros let a single button do more than one thing or things that aren’t just keyboard shortcuts, such as:</p>
+<h2 id="macros--when-shortcuts-arent-enough" class="toc-heading" style="color: #0daa4a;">Macros &ndash; when shortcuts aren&rsquo;t enough</h2>
+<p>Macros let a single button do more than one thing or things that aren&rsquo;t just keyboard shortcuts, such as:</p>
 <ul>
 <li>Mouse clicks / scroll</li>
 <li>Run a program or open a file</li>
@@ -901,7 +882,7 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <li>Wait/delay between actions</li>
 <li>Or a sequence of shortcuts</li>
 </ul>
-<h3 id="turn-a-mapping-into-a-macro">Turn a mapping into a macro </h3>
+<h3 id="turn-a-mapping-into-a-macro" class="toc-heading" style="color: #0daa4a;">Turn a mapping into a macro </h3>
 <h4 id="learn-a-button-as-normal">Learn a button as normal </h4>
 <p>Use <strong>Learn pad/note/button</strong> and follow the onscreen prompt.</p>
 <p>The editor window will open for that button.</p>
@@ -913,15 +894,15 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <p>In the Mappings panel, click the green pen next to the mapping.</p>
 <p>If the mapping is saved as a macro, this will open the Macro Editor directly.</p>
 <hr>
-<h2 id="add-steps-to-a-macro">Add steps to a macro </h2>
+<h2 id="add-steps-to-a-macro" class="toc-heading" style="color: #0daa4a;">Add steps to a macro </h2>
 <p>In the Macro Editor you build a list of steps that run from top to bottom when you press the button.</p>
 <h3 id="common-step-types">Common step types: </h3>
 <ul>
-<li><strong>Shortcut</strong> – send a keyboard shortcut</li>
+<li><strong>Shortcut</strong> &ndash; send a keyboard shortcut</li>
 <li><strong>Run program / open file</strong></li>
 <li><strong>Mouse click / move / scroll</strong></li>
-<li><strong>Text input</strong> – type some text</li>
-<li><strong>Wait / delay</strong> – pause between actions (the app has a 75ms delay between steps by default)</li>
+<li><strong>Text input</strong> &ndash; type some text</li>
+<li><strong>Wait / delay</strong> &ndash; pause between actions (the app has a 75ms delay between steps by default)</li>
 </ul>
 <h3 id="to-add-a-step">To add a step: </h3>
 <ul>
@@ -937,7 +918,7 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <li>Repeat for as many steps as you need.</li>
 </ul>
 
-<h3 id="how-to-run-microsoft-store-apps">How to run Microsoft Store apps</h3>
+<h3 id="how-to-run-microsoft-store-apps" class="toc-heading" style="color: #0daa4a;">How to run Microsoft Store apps</h3>
 <p>Some Microsoft Store apps do not have a normal <code>.exe</code> you can launch directly. In MIDI Command Studio, you can launch them by running Explorer with a special AppsFolder argument.</p>
 <h4 id="create-the-macro-step">1) Create the macro step</h4>
 <ul>
@@ -978,10 +959,81 @@ WhatsApp                     5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App
 <p>In the Macro Editor, click <strong>Save/OK</strong> to save the macro.</p>
 <p>Go to your target app and press the MIDI button.</p>
 <p>The steps will run in order.</p>
-<p>If it doesn’t behave as expected, click the green pen again to reopen the Macro Editor and adjust the steps.</p>
+<p>If it doesn&rsquo;t behave as expected, click the green pen again to reopen the Macro Editor and adjust the steps.</p>
 
 <hr>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="free-vs-full-version" class="toc-heading" style="color: #0daa4a;">Free vs Full Version</h2>
+<h3 id="free-version">Free version</h3>
+<ul>
+  <li>Up to 2 presets per device</li>
+  <li>Up to 6 mappings per preset</li>
+  <li>Multiple devices can be added, with one active at a time</li>
+  <li>MIDI Thru included (requires a virtual MIDI port)</li>
+</ul>
+
+<h3 id="full-version">Full version</h3>
+<ul>
+  <li>Multiple devices active at the same time</li>
+  <li>Unlimited presets and mappings</li>
+  <li>Simple audio sample playback</li>
+</ul>
+<p>
+  For pricing and licensing, visit:<br>
+  <a href="https://midicommandstudio.com">https://midicommandstudio.com</a>
+</p>
+
+<h2 id="activation" class="toc-heading" style="color: #0daa4a;">Activation</h2>
+<p>Activation requires an internet connection.</p>
+<p>A license allows up to 2 activations.</p>
+
+<h3 id="how-to-activate">How to activate</h3>
+<ol>
+  <li>Open <strong>Settings</strong>.</li>
+  <li>In the <strong>Licensing</strong> panel, click <strong>Activate</strong>.</li>
+  <li>Paste your license key and confirm.</li>
+  <li>Restart the app so all changes take effect.</li>
+</ol>
+
+<h3 id="check-activation-status">Check activation status</h3>
+<p>Go to <strong>Settings</strong> &rarr; <strong>Licensing</strong> &rarr; <strong>Check status</strong>.</p>
+
+<h3 id="deactivate">Deactivate</h3>
+<p>
+  Use Deactivate if you plan to reinstall Windows, change machines, or need to move an activation.
+</p>
+<p>
+  Go to <strong>Settings</strong> &rarr; <strong>Licensing</strong> &rarr; <strong>Deactivate</strong>.
+  You will be asked to confirm, and the app will switch back to Free mode.
+</p>
+
+<h2 id="data-and-privacy" class="toc-heading" style="color: #0daa4a;">Data and privacy</h2>
+<p>
+  MIDI Command Studio does not send any data automatically. If you choose to send an error log when submitting feedback,
+  the app only sends the contents of <code>error_log.txt</code> (up to 200 KB) to help diagnose issues and support development.
+  The log contains timestamps, a short context label, and exception/stack trace details, with your Windows user path
+  redacted (e.g., <code>C:\Users\&lt;redacted&gt;\...</code>). The report also includes a non-reversible machine hash used only
+  to correlate reports (it does not expose your actual hardware ID). No license keys, activation data, email address, or MIDI
+  input data are sent unless you manually add them to the log.
+</p>
+<p>
+  Licensing &amp; activation: The app makes network requests only for licensing actions (activate/status/deactivate). These
+  requests include your license key and non-identifying device/install identifiers used to manage activations. No usage
+  tracking, MIDI input, or personal information is transmitted. The app does not send your email address (if Gumroad returns
+  an email, it&rsquo;s shown locally only).
+</p>
+<h2 id="feedback-and-error-log" class="toc-heading" style="color: #0daa4a;">Feedback and error log</h2>
+<p>In <strong>Settings &rarr; Feedback</strong>:</p>
+<ul>
+  <li><strong>Open form in browser</strong> opens the feedback form for bug reports, feature requests, and general feedback.</li>
+  <li><strong>Clear error log</strong> clears the local <code>error_log.txt</code> file.</li>
+  <li><strong>Icon</strong> toggles the issue-log indicator visibility in the main window.</li>
+</ul>
+<p>
+  This panel does not send data by itself; data is only sent when you explicitly submit the feedback form.
+</p>
+
+
+<h2 id="troubleshooting" class="toc-heading" style="color: #0daa4a;">Troubleshooting</h2>
 <h3 id="device-is-red-disconnected">My device is red / disconnected</h3>
 <ul>
   <li>Make sure the device is powered and connected (try a different USB port/cable).</li>
@@ -989,7 +1041,7 @@ WhatsApp                     5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App
   <li>If the device reconnects, MIDI Command Studio will automatically switch it back to green.</li>
 </ul>
 
-<h3 id="learn-doesnt-detect-control">Learn doesn’t detect my control</h3>
+<h3 id="learn-doesnt-detect-control">Learn doesn&rsquo;t detect my control</h3>
 <ul>
   <li>Confirm the correct device is selected in the Devices panel.</li>
   <li>Make sure the device shows as connected (green) before learning.</li>
@@ -1003,13 +1055,13 @@ WhatsApp                     5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App
   <li>If you&rsquo;re unsure, open the Log window and move the control &mdash; the data shown there will help you confirm the control type.</li>
 </ul>
 
-<h3 id="target-app-not-in-list">My target app isn’t in the App dropdown</h3>
+<h3 id="target-app-not-in-list">My target app isn&rsquo;t in the App dropdown</h3>
 <ul>
   <li>Run the app and make sure it has an open window.</li>
-  <li>For <strong>Volume – App Target</strong>, the app must be producing audio so Windows creates an audio session.</li>
+  <li>For <strong>Volume &ndash; App Target</strong>, the app must be producing audio so Windows creates an audio session.</li>
 </ul>
 
-<h3 id="leds-not-working">LEDs don’t respond</h3>
+<h3 id="leds-not-working">LEDs don&rsquo;t respond</h3>
 <ul>
   <li>Open <strong>Settings</strong> and enable LED support for that device.</li>
   <li>Double-check the LED <code>on</code>/<code>off</code> values (different controllers use different values).</li>
@@ -1039,7 +1091,8 @@ WhatsApp                     5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App
       var countEl = document.getElementById("help-search-count");
       var resultsEl = document.getElementById("help-search-results");
       var main = document.querySelector(".help-main");
-      if (!input || !countEl || !resultsEl || !main) return;
+      if (!main) return;
+      if (!input || !countEl || !resultsEl) return;
 
       function clearResults() {
         resultsEl.innerHTML = "";
@@ -1148,5 +1201,7 @@ WhatsApp                     5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App
   <footer class="help-footer">&copy; 2026 Meltopia. MIDI Command Studio.</footer>
 </body>
 </html>
+
+
 
 

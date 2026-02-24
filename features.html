@@ -1,11 +1,23 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MIDI Command Studio | Features</title>
-    <meta name="description" content="Explore what MIDI Command Studio can do and how it can transform a MIDI controller into a Windows control surface." />
+    <meta
+      name="description"
+      content="Map MIDI controllers to Windows shortcuts, macros, and volume control with app targeting, LED feedback, and per-device presets."
+    />
     <link rel="canonical" href="https://midicommandstudio.com/features.html" />
+    <meta property="og:site_name" content="MIDI Command Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MIDI Command Studio | Features" />
+    <meta
+      property="og:description"
+      content="Map MIDI controllers to Windows shortcuts, macros, and volume control with app targeting, LED feedback, and per-device presets."
+    />
+    <meta property="og:url" content="https://midicommandstudio.com/features.html" />
+    <meta property="og:image" content="https://midicommandstudio.com/assets/Midi%20png.png" />
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -14,8 +26,9 @@
       <header class="site-header">
         <div class="site-logo">MIDI Command Studio</div>
         <nav class="site-nav">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <a class="active" href="features.html">Features</a>
+          <a href="guides.html">Guides</a>
           <a href="free-vs-full.html">Free vs Full</a>
           <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
           <a href="privacy.html">Data &amp; Privacy</a>
@@ -46,11 +59,11 @@
             </div>
             <div class="feature-card">
               <h3>Autosave</h3>
-              <p>Presets and device settings are saved automatically, so you don't need to worry about losing any changes.</p>
+              <p>Presets and device settings are saved automatically, so you do not need to worry about losing changes.</p>
             </div>
             <div class="feature-card">
               <h3>LED Feedback</h3>
-              <p>Light up your controller's mapped buttons with always-on, momentary, or toggle options (Device must support LED Feedback).</p>
+              <p>Use always-on, momentary, or toggle LED modes on supported devices.</p>
             </div>
             <div class="feature-card">
               <h3>App Targeting</h3>
@@ -58,7 +71,7 @@
             </div>
             <div class="feature-card">
               <h3>Volume Control</h3>
-              <p>Control system volume or a specific application's volume with a fader or knob.</p>
+              <p>Control system volume or a specific application volume with a fader or knob.</p>
             </div>
             <div class="feature-card">
               <h3>Simple Audio Sample Playback</h3>
@@ -66,12 +79,50 @@
             </div>
             <div class="feature-card">
               <h3>Shortcut Palette</h3>
-              <p>Pick shortcuts from a built-in library for different programs (auto-fills the description), or capture your own.</p>
+              <p>Pick shortcuts from a built-in library for many apps, or capture your own shortcuts.</p>
             </div>
             <div class="feature-card">
               <h3>MIDI Thru</h3>
-              <p>Pass unmapped MIDI controls through to other apps using a virtual MIDI port (requires 3rd party virtual MIDI port).</p>
+              <p>Pass unmapped MIDI controls through to other apps using a virtual MIDI port.</p>
             </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>Guides for Common Setups</h2>
+            <p>Practical setup guides for common first-time workflows.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>How to send keyboard shortcuts with MIDI</h3>
+              <p>Map buttons, pads, and encoders to shortcut combinations in Windows apps.</p>
+              <p><a href="send-midi-shortcuts-windows.html">Open guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>How to control Windows volume with MIDI</h3>
+              <p>Use one control for system volume or route controls to app-specific volume targets.</p>
+              <p><a href="control-windows-volume-with-midi.html">Open guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>How to build MIDI macros for Windows apps</h3>
+              <p>Create one-button action chains with shortcuts, delays, and program launch steps.</p>
+              <p><a href="midi-controller-macros-windows.html">Open guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>How to play audio samples with MIDI on Windows</h3>
+              <p>Set up trigger, stop, and playback mode mappings for quick sample playback.</p>
+              <p><a href="midi-audio-sample-playback-windows.html">Open guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Behringer X-Touch One one-fader volume control</h3>
+              <p>Switch presets to control multiple app and system volume targets with one fader.</p>
+              <p><a href="behringer-x-touch-one-volume-control.html">Open guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Behringer X-Touch One Windows setup</h3>
+              <p>Set up connection, preset switching, LCD labels, and motorized fader feedback.</p>
+              <p><a href="behringer-x-touch-one-windows-setup.html">Open guide</a></p>
+            </article>
           </div>
         </section>
         <section class="section">
@@ -80,11 +131,17 @@
             <p>Device-specific support for the X-Touch One.</p>
           </div>
           <p class="body-copy">
-            On the Behringer X-Touch One, MIDI Command Studio supports the motorized fader and LCD/scribble strip. The
-            display can show the current preset, which is useful when switching presets from the controller. The fader
-            can automatically move to match the target app’s volume when you switch to a preset where the fader is
-            mapped to volume. This is useful when using the fader for volume control across different apps. You can
-            effectively control multiple app volumes and the system volume with one fader.
+            MIDI Command Studio supports the X-Touch One motorized fader and LCD scribble strip. The display can show
+            the current preset while switching from the controller, and the fader can move to match the mapped target
+            volume on preset switch.
+          </p>
+          <p class="body-copy">
+            For a complete setup, see
+            <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One Windows setup guide</a>.
+          </p>
+          <p class="body-copy">
+            For one-fader multi-target volume workflow, see
+            <a href="behringer-x-touch-one-volume-control.html">Behringer X-Touch One: control multiple volumes with one fader</a>.
           </p>
         </section>
       </main>
@@ -94,3 +151,4 @@
     </div>
   </body>
 </html>
+
