@@ -102,12 +102,8 @@ body {
   letter-spacing: 0.11em;
   text-transform: uppercase;
   text-decoration: none;
+  cursor: default;
   animation: scrollCueFloat 2.1s ease-in-out infinite;
-}
-
-.scroll-cue:hover {
-  color: var(--text);
-  text-decoration: none;
 }
 
 .scroll-cue-arrow {
@@ -214,11 +210,48 @@ body {
   margin: 0;
 }
 
-.test-image {
+.hero-highlight {
+  margin: 16px auto 8px;
+  max-width: 760px;
+  text-align: center;
+  color: var(--accent);
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.screenshot-gallery {
+  margin: 18px auto 0;
+  display: grid;
+  gap: 18px;
+}
+
+.screenshot-card {
+  margin: 0;
+}
+
+.screenshot-card:not(:first-child) {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.screenshot-card img {
   display: block;
   width: 100%;
-  max-width: 1100px;
-  margin: 18px auto 0;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.screenshot-card figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero-panel {
@@ -290,6 +323,37 @@ body {
 
 .guide-stack .feature-card {
   padding: 22px 24px;
+}
+
+.guide-list {
+  margin-top: 24px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+  max-width: 980px;
+}
+
+.guide-list-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-list-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+}
+
+.guide-list-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.guide-list-item p:last-child {
+  margin-top: 8px;
 }
 
 .feature-card {
@@ -393,9 +457,28 @@ body {
   padding: 20px;
 }
 
+.release-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+  gap: 16px 24px;
+  align-items: start;
+}
+
+.release-meta-group .release-meta:last-child {
+  margin-bottom: 0;
+}
+
 .release-meta {
   margin: 0 0 8px;
   color: var(--muted);
+}
+
+.release-callout {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  text-align: right;
 }
 
 .release-card h2 {
@@ -642,6 +725,18 @@ body {
 
   .hero-panel {
     justify-content: flex-start;
+  }
+
+  .release-head {
+    grid-template-columns: 1fr;
+  }
+
+  .release-callout {
+    text-align: left;
+  }
+
+  .screenshot-card:not(:first-child) {
+    max-width: 100%;
   }
 }
 

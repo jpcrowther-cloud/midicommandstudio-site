@@ -249,9 +249,9 @@
     <ul>
     <li><a href="#autosave">Autosave</a></li>
     <li><a href="#quick-preset-switching">Quick preset switching</a></li>
+    <li><a href="#preset-switching-from-your-controller">Preset switching from your controller</a></li>
     <li><a href="#preset-bar-buttons">Preset bar buttons</a></li>
     <li><a href="#preset-files-location-and-backup">Preset files location and backup</a></li>
-    <li><a href="#preset-switching-from-your-controller">Preset switching from your controller</a></li>
     <li><a href="#audio-presets">Audio Presets</a></li>
     </ul>
     </li>
@@ -288,6 +288,16 @@
     <li><a href="#turn-a-mapping-into-a-macro">Turn a mapping into a macro</a></li>
     <li><a href="#add-steps-to-a-macro">Add steps to a macro</a></li>
     <li><a href="#how-to-run-microsoft-store-apps">How to run Microsoft Store apps</a></li>
+    </ul>
+    </li>
+    <li><a href="#settings">Settings</a>
+    <ul>
+    <li><a href="#settings-general">General</a></li>
+    <li><a href="#settings-advanced">Advanced</a></li>
+    <li><a href="#settings-led">LED</a></li>
+    <li><a href="#settings-presets">Presets</a></li>
+    <li><a href="#settings-audio-preset">Audio Preset</a></li>
+    <li><a href="#settings-feedback">Feedback</a></li>
     </ul>
     </li>
     <li><a href="#free-vs-full-version">Free vs Full Version</a></li>
@@ -436,6 +446,7 @@
 
 <h3 id="quick-preset-switching" class="toc-heading" style="color: #0daa4a;">Quick preset switching</h3>
 <p>
+  Switching presets can be done in the main app preset dropdown, from your controller or by right clicking on the system tray icon.
   Presets let you build completely different control layouts for different software.
   They are also <strong>device-specific</strong>, so you can have multiple presets for each individual device.
 </p>
@@ -459,6 +470,21 @@
 <p>
   This makes it easy to use the same controller for completely different workflows -
   even across multiple programs running at the same time.
+</p>
+
+<h3 id="preset-switching-from-your-controller" class="toc-heading" style="color: #0daa4a;">Preset switching from your controller</h3>
+<p>
+  If you want to change presets without using the mouse, open <strong>Settings</strong> and use the
+  <strong>Preset switching</strong> panel.
+</p>
+<ul>
+  <li>Click <strong>Learn</strong>.</li>
+  <li>Choose the preset you want that button to load.</li>
+  <li>Press the button/pad on your controller.</li>
+  <li>Optional: enable <strong>LED</strong> so the assigned button can light up.</li>
+</ul>
+<p>
+  If the button is already used for another mapping, the app will ask if you want to reassign it to preset switching.
 </p>
 
 <h3 id="preset-bar-buttons" class="toc-heading" style="color: #0daa4a;">Preset bar buttons</h3>
@@ -489,21 +515,6 @@
 <p>
   You can open the presets folder from inside the app via
   <strong>Settings &rarr; Preset files location</strong>.
-</p>
-
-<h3 id="preset-switching-from-your-controller" class="toc-heading" style="color: #0daa4a;">Preset switching from your controller</h3>
-<p>
-  If you want to change presets without using the mouse, open <strong>Settings</strong> and use the
-  <strong>Preset switching</strong> panel.
-</p>
-<ul>
-  <li>Click <strong>Learn</strong>.</li>
-  <li>Choose the preset you want that button to load.</li>
-  <li>Press the button/pad on your controller.</li>
-  <li>Optional: enable <strong>LED</strong> so the assigned button can light up.</li>
-</ul>
-<p>
-  If the button is already used for another mapping, the app will ask if you want to reassign it to preset switching.
 </p>
 
 <h3 id="audio-presets" class="toc-heading" style="color: #0daa4a;">Audio Presets</h3>
@@ -919,47 +930,76 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </ul>
 
 <h3 id="how-to-run-microsoft-store-apps" class="toc-heading" style="color: #0daa4a;">How to run Microsoft Store apps</h3>
-<p>Some Microsoft Store apps do not have a normal <code>.exe</code> you can launch directly. In MIDI Command Studio, you can launch them by running Explorer with a special AppsFolder argument.</p>
-<h4 id="create-the-macro-step">1) Create the macro step</h4>
+<p>Some Microsoft Store apps do not have a normal <code>.exe</code> you can launch directly. MIDI Command Studio now includes a dedicated <strong>Run Store App</strong> macro step, so you do not need to launch Explorer manually.</p>
+<h4 id="create-the-store-app-step">1) Create the macro step</h4>
 <ul>
-  <li>Open the Macro Editor (Learn a button and select &ldquo;Macro&rdquo; in the Editor).</li>
-  <li>Add a step and choose <strong>Run program</strong>.</li>
-  <li>Select Explorer: <code>C:\Windows\explorer.exe</code></li>
-  <li>When prompted for <strong>Arguments</strong>, you will paste the app's AppID (next section shows how to get it).</li>
+  <li>Open the Macro Editor (learn a button and choose <strong>Macro</strong>).</li>
+  <li>Click <strong>Add step</strong> and choose <strong>Run Store App</strong>.</li>
 </ul>
-<h4 id="list-store-appids">2) List Microsoft Store AppIDs (PowerShell)</h4>
+<h4 id="choose-the-app">2) Choose the app</h4>
 <ul>
-  <li>Press Start, type PowerShell, press Enter.</li>
-  <li>Run this command:</li>
+  <li>Use the search box to find your app in the Store app list.</li>
+  <li>Select the app and click <strong>OK</strong>.</li>
+  <li>If needed, you can paste an App ID (AUMID) manually.</li>
 </ul>
-<pre><code>Get-StartApps | Where-Object {$_.AppID -like "*!*"} | Sort-Object Name</code></pre>
-<p>You will see a list like this:</p>
-<pre><code>Name                         AppID
-----                         -----
-Photos                       Microsoft.Windows.Photos_8wekyb3d8bbwe!App
-WhatsApp                     5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App
-...</code></pre>
-<h4 id="copy-the-appid">3) What to copy (this is the AppID)</h4>
+<h4 id="test-or-save-store-app">3) Test or save</h4>
 <ul>
-  <li>Find your app in the <strong>Name</strong> column (for example, WhatsApp).</li>
-  <li>Copy the entire value from the <strong>AppID</strong> column on the same row.</li>
+  <li>Click <strong>Test macro</strong> (or save the macro and trigger your mapping).</li>
+  <li>The selected Store app should launch.</li>
 </ul>
-<p><strong>The AppID is the full string in the AppID column - it always contains a <code>!</code></strong></p>
-<p>Example AppID:</p>
-<pre><code>5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App</code></pre>
-<h4 id="build-the-argument">4) Build the argument and paste it into MIDI Command Studio</h4>
-<p>In the Arguments box, use this format:</p>
-<pre><code>shell:AppsFolder\&lt;AppID&gt;</code></pre>
-<p>Example:</p>
-<pre><code>shell:AppsFolder\5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App</code></pre>
-<h4 id="test-or-save">5) Test or save</h4>
-<p>Click <strong>Test</strong> (or save the macro). MIDI Command Studio should now be able to launch the selected Microsoft Store app.</p>
+<p>For Media Player force-focus options, see <a href="#settings-advanced"><strong>Settings &rarr; Advanced</strong></a>.</p>
 
 <h3 id="save-and-test">Save and test </h3>
 <p>In the Macro Editor, click <strong>Save/OK</strong> to save the macro.</p>
 <p>Go to your target app and press the MIDI button.</p>
 <p>The steps will run in order.</p>
 <p>If it doesn&rsquo;t behave as expected, click the green pen again to reopen the Macro Editor and adjust the steps.</p>
+
+<hr>
+<h2 id="settings" class="toc-heading" style="color: #0daa4a;">Settings</h2>
+<p>The Settings window is split into tabs. Use this section as a quick guide to what each tab controls.</p>
+
+<h3 id="settings-general" class="toc-heading" style="color: #0daa4a;">General</h3>
+<ul>
+  <li><strong>Run at Windows startup</strong>: start MIDI Command Studio automatically with Windows.</li>
+  <li><strong>Run app in system tray on close</strong> and <strong>Start app in system tray</strong>: control tray behavior.</li>
+  <li><strong>Open log window on startup</strong>: opens the live log automatically.</li>
+  <li><strong>Windows panel shortcuts</strong>: quick access to Log window, Shortcut Palette, Data folder, Help, and About.</li>
+</ul>
+
+<h3 id="settings-advanced" class="toc-heading" style="color: #0daa4a;">Advanced</h3>
+<ul>
+  <li><strong>Show specific Windows input devices in mapping targets</strong>: shows per-device input targets instead of only default input.</li>
+  <li><strong>Media Player focus</strong>: optional Store App ID (AUMID) for improved Microsoft Media Player force-focus behavior.</li>
+</ul>
+
+<h3 id="settings-led" class="toc-heading" style="color: #0daa4a;">LED</h3>
+<ul>
+  <li>Configure LED feedback support per device.</li>
+  <li>Set LED <strong>On</strong>/<strong>Off</strong> values.</li>
+  <li>Optional compatibility mode: <strong>Send Note On (vel 0) for LED off</strong>.</li>
+</ul>
+
+<h3 id="settings-presets" class="toc-heading" style="color: #0daa4a;">Presets</h3>
+<ul>
+  <li><strong>Preset switching</strong>: map controller buttons/controls to preset changes.</li>
+  <li><strong>Preset LCD</strong>: optional current-preset display on supported devices.</li>
+  <li><strong>Motorised fader feedback</strong>: optional one-time fader sync after preset switch on supported devices.</li>
+</ul>
+
+<h3 id="settings-audio-preset" class="toc-heading" style="color: #0daa4a;">Audio Preset</h3>
+<ul>
+  <li>Create or manage the device audio preset.</li>
+  <li>Audio preset sample mappings are configured from the mapping editor/macro steps.</li>
+  <li>Only one audio preset can exist at a time.</li>
+</ul>
+
+<h3 id="settings-feedback" class="toc-heading" style="color: #0daa4a;">Feedback</h3>
+<ul>
+  <li>Open the feedback form in your browser.</li>
+  <li>Open the error log file and optionally send a report.</li>
+  <li>Clear the local error log and control issue indicator visibility.</li>
+</ul>
 
 <hr>
 <h2 id="free-vs-full-version" class="toc-heading" style="color: #0daa4a;">Free vs Full Version</h2>

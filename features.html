@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -17,7 +17,7 @@
       content="Map MIDI controllers to Windows shortcuts, macros, and volume control with app targeting, LED feedback, and per-device presets."
     />
     <meta property="og:url" content="https://midicommandstudio.com/features.html" />
-    <meta property="og:image" content="https://midicommandstudio.com/assets/Midi%20png.png" />
+    <meta property="og:image" content="https://midicommandstudio.com/assets/Midi%20png.webp" />
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -58,10 +58,6 @@
               <p>Switch presets from the app or directly from your controller.</p>
             </div>
             <div class="feature-card">
-              <h3>Autosave</h3>
-              <p>Presets and device settings are saved automatically, so you do not need to worry about losing changes.</p>
-            </div>
-            <div class="feature-card">
               <h3>LED Feedback</h3>
               <p>Use always-on, momentary, or toggle LED modes on supported devices.</p>
             </div>
@@ -72,6 +68,10 @@
             <div class="feature-card">
               <h3>Volume Control</h3>
               <p>Control system volume or a specific application volume with a fader or knob.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Windows Input Volume &amp; Mute</h3>
+              <p>Control default or selected Windows input endpoints (mic/line-in) from MIDI, with dedicated mute mapping support.</p>
             </div>
             <div class="feature-card">
               <h3>Simple Audio Sample Playback</h3>
@@ -85,6 +85,43 @@
               <h3>MIDI Thru</h3>
               <p>Pass unmapped MIDI controls through to other apps using a virtual MIDI port.</p>
             </div>
+            <div class="feature-card">
+              <h3>Autosave</h3>
+              <p>Presets and device settings are saved automatically.</p>
+            </div>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>Behringer X-Touch One</h2>
+            <p>Device-specific support for the X-Touch One.</p>
+          </div>
+          <p class="body-copy">
+            MIDI Command Studio supports the X-Touch One motorized fader and LCD scribble strip. The display can show
+            the current preset while switching from the controller, and the fader can move to match the mapped target
+            volume on preset switch.
+          </p>
+          <p class="body-copy">
+            For a complete setup, see
+            <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One Windows setup guide</a>.
+          </p>
+          <p class="body-copy">
+            For one-fader multi-target volume workflow, see
+            <a href="behringer-x-touch-one-volume-control.html">Behringer X-Touch One: control multiple volumes with one fader</a>.
+          </p>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>Roadmap (Planned)</h2>
+            <p>Current priorities for upcoming development.</p>
+          </div>
+          <div class="feature-card">
+            <ul class="use-list">
+              <li>App certificate to reduce Windows SmartScreen notifications.</li>
+              <li>Expanded Behringer X-Touch compatibility (the full 9 fader version).</li>
+              <li>OBS WebSocket integration.</li>
+            </ul>
+            <p class="legacy-note">Roadmap items are planned priorities and may change.</p>
           </div>
         </section>
         <section class="section">
@@ -124,25 +161,6 @@
               <p><a href="behringer-x-touch-one-windows-setup.html">Open guide</a></p>
             </article>
           </div>
-        </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Behringer X-Touch One</h2>
-            <p>Device-specific support for the X-Touch One.</p>
-          </div>
-          <p class="body-copy">
-            MIDI Command Studio supports the X-Touch One motorized fader and LCD scribble strip. The display can show
-            the current preset while switching from the controller, and the fader can move to match the mapped target
-            volume on preset switch.
-          </p>
-          <p class="body-copy">
-            For a complete setup, see
-            <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One Windows setup guide</a>.
-          </p>
-          <p class="body-copy">
-            For one-fader multi-target volume workflow, see
-            <a href="behringer-x-touch-one-volume-control.html">Behringer X-Touch One: control multiple volumes with one fader</a>.
-          </p>
         </section>
       </main>
       <footer class="footer">
