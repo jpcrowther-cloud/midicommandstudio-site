@@ -19,7 +19,7 @@
         "name": "MIDI Command Studio",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Windows 10, Windows 11",
-        "softwareVersion": "0.9.4",
+        "softwareVersion": "0.9.5",
         "url": "https://midicommandstudio.com/download.html",
         "downloadUrl": "https://crowtherian.gumroad.com/l/ddscqt",
         "description": "Turn a MIDI controller into a Windows control surface for shortcuts, macros, and volume control.",
@@ -47,6 +47,7 @@
     </script>
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://gumroad.com/js/gumroad.js"></script>
   </head>
   <body>
     <div class="page">
@@ -72,10 +73,10 @@
           <div class="release-card">
             <div class="release-head">
               <div class="release-meta-group">
-                <p class="release-meta"><strong>Current version:</strong> 0.9.4</p>
-                <p class="release-meta"><strong>Installer:</strong> MidiCommandStudio_Setup_0.9.4.exe</p>
+                <p class="release-meta"><strong>Current version:</strong> 0.9.5</p>
+                <p class="release-meta"><strong>Installer:</strong> MidiCommandStudio_Setup_0.9.5.exe</p>
                 <p class="release-meta"><strong>Publisher:</strong> Meltopia</p>
-                <p class="release-meta">The installer is hosted on Gumroad (official download page).</p>
+                <p class="release-meta release-meta-emphasis">The installer and purchasing are handled via Gumroad (official download page).</p>
               </div>
               <p class="release-callout">
                 MIDI Command Studio is currently in public beta. The free version lets you try your controller with your workflow. If it works for your setup, you can purchase a license for full features.<br />
@@ -83,23 +84,39 @@
               </p>
             </div>
             <div class="hero-actions">
-              <a class="btn primary" href="https://crowtherian.gumroad.com/l/ddscqt">
+              <a
+                class="btn primary"
+                href="https://crowtherian.gumroad.com/l/ddscqt?price=0&wanted=true"
+                data-gumroad-single-product="true"
+                target="_blank"
+                rel="noopener"
+              >
                 <span>Free Download</span>
               </a>
-              <a class="btn ghost" href="https://crowtherian.gumroad.com/l/sycmzu">Buy Licence</a>
+              <a
+                class="btn ghost"
+                href="https://crowtherian.gumroad.com/l/sycmzu?wanted=true"
+                data-gumroad-single-product="true"
+                target="_blank"
+                rel="noopener"
+              >
+                Buy Licence
+              </a>
+              <div class="hero-buy">
+                <span class="buy-note">Try the Free Version to confirm it works with your controller and setup.</span>
+              </div>
             </div>
             <h2>Release Notes</h2>
             <ul class="release-list">
-              <li>New Windows input volume/mute features.</li>
-              <li>New option to run Microsoft store apps with macros.</li>
-              <li>advanced settings additions (including AppID input to improve force focus for Windows Media Player)</li>
-              <li>Device disconnect/reconnect stability improvements.</li>
-              <li>Simple audio playback is now available (full version only).</li>
-              <li>You can now Learn a dedicated Mute button for volume-mapped faders.</li>
+              <li>New Assignment Check Mode to help you quickly see what is mapped on your controller.</li>
+              <li>Improved shortcut lists and added shortcut search to the Shortcut Palette.</li>
+              <li>General stability improvements.</li>
+              <li>Improved device disconnect/reconnect handling.</li>
+              <li>Simple audio playback is now available (Full version only).</li>
               <li>Updated help/docs and website guides.</li>
             </ul>
           </div>
-          <p class="body-copy">
+          <p class="body-copy accent-copy">
             <strong>Windows security note:</strong> New apps sometimes trigger a warning on first run. If you see
             "Windows protected your PC," click <strong>More info &gt; Run anyway</strong>. On some Windows 11 systems,
             <strong>Smart App Control</strong> can block unsigned apps entirely, so this beta might not launch if SAC is
