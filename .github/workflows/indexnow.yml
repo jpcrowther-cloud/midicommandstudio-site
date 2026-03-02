@@ -1,0 +1,36 @@
+name: Notify IndexNow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URLs to IndexNow
+        run: |
+          curl --fail --silent --show-error \
+            -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "midicommandstudio.com",
+              "key": "9f0d0436ca724722ab22dc2050be3f0b",
+              "keyLocation": "https://midicommandstudio.com/9f0d0436ca724722ab22dc2050be3f0b.txt",
+              "urlList": [
+                "https://midicommandstudio.com/",
+                "https://midicommandstudio.com/download.html",
+                "https://midicommandstudio.com/features.html",
+                "https://midicommandstudio.com/guides.html",
+                "https://midicommandstudio.com/faq.html",
+                "https://midicommandstudio.com/send-midi-shortcuts-windows.html",
+                "https://midicommandstudio.com/control-windows-volume-with-midi.html",
+                "https://midicommandstudio.com/control-windows-input-volume-mute-with-midi.html",
+                "https://midicommandstudio.com/midi-controller-macros-windows.html",
+                "https://midicommandstudio.com/midi-audio-sample-playback-windows.html",
+                "https://midicommandstudio.com/behringer-x-touch-one-volume-control.html",
+                "https://midicommandstudio.com/behringer-x-touch-one-windows-setup.html",
+                "https://midicommandstudio.com/contact.html",
+                "https://midicommandstudio.com/free-vs-full.html",
+                "https://midicommandstudio.com/help/index.html"
+              ]
+            }'
