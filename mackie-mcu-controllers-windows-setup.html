@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mackie/MCU Setup on Windows | MIDI Command Studio</title>
+    <meta
+      name="description"
+      content="Set up Mackie Control Universal (MCU) MIDI controllers on Windows with MIDI Command Studio, including mapping, preset switching, LCD text, LED updates, and motorized fader feedback."
+    />
+    <link rel="canonical" href="https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html" />
+    <meta property="og:site_name" content="MIDI Command Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mackie/MCU Setup on Windows | MIDI Command Studio" />
+    <meta
+      property="og:description"
+      content="Set up Mackie Control Universal (MCU) MIDI controllers on Windows with MIDI Command Studio, including mapping, preset switching, LCD text, LED updates, and motorized fader feedback."
+    />
+    <meta property="og:url" content="https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html" />
+    <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
+    <!-- Guide structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "HowTo",
+            "@id": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html#howto",
+            "name": "How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume",
+            "description": "Set up Mackie Control Universal (MCU) MIDI controllers on Windows with MIDI Command Studio, including mapping, preset switching, LCD text, LED updates, and motorized fader feedback.",
+            "url": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Open MIDI Command Studio and add your controller from the Devices panel.",
+                "text": "Open MIDI Command Studio and add your controller from the Devices panel."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "When prompted, set feedback options for that device (LED/LCD/fader as needed).",
+                "text": "When prompted, set feedback options for that device (LED/LCD/fader as needed)."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Set Protocol mode to MCU.",
+                "text": "Set Protocol mode to MCU."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Set MCU strips to match your device, excluding master fader (typically 1, 8, or 16 for extended setups).",
+                "text": "Set MCU strips to match your device, excluding master fader (typically 1, 8, or 16 for extended setups)."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "If you skip setup or want to change it later, use Settings → Device Feedback for that device.",
+                "text": "If you skip setup or want to change it later, use Settings → Device Feedback for that device."
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://midicommandstudio.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://midicommandstudio.com/guides.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume",
+                "item": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <!-- /Guide structured data -->
+    <link rel="icon" href="assets/mcs_exact.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="site-logo">MIDI Command Studio</div>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="features.html">Features</a>
+          <a href="guides.html">Guides</a>
+          <a href="free-vs-full.html">Free vs Full</a>
+          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
+          <a href="privacy.html">Data &amp; Privacy</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="download.html">Download</a>
+        </nav>
+      </header>
+      <main>
+        <section class="section">
+          <div class="section-head">
+            <h1>How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume</h1>
+          </div>
+          <p class="body-copy">
+            MIDI Command Studio supports the Mackie Control Universal (MCU) protocol and lets you map faders, knobs, and
+            encoders to shortcuts, macros, and volume control for Windows apps. In MCU mode, supported devices can also
+            receive LCD text, LED state, and motorized fader feedback.
+          </p>
+          <p class="body-copy">
+            This guide covers generic Mackie/MCU-compatible controllers. For device-specific steps, use your hardware manual for
+            entering MCU mode.
+          </p>
+          <h2>Before You Start</h2>
+          <ul class="use-list">
+            <li>Put the controller into Mackie/MCU mode (not HUI).</li>
+          </ul>
+          <h2>Setup Steps</h2>
+          <ol class="use-list">
+            <li>Open MIDI Command Studio and add your controller from the Devices panel.</li>
+            <li>When prompted, set feedback options for that device (LED/LCD/fader as needed).</li>
+            <li>Set <strong>Protocol mode</strong> to <strong>MCU</strong>.</li>
+            <li>Set <strong>MCU strips</strong> to match your device, excluding master fader (typically 1, 8, or 16 for extended setups).</li>
+            <li>If you skip setup or want to change it later, use <strong>Settings &rarr; Device Feedback</strong> for that device.</li>
+          </ol>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>How to Verify</h2>
+          </div>
+          <ul class="use-list">
+            <li>Device status should show green in the Devices panel.</li>
+            <li>Preset switches should update LCD text on supported displays.</li>
+            <li>Faders should update to the current mapped volume on save, preset load or app startup.</li>
+            <li>LED-enabled mappings should reflect their configured LED mode.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>Related Guides</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>X-Touch One Windows setup and preset switching</h3>
+              <p><a href="behringer-x-touch-one-windows-setup.html">Read guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Control Windows volume with MIDI</h3>
+              <p><a href="control-windows-volume-with-midi.html">Read guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Send shortcuts with MIDI</h3>
+              <p><a href="send-midi-shortcuts-windows.html">Read guide</a></p>
+            </article>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="download.html"><span>Go to Download Page</span></a>
+            <a class="btn ghost" href="guides.html">View All Guides</a>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
+      </footer>
+    </div>
+  </body>
+</html>

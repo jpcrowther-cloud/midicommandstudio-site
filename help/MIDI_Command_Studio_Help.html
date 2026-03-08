@@ -249,6 +249,8 @@
     <li><a href="#devices">Devices</a>
     <ul>
     <li><a href="#add-a-new-device">Add a new device</a></li>
+    <li><a href="#mackie-mcu-devices">Mackie/MCU devices</a></li>
+    <li><a href="#native-supported-devices">Native supported devices</a></li>
     </ul>
     </li>
     <li><a href="#presets-and-autosave">Presets and Autosave</a>
@@ -275,14 +277,10 @@
     </ul>
     </li>
     <li><a href="#how-the-app-icons-work-mappings-panel">App icons in the Mappings panel</a></li>
-    <li><a href="#faders">Faders</a>
-    <ul>
-    <li><a href="#windows-input-control-advanced">Windows Input Control (Advanced)</a></li>
-    </ul>
-    </li>
+    <li><a href="#faders">Faders</a></li>
     <li><a href="#encoders-and-jog-wheels">Encoders and jog wheels</a></li>
     <li><a href="#led-feedback">LED feedback</a></li>
-    <li><a href="#preset-lcd-optional">LCD Feedback (sysex data)</a></li>
+    <li><a href="#preset-lcd-optional">LCD Feedback (SysEx data)</a></li>
     <li><a href="#motorised-faders">Motorised Faders</a></li>
     <li><a href="#midi-thru--virtual-port-setup">MIDI Thru</a>
     <ul>
@@ -302,7 +300,9 @@
     <li><a href="#settings-general">General</a></li>
     <li><a href="#settings-advanced">Advanced</a></li>
     <li><a href="#settings-led">LED</a></li>
-    <li><a href="#settings-presets">Presets</a></li>
+    <li><a href="#settings-presets">Preset Switching</a></li>
+    <li><a href="#settings-device-feedback">Device Feedback</a></li>
+    <li><a href="#settings-advanced-feedback">Advanced Feedback</a></li>
     <li><a href="#settings-audio-preset">Audio Preset</a></li>
     <li><a href="#settings-feedback">Feedback</a></li>
     </ul>
@@ -393,15 +393,12 @@
   volume control.
 </p>
 <p>
-  MCS should work with most MIDI controllers that send standard MIDI data. However, some devices send
-  data that is not supported. If your device is set to send <strong>Mackie</strong> or <strong>HUI</strong>
-  data, some controls may behave unexpectedly. Where possible, switch the device output mode to standard
-  MIDI &mdash; most Mackie-style control surfaces support this.
-</p>
-<p>
-  MCS does not currently support some Mackie MCU devices where faders send <strong>pitch wheel</strong>
-  data instead of simple 0&ndash;127 values. Standard MIDI note and CC messages from devices are compatible,
-  so please ensure your device is in the correct mode.
+  MIDI Command Studio works with most controllers that send standard MIDI note/CC data, and it also
+  supports Mackie/MCU-style for LCD screen feedback and motorised faders. Some devices can switch between
+  Standard MIDI or MCU (Mackie) and other modes. Make sure your device is set to standard MIDI (no feedback
+  unless a profile exists in the app) or Mackie/MCU to use the Mackie protocol for LCD or fader feedback.
+  HUI is not currently supported. LED feedback can normally work regardless of the device MIDI/MCU setting
+  if your device supports LED feedback.
 </p>
 <p>
   MMC (MIDI Machine Control) data is only minimally supported. Because MMC transport uses positional data,
@@ -428,6 +425,11 @@
 <h3 id="add-a-new-device" class="toc-heading" style="color: #0daa4a;">Add a new device</h3>
 <p>Click <strong>Add</strong> in the Devices panel.</p>
 <p>Select your MIDI device from the dropdown list and click <strong>OK</strong>.</p>
+<p>
+  If you want to use device feedback, apply the options shown in the feedback setup popup.
+  If you want to use <strong>Native</strong> protocol mode, check the
+  <a href="#native-supported-devices">Native supported devices</a> list below.
+</p>
 <p>The device will appear in the Devices panel already enabled:</p>
 <ul>
 <li><strong>Green</strong> = connected and available</li>
@@ -438,8 +440,39 @@
 <li>If a device is unplugged or goes missing, its status will automatically switch to red.</li>
 <li>When it becomes available again, it will automatically switch back to green.</li>
 </ul>
-<p>The tray icon will show an exclamation mark if any enabled device is red, so you can see at a glance that something needs attention.</p>
 <p>You can add multiple devices to the Devices panel in the same way - each one will be monitored independently and can be enabled/disabled as needed.</p>
+<h3 id="mackie-mcu-devices" class="toc-heading" style="color: #0daa4a;">Mackie/MCU devices</h3>
+<p>
+  If your device supports Mackie/MCU motorised faders and LCD feedback, enable feedback in the
+  <strong>Add Device</strong> popup when you add the device.
+</p>
+<p>
+  Use <strong>Protocol: MCU</strong> for Mackie/MCU behavior.
+</p>
+<p>
+  You can change these later in <strong>Settings &rarr; Device Feedback</strong>.
+</p>
+<p>
+  For LED feedback, enable it in the same popup or later in <strong>Settings &rarr; LED</strong>.
+</p>
+<h3 id="native-supported-devices" class="toc-heading" style="color: #0daa4a;">Native supported devices</h3>
+<p>
+  Native mode is only available for devices with a built-in native profile in MIDI Command Studio.
+  On supported devices, you can use either <strong>Native</strong> or <strong>MCU</strong>, but the controller
+  hardware mode must match (for example, Standard MIDI for Native, Mackie/MCU for MCU).
+  If a device is not listed here, use <strong>MCU</strong> mode for LCD and motorised fader feedback.
+</p>
+<ul>
+  <li>
+    <strong>Behringer X-Touch One</strong>:
+    set the hardware to <strong>"MIDI"</strong> mode when using <strong>Native</strong> protocol.
+    Or <strong>"MC Std"</strong> if using <strong>MCU</strong> protocol.
+  </li>
+</ul>
+<p>
+  Tip: if you are unsure, go to <strong>Settings &rarr; Device Feedback</strong> and check the protocol list.
+  If <strong>Native</strong> is not available for that device, use <strong>MCU</strong>.
+</p>
 <hr>
 <h2 id="presets-and-autosave" class="toc-heading" style="color: #0daa4a;">Presets and Autosave</h2>
 <p>MIDI Command Studio uses a simple but powerful preset system.</p>
@@ -590,7 +623,7 @@
 <p><strong>Faders / Knobs (Absolute CC, 0-127)</strong></p>
 <ul>
   <li>Expected MIDI: Control Change (CC) values that sweep 0-127.</li>
-  <li>Pitch wheel data is not supported; change the device mode if available.</li>
+  <li>Some motorised faders send pitch wheel instead of CC; this is supported on compatible devices/workflows.</li>
   <li>Use for faders and knobs that have a fixed position (volume, pan, etc.).</li>
   <li>Touch faders: if you want to capture touch data, use Learn touch fader.</li>
 </ul>
@@ -731,19 +764,6 @@ Controls the current main output for Windows (your master system volume).</p>
 Controls the volume for a specific app instead of the whole system.</p>
 </li>
 </ul>
-<h3 id="volume--windows-input-default">Volume &ndash; Input (Default)</h3>
-<p>When you choose <strong>Volume &ndash; Input (Default)</strong>, the fader controls the Windows default recording input level. If you add a paired mute control, it toggles that same Windows default input mute state.</p>
-<p><strong>Mute setup tip:</strong> Mute can be set up either when learning a button (<strong>Use as mute control...</strong>) or when learning a fader (<strong>Add mute control</strong>).</p>
-<p><strong>Common apps that usually follow this Windows input level:</strong> OBS / Streamlabs Desktop, Discord, Zoom, Microsoft Teams, and Skype.</p>
-<p><strong>Important:</strong> Interface direct monitoring/hardware monitor mix is not controlled by Windows input level or Windows input mute.</p>
-<p><strong>Compatibility note:</strong> Some ASIO, exclusive-mode, or vendor-specific paths can bypass Windows input controls. In those cases both Windows input <strong>volume</strong> and Windows input <strong>mute</strong> may be ignored by that app.</p>
-<h3 id="windows-input-control-advanced" class="toc-heading" style="color: #0daa4a;">Windows Input Control (Advanced)</h3>
-<p>Use this when you want a fader or mute button to control Windows input streams (for example individual mic inputs) in software.</p>
-<p>Input volume and mute mappings control the Windows input stream used by software, so they change what your audience hears in apps like OBS, Streamlabs Desktop, Discord, Zoom, and Teams.</p>
-<p>They do not change direct hardware monitoring on your audio interface.</p>
-<p>To show specific input devices in the target list, enable <strong>Settings &rarr; General &rarr; Advanced &rarr; Show specific Windows input devices in mapping targets</strong>.</p>
-<p>If a selected input device is unavailable (for example unplugged or renamed), that mapping may not apply until you reselect it.</p>
-<p>Some ASIO, exclusive-mode, or vendor-specific routing paths may ignore Windows input volume and mute controls.</p>
 <h3 id="volume--app-target-per-app-volume--app-targeting">Volume &ndash; App Target (per-app volume + app targeting)</h3>
 <p>When you choose <strong>Volume &ndash; App Target</strong>:</p>
 <p>Use the <strong>App</strong> dropdown (in the App Targeting panel at the bottom of the editor) to pick the app you want this fader to control<br>
@@ -775,6 +795,19 @@ Makes it very clear which app is being controlled, because it pops to the front 
 Windows can sometimes block background apps from taking focus. Force focus works best when the target app has been used recently; if apps have been left unused for a while, Windows may block focusing. For best results, keep the target app open (not minimized to the taskbar). App-specific volume control does not rely on focus, so volume mappings with App targeting still work reliably even when set to &ldquo;normal.&rdquo;</p>
 </li>
 </ul>
+<h3 id="volume--windows-input-default">Volume &ndash; Input (Default)</h3>
+<p>When you choose <strong>Volume &ndash; Input (Default)</strong>, the fader controls the Windows default recording input level. If you add a paired mute control, it toggles that same Windows default input mute state.</p>
+<p><strong>Mute setup tip:</strong> Mute can be set up either when learning a button (<strong>Use as mute control...</strong>) or when learning a fader (<strong>Add mute control</strong>).</p>
+<p><strong>Common apps that usually follow this Windows input level:</strong> OBS / Streamlabs Desktop, Discord, Zoom, Microsoft Teams, and Skype.</p>
+<p><strong>Important:</strong> Interface direct monitoring/hardware monitor mix is not controlled by Windows input level or Windows input mute.</p>
+<p><strong>Compatibility note:</strong> Some ASIO, exclusive-mode, or vendor-specific paths can bypass Windows input controls. In those cases both Windows input <strong>volume</strong> and Windows input <strong>mute</strong> may be ignored by that app.</p>
+<h4 id="windows-input-control-advanced">Windows Input Control (Advanced)</h4>
+<p>Use this when you want a fader or mute button to control Windows input streams (for example individual mic inputs) in software.</p>
+<p>Input volume and mute mappings control the Windows input stream used by software, so they change what your audience hears in apps like OBS, Streamlabs Desktop, Discord, Zoom, and Teams.</p>
+<p>They do not change direct hardware monitoring on your audio interface.</p>
+<p>To show specific input devices in the target list, enable <strong>Settings &rarr; General &rarr; Advanced &rarr; Show specific Windows input devices in mapping targets</strong>.</p>
+<p>If a selected input device is unavailable (for example unplugged or renamed), that mapping may not apply until you reselect it.</p>
+<p>Some ASIO, exclusive-mode, or vendor-specific routing paths may ignore Windows input volume and mute controls.</p>
 <h4 id="in-short">In short: </h4>
 <ul>
 <li><strong>Volume - System</strong> &rarr; one fader that always controls your main Windows volume.</li>
@@ -872,18 +905,37 @@ Windows can sometimes block background apps from taking focus. Force focus works
   set correctly. If LED feedback is disabled for the device selected, the test function is also
   disabled.
 </p>
-<h3 id="preset-lcd-optional" class="toc-heading" style="color: #0daa4a;">LCD Feedback (sysex data)</h3>
-<p>Only the Behringer Xtouch One is currently supported for this feature.</p>
-<p>More devices may be added in future updates.</p>
+<h3 id="preset-lcd-optional" class="toc-heading" style="color: #0daa4a;">LCD Feedback (SysEx data)</h3>
 <p>
-  This setting lets you send the current preset name and a colour to the device&rsquo;s LCD display. So when switching
-  presets, the screen will update and display the preset name and the colour chosen. Useful for knowing which preset is
-  currently loaded for that device without checking the app.
+  LCD feedback is configured per device in <strong>Settings &rarr; Device Feedback</strong>. Enable
+  feedback for the device, select a protocol mode, then enable <strong>Send current preset to LCD</strong>.
+</p>
+<ul>
+  <li><strong>Native</strong>: device-specific LCD formatting for known native profiles.</li>
+  <li><strong>MCU</strong>: standard MCU LCD SysEx formatting for broad MCU compatibility.</li>
+</ul>
+<p>
+  In MCU mode, <strong>MCU strips</strong> controls how many strips are addressed. Up to 16 strips can be
+  targeted, and the first 8 strips carry the standard LCD text fields.
+</p>
+<p>
+  Tip: use <strong>8</strong> strips for standard 8-channel MCU devices, or <strong>16</strong> when using
+  a main unit plus extender-style channels.
 </p>
 <h3 id="motorised-faders" class="toc-heading" style="color: #0daa4a;">Motorised Faders</h3>
-<p>Only the Behringer Xtouch One is currently supported for this feature.</p>
-<p>If <strong>Motorised fader feedback</strong> is enabled in settings, switching presets sends a one-time fader position update for the mapped volume target in that preset (System, App Target, Windows Input (Default), or Audio Volume).</p>
-<p>To refresh app-target fader feedback, make sure the targeted app is running and producing audio, then press the preset button so the fader can read the current app volume and adjust to it.</p>
+<p>
+  Motorised fader behavior is configured in <strong>Settings &rarr; Device Feedback</strong>. If
+  <strong>Motorised fader feedback</strong> is enabled, MCS sends fader-position updates for compatible
+  mapped targets during relevant refresh points (including preset changes).
+</p>
+<p>
+  MCU motor faders generally expect host feedback to hold position. If feedback is disabled, some devices
+  can drift or snap back to their last host-owned position.
+</p>
+<p>
+  For app-target volume mappings, best results are when the target app is running and has an active audio
+  session.
+</p>
 <h2 id="midi-thru--virtual-port-setup" class="toc-heading" style="color: #0daa4a;">MIDI Thru &ndash; virtual port setup</h2>
 <p>To use MIDI Thru, you need one virtual MIDI port with a specific name:</p>
 <ul>
@@ -998,12 +1050,44 @@ Windows can sometimes block background apps from taking focus. Force focus works
   <li>Optional compatibility mode: <strong>Send Note On (vel 0) for LED off</strong>.</li>
 </ul>
 
-<h3 id="settings-presets" class="toc-heading" style="color: #0daa4a;">Presets</h3>
+<h3 id="settings-presets" class="toc-heading" style="color: #0daa4a;">Preset Switching</h3>
 <ul>
   <li><strong>Preset switching</strong>: map controller buttons/controls to preset changes.</li>
-  <li><strong>Preset LCD</strong>: optional current-preset display on supported devices.</li>
-  <li><strong>Motorised fader feedback</strong>: optional one-time fader sync after preset switch on supported devices.</li>
+  <li>Manage per-device preset switch behavior.</li>
 </ul>
+
+<h3 id="settings-device-feedback" class="toc-heading" style="color: #0daa4a;">Device Feedback</h3>
+<ul>
+  <li><strong>Enable feedback for this device</strong>: master toggle for LCD and motorised feedback output.</li>
+  <li><strong>Protocol mode</strong>: choose <strong>Native</strong> (device-specific) or <strong>MCU</strong> (standard MCU feedback).</li>
+  <li><strong>Send current preset to LCD</strong>: sends preset/mapping context text to compatible LCD displays.</li>
+  <li><strong>Motorised fader feedback</strong>: sends fader position updates for compatible mapped targets.</li>
+  <li><strong>MCU strips</strong>: number of MCU strips to target (first 8 strips carry LCD text fields).</li>
+  <li>Tip: set MCU strips to <strong>8</strong> for a standard 8-channel MCU surface, or <strong>16</strong> for a main unit + extender-style setup.</li>
+</ul>
+
+<h3 id="settings-advanced-feedback" class="toc-heading" style="color: #0daa4a;">Advanced Feedback</h3>
+<p><strong>Advanced LCD SysEx Header Override</strong></p>
+<p>
+  Some Mackie/MCU-family devices may use different LCD SysEx header bytes. This setting lets advanced
+  users override those bytes for compatibility testing.
+</p>
+<p>
+  Use this only if your device is MCU-compatible but LCD text is not updating correctly. Do not change
+  this setting unless you know the required header bytes.
+</p>
+<p>
+  Valid input example: <code>00 00 66 14 12</code>
+</p>
+<p>
+  With this option off (recommended), MIDI Command Studio uses the default MCU LCD SysEx header.
+  Enable it only if your MCU device needs a custom LCD header.
+  This affects MCU LCD text compatibility only and does not change normal mapping behavior.
+  If the custom header is incorrect, LCD updates may fail.
+</p>
+<p>
+  These options are only relevant when Device Feedback is enabled and protocol mode is set to MCU.
+</p>
 
 <h3 id="settings-audio-preset" class="toc-heading" style="color: #0daa4a;">Audio Preset</h3>
 <ul>
