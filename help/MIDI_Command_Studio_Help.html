@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Comprehensive MIDI Command Studio help guide covering setup, mappings, presets, macros, MIDI Thru, licensing, and troubleshooting on Windows." />
+  <meta name="description" content="Use the MIDI Command Studio Help guide to set up devices, build mappings and macros, configure MIDI Thru and feedback, manage licensing, and troubleshoot." />
   <title>MIDI Command Studio - Help</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://midicommandstudio.com/help/MIDI_Command_Studio_Help.html" />
   <meta property="og:site_name" content="MIDI Command Studio" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="MIDI Command Studio - Help" />
-  <meta property="og:description" content="Comprehensive MIDI Command Studio help guide covering setup, mappings, presets, macros, MIDI Thru, licensing, and troubleshooting on Windows." />
+  <meta property="og:description" content="Use the MIDI Command Studio Help guide to set up devices, build mappings and macros, configure MIDI Thru and feedback, manage licensing, and troubleshoot." />
   <meta property="og:url" content="https://midicommandstudio.com/help/MIDI_Command_Studio_Help.html" />
   <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
   <link rel="icon" href="../assets/mcs_exact.ico" />
@@ -280,7 +280,7 @@
     <li><a href="#faders">Faders</a></li>
     <li><a href="#encoders-and-jog-wheels">Encoders and jog wheels</a></li>
     <li><a href="#led-feedback">LED feedback</a></li>
-    <li><a href="#preset-lcd-optional">LCD Feedback (SysEx data)</a></li>
+    <li><a href="#preset-lcd-optional">LCD Feedback (sysex data)</a></li>
     <li><a href="#motorised-faders">Motorised Faders</a></li>
     <li><a href="#midi-thru--virtual-port-setup">MIDI Thru</a>
     <ul>
@@ -460,6 +460,7 @@
   Native mode is only available for devices with a built-in native profile in MIDI Command Studio.
   On supported devices, you can use either <strong>Native</strong> or <strong>MCU</strong>, but the controller
   hardware mode must match (for example, Standard MIDI for Native, Mackie/MCU for MCU).
+  Choose the mode that best suits your workflow.
   If a device is not listed here, use <strong>MCU</strong> mode for LCD and motorised fader feedback.
 </p>
 <ul>
@@ -469,6 +470,17 @@
     Or <strong>"MC Std"</strong> if using <strong>MCU</strong> protocol.
   </li>
 </ul>
+<p>
+  In X-Touch One MCU mode, the built-in CH1-CH8 channel-select buttons switch channel strips.
+  In <strong>Single fader</strong> MCU layout, these channel-select buttons are reserved and cannot be mapped as normal controls.
+  Mute/Solo/Rec are strip-linked, so they can be mapped per selected channel within the same preset.
+</p>
+<p>
+  In practice, this lets one fader plus Mute/Solo/Rec work across 8 channel slots in one preset as you switch channels.
+</p>
+<p>
+  In <strong>Multi fader</strong> MCU layout (8/9-fader surfaces), strip controls stay available per channel and are not treated as one-fader reserved channel selectors.
+</p>
 <p>
   Tip: if you are unsure, go to <strong>Settings &rarr; Device Feedback</strong> and check the protocol list.
   If <strong>Native</strong> is not available for that device, use <strong>MCU</strong>.
@@ -606,6 +618,9 @@
 <p>
   The audio volume level is saved with the audio preset and restored when that preset is loaded again.
 </p>
+<p>
+  When audio volume changes from a mapped control, the app shows a temporary on-screen volume overlay so you can see the level in real time.
+</p>
 
 <hr />
 <h2 id="mappings-and-the-editor" class="toc-heading" style="color: #0daa4a;">Mappings and the editor</h2>
@@ -696,6 +711,9 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </ul>
 </li>
 </ul>
+<p>
+  Hold Repeat uses a minimum <strong>Delay</strong> of <strong>300 ms</strong> and minimum <strong>Every</strong> interval of <strong>80 ms</strong>. Lower values are clamped automatically.
+</p>
 <p>The Shortcut Palette will open automatically when clicking inside the empty fields.</p>
 <p>In the palette:</p>
 <ul>
@@ -915,13 +933,13 @@ Windows can sometimes block background apps from taking focus. Force focus works
   <li><strong>MCU</strong>: standard MCU LCD SysEx formatting for broad MCU compatibility.</li>
 </ul>
 <p>
-  In MCU mode, <strong>MCU strips</strong> controls how many strips are addressed. Up to 16 strips can be
-  targeted, and the first 8 strips carry the standard LCD text fields.
+  In MCU mode, use <strong>MCU layout</strong> in <strong>Settings &rarr; Device Feedback</strong>:
 </p>
-<p>
-  Tip: use <strong>8</strong> strips for standard 8-channel MCU devices, or <strong>16</strong> when using
-  a main unit plus extender-style channels.
-</p>
+<ul>
+  <li><strong>Single fader</strong>: for one-fader surfaces that switch CH1-CH8 with channel-select buttons.</li>
+  <li><strong>Multi fader</strong>: for 8/9-fader surfaces where strip controls are always available.</li>
+</ul>
+<p>Choose the layout that matches your hardware for predictable MCU channel behavior when mapping controls.</p>
 <h3 id="motorised-faders" class="toc-heading" style="color: #0daa4a;">Motorised Faders</h3>
 <p>
   Motorised fader behavior is configured in <strong>Settings &rarr; Device Feedback</strong>. If
@@ -1034,6 +1052,7 @@ Windows can sometimes block background apps from taking focus. Force focus works
   <li><strong>Run at Windows startup</strong>: start MIDI Command Studio automatically with Windows.</li>
   <li><strong>Run app in system tray on close</strong> and <strong>Start app in system tray</strong>: control tray behavior.</li>
   <li><strong>Open log window on startup</strong>: opens the live log automatically.</li>
+  <li><strong>Show shortcut/macro popup when triggered</strong>: show or hide the on-screen action popup for triggered shortcuts, macros, and preset actions.</li>
   <li><strong>Windows panel shortcuts</strong>: quick access to Log window, Shortcut Palette, Data folder, Help, and About.</li>
 </ul>
 
@@ -1062,8 +1081,8 @@ Windows can sometimes block background apps from taking focus. Force focus works
   <li><strong>Protocol mode</strong>: choose <strong>Native</strong> (device-specific) or <strong>MCU</strong> (standard MCU feedback).</li>
   <li><strong>Send current preset to LCD</strong>: sends preset/mapping context text to compatible LCD displays.</li>
   <li><strong>Motorised fader feedback</strong>: sends fader position updates for compatible mapped targets.</li>
-  <li><strong>MCU strips</strong>: number of MCU strips to target (first 8 strips carry LCD text fields).</li>
-  <li>Tip: set MCU strips to <strong>8</strong> for a standard 8-channel MCU surface, or <strong>16</strong> for a main unit + extender-style setup.</li>
+  <li><strong>MCU layout</strong>: choose <strong>Single fader</strong> (one-fader surfaces) or <strong>Multi fader</strong> (8/9-fader surfaces).</li>
+  <li>Tip: use <strong>Single fader</strong> for X-Touch One style workflows, and <strong>Multi fader</strong> for standard multi-fader MCU surfaces.</li>
 </ul>
 
 <h3 id="settings-advanced-feedback" class="toc-heading" style="color: #0daa4a;">Advanced Feedback</h3>
