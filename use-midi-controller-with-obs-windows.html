@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Use a MIDI Controller with OBS on Windows | MIDI Command Studio</title>
+    <meta
+      name="description"
+      content="Use MIDI Command Studio with OBS on Windows for hotkeys, input volume and mute before OBS, presets, macros, MCU feedback, and wider streaming workflow control."
+    />
+    <link rel="canonical" href="https://midicommandstudio.com/use-midi-controller-with-obs-windows.html" />
+    <meta property="og:site_name" content="MIDI Command Studio" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Use a MIDI Controller with OBS on Windows | MIDI Command Studio" />
+    <meta
+      property="og:description"
+      content="Use MIDI Command Studio with OBS on Windows for hotkeys, input volume and mute before OBS, presets, macros, MCU feedback, and wider streaming workflow control."
+    />
+    <meta property="og:url" content="https://midicommandstudio.com/use-midi-controller-with-obs-windows.html" />
+    <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://midicommandstudio.com/use-midi-controller-with-obs-windows.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://midicommandstudio.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Guides",
+                "item": "https://midicommandstudio.com/guides.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Use a MIDI Controller with OBS on Windows",
+                "item": "https://midicommandstudio.com/use-midi-controller-with-obs-windows.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" href="assets/mcs_exact.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="site-logo">MIDI Command Studio</div>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="features.html">Features</a>
+          <a href="guides.html">Guides</a>
+          <a href="free-vs-full.html">Free vs Full</a>
+          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
+          <a href="privacy.html">Data &amp; Privacy</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="download.html">Download</a>
+        </nav>
+      </header>
+      <main>
+        <section class="section">
+          <div class="section-head">
+            <h1>Using MIDI Command Studio with OBS on Windows</h1>
+            <p>Build an OBS workflow with MIDI shortcuts, input control, presets, and Mackie/MCU feedback.</p>
+          </div>
+          <p class="body-copy">
+            MIDI Command Studio can be used as a practical control layer around OBS workflows on Windows. You can map
+            MIDI controls to OBS hotkeys, build presets for different streaming or recording tasks, and use faders,
+            buttons, and MCU-style controllers to manage the parts of your setup that OBS relies on. The app can also
+            play samples from a dedicated Audio Preset.
+          </p>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>In This Guide</h2>
+            <p>Jump to the part of the OBS workflow you want to understand first.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>OBS and other apps</h3>
+              <p>See how one controller can cover OBS actions and other software at the same time.</p>
+              <p><a href="#obs-other-apps">Jump to section</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Input control before OBS</h3>
+              <p>Understand how Windows input volume and mute can affect what OBS receives.</p>
+              <p><a href="#input-before-obs">Jump to section</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Mackie/MCU and one-fader workflows</h3>
+              <p>See how LCD feedback, channel switching, and compact Mackie/MCU controllers fit in.</p>
+              <p><a href="#mcu-workflows">Jump to section</a></p>
+            </article>
+          </div>
+        </section>
+        <section id="obs-other-apps" class="section">
+          <div class="section-head">
+            <h2>Use OBS and Other Apps at the Same Time</h2>
+          </div>
+          <p class="body-copy">
+            MIDI Command Studio does not lock the controller into OBS-only use. You can build a broader workflow where
+            some controls are used for OBS-related actions, while others control Windows input, app volume, shortcuts,
+            or macros for other apps running at the same time. Using preset switching can extend the controller even
+            further if needed.
+          </p>
+        </section>
+        <section id="input-before-obs" class="section">
+          <div class="section-head">
+            <h2>Control Input Levels Before They Reach OBS</h2>
+          </div>
+          <p class="body-copy">
+            One of the most useful options is Windows input volume and mute control. If OBS is using a Windows
+            microphone or other Windows input endpoint, MIDI Command Studio can control that input volume and mute
+            before the signal reaches OBS. In practice, that means you can change or mute the level OBS receives for
+            streaming or recording from your MIDI controller. This does not change hardware preamp gain, audio
+            interface direct monitoring, or hardware monitor mixes. It is controlling the Windows input level that
+            software receives.
+          </p>
+          <p class="body-copy">
+            This matters because it lets a MIDI controller behave more like a live streaming control surface. A fader
+            can control the Windows input level feeding software, while a paired mute button can mute that same Windows
+            input stream. For many OBS setups, that means controlling what your audience hears without needing to reach
+            for the mouse. The limitation is that some ASIO, exclusive-mode, or vendor-specific audio paths can bypass
+            Windows input controls, so this depends on how the source is routed.
+          </p>
+        </section>
+        <section id="mcu-workflows" class="section">
+          <div class="section-head">
+            <h2>Mackie/MCU, LCD, and Single-Fader Workflows</h2>
+          </div>
+          <p class="body-copy">
+            Mackie/MCU-style controllers also make the workflow clearer because the app can send feedback to the
+            hardware. Compatible LCD displays can show preset and target context, so the controller can tell you what
+            the current fader or strip is being used for. If you name presets and descriptions clearly, this makes it
+            much easier to work in OBS-related setups without guessing what the hardware is currently controlling.
+          </p>
+          <p class="body-copy">
+            On single-fader MCU controllers, MIDI Command Studio can use the built-in CH1 to CH8 channel switching as
+            eight switchable control slots within one preset. That means one physical fader device can control up to
+            eight channel-style targets, with separate fader, mute, solo, and record-style mappings per slot. As you
+            switch channels, the fader position, LCD text, and LEDs can update to match. In an OBS workflow, that can
+            make one compact controller behave more like a small bank of stream controls instead of just a single fixed
+            fader. For example, you could map Mic 1, Mic 2, Firefox, and a media player, each with its own volume and
+            mute control, then move between them instantly with the device's channel buttons.
+          </p>
+        </section>
+        <section class="section">
+          <div class="section-head">
+            <h2>Related Guides</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Control Windows input volume and mute with MIDI</h3>
+              <p><a href="control-windows-input-volume-mute-with-midi.html">Read guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Set up Mackie/MCU controllers on Windows</h3>
+              <p><a href="mackie-mcu-controllers-windows-setup.html">Read guide</a></p>
+            </article>
+            <article class="feature-card">
+              <h3>Build MIDI macros for apps</h3>
+              <p><a href="midi-controller-macros-windows.html">Read guide</a></p>
+            </article>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="download.html"><span>Go to Download Page</span></a>
+            <a class="btn ghost" href="guides.html">View All Guides</a>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
+      </footer>
+    </div>
+  </body>
+</html>
