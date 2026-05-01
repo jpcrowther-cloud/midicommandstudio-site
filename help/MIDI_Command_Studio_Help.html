@@ -258,6 +258,7 @@
     <li><a href="#autosave">Autosave</a></li>
     <li><a href="#quick-preset-switching">Quick preset switching</a></li>
     <li><a href="#preset-switching-from-your-controller">Preset switching from your controller</a></li>
+    <li><a href="#preset-cycling-from-your-controller">Preset cycling from your controller</a></li>
     <li><a href="#preset-bar-buttons">Preset bar buttons</a></li>
     <li><a href="#preset-files-location-and-backup">Preset files location and backup</a></li>
     <li><a href="#audio-presets">Audio Presets</a></li>
@@ -537,6 +538,38 @@
 </ul>
 <p>
   If the button is already used for another mapping, the app will ask if you want to reassign it to preset switching.
+</p>
+<p>
+  If that same control is already used in other saved presets for the same device, MIDI Command Studio can also remove
+  those conflicting uses there so the preset switch button stays reserved for that device.
+</p>
+
+<h3 id="preset-cycling-from-your-controller" class="toc-heading" style="color: #0daa4a;">Preset cycling from your controller</h3>
+<p>
+  You can also assign one controller button to cycle through a chosen list of presets for a single device.
+</p>
+<p>
+  This is useful when you want one button to step through a smaller working set instead of using one button per preset.
+</p>
+<ul>
+  <li>Open <strong>Settings</strong> and go to the <strong>Preset Switching</strong> tab.</li>
+  <li>Choose the device in <strong>Preset control device</strong>.</li>
+  <li>In <strong>Preset cycling</strong>, choose a preset from the dropdown and click <strong>Add to cycle</strong> for each preset you want to include.</li>
+  <li>Click <strong>Learn cycle</strong>, then press the controller button you want to use.</li>
+  <li>In the popup, you can optionally enable <strong>LED always on</strong> for that button if your device supports it.</li>
+</ul>
+<p>
+  Each press moves to the next preset in the cycle list and wraps back to the start when it reaches the end.
+</p>
+<p>
+  If a cycle button is already assigned for that device, editing the cycle list updates that assignment automatically.
+</p>
+<p>
+  Preset cycling is device-specific, so each device can have its own cycle button and its own cycle list.
+</p>
+<p>
+  If the button is already used by another mapping, preset switch, or encoder modifier, the app will ask if you want
+  to reassign it. It also checks other saved presets for that same device and can remove conflicting uses there as well.
 </p>
 
 <h3 id="preset-bar-buttons" class="toc-heading" style="color: #0daa4a;">Preset bar buttons</h3>
@@ -1071,8 +1104,9 @@ Windows can sometimes block background apps from taking focus. Force focus works
 
 <h3 id="settings-presets" class="toc-heading" style="color: #0daa4a;">Preset Switching</h3>
 <ul>
-  <li><strong>Preset switching</strong>: map controller buttons/controls to preset changes.</li>
-  <li>Manage per-device preset switch behavior.</li>
+  <li><strong>Preset switching</strong>: map controller buttons/controls to load specific presets.</li>
+  <li><strong>Preset cycling</strong>: build a list of presets and assign one button to step through them.</li>
+  <li>Both features are managed per device.</li>
 </ul>
 
 <h3 id="settings-device-feedback" class="toc-heading" style="color: #0daa4a;">Device Feedback</h3>
