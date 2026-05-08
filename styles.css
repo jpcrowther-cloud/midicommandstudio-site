@@ -210,6 +210,25 @@ body {
   margin: 0;
 }
 
+.softpedia-badge {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 14px;
+  color: var(--link);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.softpedia-badge:hover {
+  text-decoration: none;
+}
+
+.softpedia-badge-inline {
+  margin-top: 16px;
+}
+
 .hero-highlight {
   margin: 16px auto 8px;
   max-width: 760px;
