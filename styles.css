@@ -239,38 +239,174 @@ body {
   line-height: 1.4;
 }
 
-.screenshot-gallery {
-  margin: 18px auto 0;
-  display: grid;
-  gap: 18px;
+.screenshot-carousel {
+  margin: 22px auto 0;
 }
 
-.screenshot-card {
-  margin: 0;
+.carousel-shell {
+  background:
+    linear-gradient(180deg, rgba(13, 170, 74, 0.06), rgba(13, 170, 74, 0)),
+    #121721;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
 }
 
-.screenshot-card:not(:first-child) {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+.carousel-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
-.screenshot-card img {
+.carousel-tab {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(16, 18, 24, 0.92);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.22s ease, color 0.22s ease, background-color 0.22s ease;
+}
+
+.carousel-tab:hover,
+.carousel-tab:focus-visible {
+  color: var(--text);
+  border-color: rgba(13, 170, 74, 0.42);
+  outline: none;
+}
+
+.carousel-tab.is-active {
+  color: var(--text);
+  background: rgba(13, 170, 74, 0.12);
+  border-color: rgba(13, 170, 74, 0.48);
+}
+
+.carousel-viewport {
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 42px;
+  height: 96px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(7, 11, 17, 0.48), rgba(7, 11, 17, 0));
+  color: var(--text);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: linear-gradient(90deg, rgba(13, 170, 74, 0.2), rgba(7, 11, 17, 0));
+  color: var(--accent);
+  outline: none;
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+.carousel-arrow span {
+  font-size: 3.1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+}
+
+.carousel-arrow-prev {
+  left: 10px;
+}
+
+.carousel-arrow-next {
+  right: 10px;
+  background: linear-gradient(270deg, rgba(7, 11, 17, 0.48), rgba(7, 11, 17, 0));
+}
+
+.carousel-arrow-next:hover,
+.carousel-arrow-next:focus-visible {
+  background: linear-gradient(270deg, rgba(13, 170, 74, 0.2), rgba(7, 11, 17, 0));
+}
+
+.carousel-slide {
+  opacity: 0;
+  transform: translateX(16px);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.carousel-slide:not(.is-active) {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+.carousel-frame {
+  padding: 16px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    #0b1018;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.carousel-frame img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #090c12;
 }
 
-.screenshot-card figcaption {
-  margin-top: 8px;
-  color: var(--muted);
+.carousel-copy {
+  display: grid;
+  gap: 8px;
+  padding: 16px 6px 4px;
+}
+
+.carousel-label {
+  margin: 0;
+  color: var(--accent);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
   font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.carousel-caption {
+  margin: 0;
+  max-width: 760px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .hero-panel {
@@ -762,13 +898,48 @@ body {
     text-align: left;
   }
 
-  .screenshot-card:not(:first-child) {
-    max-width: 100%;
+  .carousel-shell {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .carousel-tabs {
+    gap: 8px;
+  }
+
+  .carousel-tab {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .carousel-frame {
+    padding: 12px;
+  }
+
+  .carousel-arrow {
+    width: 34px;
+    height: 78px;
+  }
+
+  .carousel-arrow-prev {
+    left: 8px;
+  }
+
+  .carousel-arrow-next {
+    right: 8px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scroll-cue {
     animation: none;
+  }
+
+  .carousel-slide,
+  .carousel-tab,
+  .carousel-arrow,
+  .btn {
+    transition: none;
   }
 }

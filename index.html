@@ -73,15 +73,14 @@
       </header>
       <header class="hero">
         <div class="hero-copy">
-          <h1>Control Windows apps with a MIDI controller</h1>
+          <h1>Turn a MIDI controller into a Windows control surface.</h1>
           <p class="tagline">
-            Map buttons, knobs, and faders to keyboard shortcuts, macros, app volume, system volume, and
-            quick-switching presets.
+            Map buttons, knobs and faders to shortcuts, macros, soundboard triggers, app volume and preset
+            switching.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="download.html">
-              <span>Go to Download Page</span>
-            </a>
+            <a class="btn primary" href="download.html">Download Free Version</a>
+            <a class="btn ghost" href="features.html">View Features</a>
             <div class="hero-buy">
               <span class="buy-note">Free version available. Full licence: $16.99 USD.</span>
             </div>
@@ -90,72 +89,225 @@
         </div>
         <div class="hero-panel">
           <div class="panel-card">
-            <p class="panel-title">Using MIDI beyond music software</p>
+            <p class="panel-title">Built for real Windows workflows</p>
             <p class="panel-body">
-              Designed to extend MIDI controllers into general Windows use, allowing them to trigger actions and
-              control multiple applications.
+              Switch presets and repurpose the same controller for browsers, streaming, editing tools, soundboards,
+              media playback and everyday desktop shortcuts.
             </p>
           </div>
         </div>
       </header>
-      <p class="hero-highlight">A versatile toolkit for controlling Windows software using MIDI devices.</p>
+      <p class="hero-highlight">See how one controller can be configured for browsing, streaming, editing and media control.</p>
       <div class="scroll-cue" aria-hidden="true">
         <span>Scroll for more</span>
         <span class="scroll-cue-arrow" aria-hidden="true"></span>
       </div>
-      <section id="screenshots" class="screenshot-gallery" aria-label="MIDI Command Studio screenshots">
-        <figure class="screenshot-card">
-          <img
-            src="assets/Main app.webp"
-            alt="MIDI Command Studio main application window"
-            width="1202"
-            height="712"
-            loading="eager"
-            decoding="async"
-          />
-          <figcaption>Learn your MIDI controls</figcaption>
-        </figure>
-        <figure class="screenshot-card">
-          <img
-            src="assets/Edit Mapping.webp"
-            alt="Edit mapping window in MIDI Command Studio"
-            width="582"
-            height="672"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>Edit and assign mappings</figcaption>
-        </figure>
-        <figure class="screenshot-card">
-          <img
-            src="assets/Shortcut Palette.webp"
-            alt="Shortcut palette in MIDI Command Studio"
-            width="872"
-            height="632"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>Select shortcuts or capture your own</figcaption>
-        </figure>
-        <figure class="screenshot-card">
-          <img
-            src="assets/Macro Editor.webp"
-            alt="Macro editor in MIDI Command Studio"
-            width="902"
-            height="582"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>Create and assign macros</figcaption>
-        </figure>
+      <section id="screenshots" class="screenshot-carousel" aria-label="MIDI Command Studio workflow screenshots" data-carousel>
+        <div class="carousel-shell">
+          <div class="carousel-tabs" role="tablist" aria-label="Choose a MIDI Command Studio workflow screenshot">
+            <button
+              id="carousel-tab-1"
+              class="carousel-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="carousel-panel-1"
+              tabindex="0"
+              data-slide="0"
+            >
+              Browser &amp; Windows
+            </button>
+            <button
+              id="carousel-tab-2"
+              class="carousel-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="carousel-panel-2"
+              tabindex="-1"
+              data-slide="1"
+            >
+              Streaming and Recording
+            </button>
+            <button
+              id="carousel-tab-3"
+              class="carousel-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="carousel-panel-3"
+              tabindex="-1"
+              data-slide="2"
+            >
+              Video Editing
+            </button>
+            <button
+              id="carousel-tab-4"
+              class="carousel-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="carousel-panel-4"
+              tabindex="-1"
+              data-slide="3"
+            >
+              Media Control
+            </button>
+            <button
+              id="carousel-tab-5"
+              class="carousel-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="carousel-panel-5"
+              tabindex="-1"
+              data-slide="4"
+            >
+              Volume and Input Control
+            </button>
+          </div>
+          <div class="carousel-viewport">
+            <button
+              class="carousel-arrow carousel-arrow-prev"
+              type="button"
+              aria-label="Previous screenshot"
+              data-carousel-prev
+            >
+              <span aria-hidden="true">&#8249;</span>
+            </button>
+            <button
+              class="carousel-arrow carousel-arrow-next"
+              type="button"
+              aria-label="Next screenshot"
+              data-carousel-next
+            >
+              <span aria-hidden="true">&#8250;</span>
+            </button>
+            <article
+              id="carousel-panel-1"
+              class="carousel-slide is-active"
+              role="tabpanel"
+              aria-labelledby="carousel-tab-1"
+              aria-hidden="false"
+              data-slide-panel="0"
+            >
+              <div class="carousel-frame">
+                <img
+                  src="assets/Firefox.png"
+                  alt="MIDI Command Studio preset mapped for browser controls, Windows shortcuts, macros and app volume"
+                  width="1600"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-copy">
+                <p class="carousel-label">Browser &amp; Windows</p>
+                <p class="carousel-caption">Control browser tabs, YouTube playback, Windows shortcuts, macros and app volume.</p>
+              </div>
+            </article>
+            <article
+              id="carousel-panel-2"
+              class="carousel-slide"
+              role="tabpanel"
+              aria-labelledby="carousel-tab-2"
+              aria-hidden="true"
+              data-slide-panel="1"
+            >
+              <div class="carousel-frame">
+                <img
+                  src="assets/OBS.png"
+                  alt="MIDI Command Studio preset for recording, streaming and audio controls"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-copy">
+                <p class="carousel-label">Streaming and Recording</p>
+                <p class="carousel-caption">Trigger recording, streaming and audio controls from MIDI buttons, knobs and faders.</p>
+              </div>
+            </article>
+            <article
+              id="carousel-panel-3"
+              class="carousel-slide"
+              role="tabpanel"
+              aria-labelledby="carousel-tab-3"
+              aria-hidden="true"
+              data-slide-panel="2"
+            >
+              <div class="carousel-frame">
+                <img
+                  src="assets/Davinci resolve 1.png"
+                  alt="MIDI Command Studio preset for video editing timeline navigation, markers and editing shortcuts"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-copy">
+                <p class="carousel-label">Video Editing</p>
+                <p class="carousel-caption">Map timeline navigation, playback, markers and editing shortcuts to your controller.</p>
+              </div>
+            </article>
+            <article
+              id="carousel-panel-4"
+              class="carousel-slide"
+              role="tabpanel"
+              aria-labelledby="carousel-tab-4"
+              aria-hidden="true"
+              data-slide-panel="3"
+            >
+              <div class="carousel-frame">
+                <img
+                  src="assets/VLC.png"
+                  alt="MIDI Command Studio preset for play, pause, jump, fullscreen, mute and app volume control"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-copy">
+                <p class="carousel-label">Media Control</p>
+                <p class="carousel-caption">Use MIDI controls for play/pause, jump, fullscreen, mute and app volume.</p>
+              </div>
+            </article>
+            <article
+              id="carousel-panel-5"
+              class="carousel-slide"
+              role="tabpanel"
+              aria-labelledby="carousel-tab-5"
+              aria-hidden="true"
+              data-slide-panel="4"
+            >
+              <div class="carousel-frame">
+                <img
+                  src="assets/Volume Control.png"
+                  alt="MIDI Command Studio preset for system volume, app volume, input volume and mute control"
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="carousel-copy">
+                <p class="carousel-label">Volume and Input Control</p>
+                <p class="carousel-caption">Control system volume, app volume, input volume and mute from MIDI knobs and faders.</p>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
       <section class="section" aria-label="Homepage overview">
         <p class="body-copy">
-          MIDI Command Studio is more than a basic MIDI-to-shortcut app. It allows MIDI controls to be mapped to
-          shortcuts, macros, and volume controls, while also letting a single controller be configured for multiple
-          applications and switched between them instantly. This makes it possible for one device to behave like
-          several purpose-built controllers. The free version can be tested with your own setup first, and if it
-          already does what you need, you can simply keep using it.
+          MIDI Command Studio is more than a basic MIDI-to-shortcut app. It lets the same controller be configured
+          for multiple Windows workflows, from shortcuts and macros to soundboard triggers, app volume targets and
+          fast preset switching. That means one device can behave like several purpose-built control surfaces,
+          without changing hardware. The free version can be tested with your own setup first, and if it already
+          does what you need, you can simply keep using it.
         </p>
       </section>
       <section id="quick-links" class="section" aria-label="Quick links">
@@ -230,6 +382,135 @@
         <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
       </footer>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector("[data-carousel]");
+        if (!carousel) {
+          return;
+        }
+
+        const tabs = Array.from(carousel.querySelectorAll("[role='tab']"));
+        const slides = Array.from(carousel.querySelectorAll("[data-slide-panel]"));
+        const prevButton = carousel.querySelector("[data-carousel-prev]");
+        const nextButton = carousel.querySelector("[data-carousel-next]");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const cycleMs = 6000;
+        let activeIndex = 0;
+        let timerId = null;
+        let isPaused = false;
+
+        function setSlide(index) {
+          activeIndex = (index + slides.length) % slides.length;
+
+          tabs.forEach(function (tab, tabIndex) {
+            const isActive = tabIndex === activeIndex;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", isActive ? "true" : "false");
+            tab.setAttribute("tabindex", isActive ? "0" : "-1");
+          });
+
+          slides.forEach(function (slide, slideIndex) {
+            const isActive = slideIndex === activeIndex;
+            slide.classList.toggle("is-active", isActive);
+            slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+          });
+        }
+
+        function stopAutoCycle() {
+          if (timerId !== null) {
+            window.clearInterval(timerId);
+            timerId = null;
+          }
+        }
+
+        function startAutoCycle() {
+          stopAutoCycle();
+          if (isPaused || reducedMotion.matches) {
+            return;
+          }
+          timerId = window.setInterval(function () {
+            setSlide(activeIndex + 1);
+          }, cycleMs);
+        }
+
+        tabs.forEach(function (tab, tabIndex) {
+          tab.addEventListener("click", function () {
+            setSlide(tabIndex);
+            startAutoCycle();
+          });
+
+          tab.addEventListener("keydown", function (event) {
+            let nextIndex = null;
+
+            if (event.key === "ArrowRight") {
+              nextIndex = tabIndex + 1;
+            } else if (event.key === "ArrowLeft") {
+              nextIndex = tabIndex - 1;
+            } else if (event.key === "Home") {
+              nextIndex = 0;
+            } else if (event.key === "End") {
+              nextIndex = tabs.length - 1;
+            }
+
+            if (nextIndex === null) {
+              return;
+            }
+
+            event.preventDefault();
+            const normalizedIndex = (nextIndex + tabs.length) % tabs.length;
+            setSlide(normalizedIndex);
+            tabs[normalizedIndex].focus();
+            startAutoCycle();
+          });
+        });
+
+        if (prevButton) {
+          prevButton.addEventListener("click", function () {
+            setSlide(activeIndex - 1);
+            startAutoCycle();
+          });
+        }
+
+        if (nextButton) {
+          nextButton.addEventListener("click", function () {
+            setSlide(activeIndex + 1);
+            startAutoCycle();
+          });
+        }
+
+        carousel.addEventListener("mouseenter", function () {
+          isPaused = true;
+          stopAutoCycle();
+        });
+
+        carousel.addEventListener("mouseleave", function () {
+          isPaused = false;
+          startAutoCycle();
+        });
+
+        carousel.addEventListener("focusin", function () {
+          isPaused = true;
+          stopAutoCycle();
+        });
+
+        carousel.addEventListener("focusout", function (event) {
+          if (carousel.contains(event.relatedTarget)) {
+            return;
+          }
+          isPaused = false;
+          startAutoCycle();
+        });
+
+        if (typeof reducedMotion.addEventListener === "function") {
+          reducedMotion.addEventListener("change", startAutoCycle);
+        } else if (typeof reducedMotion.addListener === "function") {
+          reducedMotion.addListener(startAutoCycle);
+        }
+
+        setSlide(0);
+        startAutoCycle();
+      });
+    </script>
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->
