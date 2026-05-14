@@ -233,6 +233,19 @@ body {
   margin: 16px auto 8px;
   max-width: 760px;
   text-align: center;
+}
+
+.hero-highlight-label {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-highlight-text {
+  margin: 0;
   color: var(--accent);
   font-size: clamp(1.05rem, 2.1vw, 1.35rem);
   font-weight: 700;
@@ -251,6 +264,10 @@ body {
   border-radius: 22px;
   padding: 22px;
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
+.carousel-shell .hero-highlight {
+  margin: 0 auto 18px;
 }
 
 .carousel-tabs {
