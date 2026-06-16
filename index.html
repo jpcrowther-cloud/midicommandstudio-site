@@ -229,7 +229,7 @@
                   alt="MIDI Command Studio preset for recording, streaming and audio controls"
                   width="1600"
                   height="900"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
               </div>
@@ -252,7 +252,7 @@
                   alt="MIDI Command Studio preset for video editing timeline navigation, markers and editing shortcuts"
                   width="1600"
                   height="900"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
               </div>
@@ -275,7 +275,7 @@
                   alt="MIDI Command Studio preset for play, pause, jump, fullscreen, mute and app volume control"
                   width="1600"
                   height="900"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
               </div>
@@ -298,7 +298,7 @@
                   alt="MIDI Command Studio preset for system volume, app volume, input volume and mute control"
                   width="1600"
                   height="900"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
               </div>
@@ -407,14 +407,30 @@
         const slides = Array.from(carousel.querySelectorAll("[data-slide-panel]"));
         const prevButton = carousel.querySelector("[data-carousel-prev]");
         const nextButton = carousel.querySelector("[data-carousel-next]");
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const cycleMs = 6000;
+        const cycleMs = 4000;
         let activeIndex = 0;
         let timerId = null;
-        let isPaused = false;
+        let isPointerPaused = false;
+        let isFocusPaused = false;
 
         function setSlide(index) {
-          activeIndex = (index + slides.length) % slides.length;
+          const previousIndex = activeIndex;
+          const nextIndex = (index + slides.length) % slides.length;
+          const isSameSlide = nextIndex === previousIndex;
+          const directionClass = index < activeIndex ? "is-moving-prev" : "is-moving-next";
+
+          carousel.classList.remove("is-moving-next", "is-moving-prev");
+          slides.forEach(function (slide) {
+            slide.classList.remove("is-exiting");
+          });
+
+          if (!isSameSlide) {
+            carousel.classList.add(directionClass);
+            // Establish the off-screen start position before toggling the active slide.
+            void carousel.offsetWidth;
+          }
+
+          activeIndex = nextIndex;
 
           tabs.forEach(function (tab, tabIndex) {
             const isActive = tabIndex === activeIndex;
@@ -425,7 +441,9 @@
 
           slides.forEach(function (slide, slideIndex) {
             const isActive = slideIndex === activeIndex;
+            const isExiting = !isSameSlide && slideIndex === previousIndex;
             slide.classList.toggle("is-active", isActive);
+            slide.classList.toggle("is-exiting", isExiting);
             slide.setAttribute("aria-hidden", isActive ? "false" : "true");
           });
         }
@@ -439,7 +457,7 @@
 
         function startAutoCycle() {
           stopAutoCycle();
-          if (isPaused || reducedMotion.matches) {
+          if (isPointerPaused || isFocusPaused || document.hidden) {
             return;
           }
           timerId = window.setInterval(function () {
@@ -492,18 +510,20 @@
           });
         }
 
-        carousel.addEventListener("mouseenter", function () {
-          isPaused = true;
-          stopAutoCycle();
-        });
+        [prevButton, nextButton].concat(tabs).filter(Boolean).forEach(function (control) {
+          control.addEventListener("mouseenter", function () {
+            isPointerPaused = true;
+            stopAutoCycle();
+          });
 
-        carousel.addEventListener("mouseleave", function () {
-          isPaused = false;
-          startAutoCycle();
+          control.addEventListener("mouseleave", function () {
+            isPointerPaused = false;
+            startAutoCycle();
+          });
         });
 
         carousel.addEventListener("focusin", function () {
-          isPaused = true;
+          isFocusPaused = true;
           stopAutoCycle();
         });
 
@@ -511,15 +531,11 @@
           if (carousel.contains(event.relatedTarget)) {
             return;
           }
-          isPaused = false;
+          isFocusPaused = false;
           startAutoCycle();
         });
 
-        if (typeof reducedMotion.addEventListener === "function") {
-          reducedMotion.addEventListener("change", startAutoCycle);
-        } else if (typeof reducedMotion.addListener === "function") {
-          reducedMotion.addListener(startAutoCycle);
-        }
+        document.addEventListener("visibilitychange", startAutoCycle);
 
         setSlide(0);
         startAutoCycle();
