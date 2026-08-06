@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://midicommandstudio.com/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-08-06</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/features.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://midicommandstudio.com/guides.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-08-06</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/use-midi-controller-with-obs-windows.html</loc>
@@ -73,11 +73,15 @@
     <lastmod>2026-07-23</lastmod>
   </url>
   <url>
+    <loc>https://midicommandstudio.com/korg-nanokontrol2-windows-setup.html</loc>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+  <url>
     <loc>https://midicommandstudio.com/help/index.html</loc>
     <lastmod>2026-02-26</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/help/MIDI_Command_Studio_Help.html</loc>
-    <lastmod>2026-03-12</lastmod>
+    <lastmod>2026-08-06</lastmod>
   </url>
 </urlset>
