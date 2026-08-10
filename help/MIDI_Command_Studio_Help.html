@@ -759,6 +759,11 @@ Windows can sometimes block background apps from taking focus. Force focus works
 (Per-app behaviour is handled separately in the <strong>App Targeting</strong> settings for the mapping.)</p>
 <p>Shortcut lists are stored in the data folder: <code>%LOCALAPPDATA%\\MIDI Command Studio\\shortcut_lists</code>.<br>
 Use <strong>Settings</strong> &rarr; <strong>Data folder location</strong> to open it.</p>
+<ul>
+<li><strong>App Managed Lists</strong> contains the official lists supplied with the installed app. It is refreshed after an app update and recreated if the whole folder is deleted.</li>
+<li><strong>User Managed Lists</strong> is available for copied, edited, or downloaded lists and is not changed by app updates.</li>
+</ul>
+<p>User-managed files use the same <code>App - Category.json</code> filename format. If an app-managed and user-managed file define the same app and category, the user-managed version is shown.</p>
 <p>The shortcut will be sent back to the editor and the description will update automatically.</p>
 <h3 id="capture-your-own-shortcut-optional" class="toc-heading" style="color: #0daa4a;">Capture your own shortcut (optional)</h3>
 <p>If you can&rsquo;t find the shortcut you want in the list, click <strong>Capture from keyboard</strong> in the Shortcut Palette.</p>
