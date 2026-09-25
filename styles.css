@@ -1441,12 +1441,9 @@ body {
 
 .home-product-carousel-viewport {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   aspect-ratio: 1196 / 707;
-  border: 1px solid var(--home-line-strong);
-  border-radius: 8px;
-  background: #090b0f;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.32);
+  background: transparent;
   touch-action: pan-y;
 }
 
@@ -1467,6 +1464,8 @@ body {
   max-width: 100%;
   height: auto;
   max-height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.3);
 }
 
 .home-product-carousel-arrow {
