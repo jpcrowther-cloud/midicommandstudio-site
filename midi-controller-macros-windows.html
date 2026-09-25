@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Use a MIDI Controller to Trigger Macros on Windows | MIDI Command Studio</title>
+    <title>MIDI Controller Macros for Windows | MIDI Command Studio</title>
     <meta
       name="description"
       content="Create practical MIDI macros for Windows by combining shortcuts, delays, text input, mouse actions, and program launch into one control."
@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://midicommandstudio.com/midi-controller-macros-windows.html" />
     <meta property="og:site_name" content="MIDI Command Studio" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Use a MIDI Controller to Trigger Macros on Windows | MIDI Command Studio" />
+    <meta property="og:title" content="MIDI Controller Macros for Windows | MIDI Command Studio" />
     <meta
       property="og:description"
       content="Create practical MIDI macros for Windows by combining shortcuts, delays, text input, mouse actions, and program launch into one control."
@@ -35,8 +35,8 @@
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Features",
-                "item": "https://midicommandstudio.com/features.html"
+                "name": "Use Cases",
+                "item": "https://midicommandstudio.com/use-cases.html"
               },
               {
                 "@type": "ListItem",
@@ -51,193 +51,198 @@
     </script>
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="site-logo">MIDI Command Studio</div>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a href="features.html">Features</a>
-          <a href="guides.html">Guides</a>
-          <a href="free-vs-full.html">Free vs Full</a>
-          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
-          <a href="privacy.html">Data &amp; Privacy</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="download.html">Download</a>
-          <a href="download.html">Buy Licence</a>
+  <body class="use-case-page use-case-macros-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases is-active" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html" aria-current="page">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html">Guides</a>
+          <details class="site-nav-group site-nav-group-support" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
         </nav>
-      </header>
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h1>Use a MIDI controller to trigger macros on Windows</h1>
-            <p>Run multi-step actions from one button, pad, knob, or control.</p>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group is-active" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html" aria-current="page">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html">Guides</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
           </div>
-          <p class="body-copy">
-            Macros in MIDI Command Studio make a MIDI controller more than a shortcut trigger. Instead of assigning
-            one action to one control, you can build a sequence of actions that runs from a single press. This makes
-            it easier to automate repeated tasks, reduce setup friction, and create more useful controller workflows
-            across Windows apps.
-          </p>
-          <p class="body-copy">
-            A macro can combine shortcuts, waits, text input, mouse actions, and program launch steps into one
-            mapping. That means a single control can start a workflow, continue it in the right order, and save
-            repeated manual steps.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="download.html">Download Free Version</a>
-            <a class="btn ghost" href="download.html">Download Details</a>
-            <a class="btn ghost" href="features.html">View Features</a>
-          </div>
-        </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>What You Can Build With MIDI Macros</h2>
-            <p>Practical action chains, without scripting.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Shortcut Sequences</h3>
-              <p>Send several keyboard shortcuts in order from one button press instead of spreading them across multiple mappings.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Timed Actions</h3>
-              <p>Add waits between steps so a macro can launch an app, pause briefly, and then continue with follow-up actions.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Text and Mouse Input</h3>
-              <p>Combine typed text and mouse actions with shortcuts for repetitive setup or utility tasks.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Program and File Launch</h3>
-              <p>Open applications, folders, or files as part of a repeatable workflow instead of handling them manually first.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Favourite Macro Reuse</h3>
-              <p>Save useful macros to favourites so commonly used workflows are easier to keep and reuse across setups.</p>
-            </article>
-            <article class="feature-card">
-              <h3>One-Control Workflow Actions</h3>
-              <p>Turn a single pad, button, or control into something more meaningful than a single shortcut.</p>
-            </article>
-          </div>
-        </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Why Macros Matter</h2>
-            <p>Useful Windows actions are often short sequences, not single commands.</p>
-          </div>
-          <p class="body-copy">
-            In real Windows workflows, the useful action is often a combination of steps. You might need to launch an
-            app and then send shortcuts, trigger several editing actions in order, or combine playback and utility
-            steps into one reliable action. Macros let a MIDI controller handle those sequences directly, so common
-            tasks become faster, more consistent, and easier to repeat.
-          </p>
-          <p class="body-copy">
-            This is especially useful when the same controller is being used for different apps, different presets, or
-            different parts of a session.
-          </p>
-        </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Common Macro Workflows</h2>
-            <p>Examples of where one-button action chains are useful.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Streaming and Recording</h3>
-              <p>Trigger recording or streaming actions together with supporting shortcuts and utility steps.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Video Editing</h3>
-              <p>Run repeated editing actions, playback commands, or timeline-related shortcut chains from one control.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Browser and Desktop Workflows</h3>
-              <p>Combine browser shortcuts, Windows shortcuts, and app launch steps into everyday desktop actions.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Media and Playback Control</h3>
-              <p>Group playback, mute, fullscreen, or related utility actions into one mapping when a single shortcut is not enough.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Repeated Utility Tasks</h3>
-              <p>Open folders, launch tools, or trigger support actions that are repeated throughout a session.</p>
-            </article>
-            <article class="feature-card">
-              <h3>Multi-App Sessions</h3>
-              <p>Keep useful macro workflows ready when your setup moves between different Windows apps during the same session.</p>
-            </article>
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page use-case-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="use-cases.html">Use Cases</a></li><li><span aria-current="page">MIDI macros</span></li></ol></nav>
+
+        <section class="use-case-hero use-case-hero-plain" aria-labelledby="use-case-title">
+          <div class="use-case-hero-grid use-case-hero-grid-single">
+            <div>
+              <h1 id="use-case-title">Use MIDI controls to run multi-step macros in Windows.</h1>
+              <p class="use-case-hero-intro">Combine shortcuts, waits, text, mouse actions, and launch steps into an ordered macro that starts from one button, pad, knob, or other mapped control.</p>
+            </div>
           </div>
         </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Works Well With Presets and App Targeting</h2>
-            <p>One controller can behave differently depending on the workflow.</p>
+
+        <section id="actions" class="use-case-section" aria-labelledby="actions-title">
+          <div class="use-case-section-heading"><h2 id="actions-title">Build practical action chains without scripting.</h2></div>
+          <div class="use-case-action-grid">
+            <article><h3>Shortcut sequences</h3><p>Send several keyboard shortcuts in order from one mapping.</p></article>
+            <article><h3>Waits and timing</h3><p>Add delays so an application or earlier action has time to respond.</p></article>
+            <article><h3>Text and mouse input</h3><p>Combine typed text and mouse actions with shortcut steps.</p></article>
+            <article><h3>Program and file launch</h3><p>Open applications, files, folders, or Windows shortcuts as part of the sequence.</p></article>
+            <article><h3>Favourite reuse</h3><p>Save useful macros to favourites so they are easier to keep and reuse across setups.</p></article>
+            <article><h3>Launch with arguments</h3><p>Add optional command-line arguments when a macro launches an application.</p></article>
           </div>
-          <p class="body-copy">
-            Macros become even more useful when combined with presets. One preset can focus on editing, another on
-            streaming and recording, another on browser and desktop control, while each uses its own macro set.
-          </p>
-          <p class="body-copy">
-            Combined with app targeting and shortcut mappings, this makes it possible for one MIDI controller to act
-            like several purpose-built control surfaces without changing hardware.
-          </p>
         </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>No Scripting Required</h2>
-            <p>Build useful macro workflows inside the app.</p>
+
+        <section id="editor" class="use-case-section" aria-labelledby="editor-title">
+          <div class="use-case-section-heading"><h2 id="editor-title">Build and edit macros in the Macro Editor.</h2><p>Add and arrange actions in the Macro Editor. No scripting is required.</p></div>
+          <div class="use-case-media-pair">
+            <figure class="use-case-screenshot">
+              <img src="assets/Macro Editor.webp" width="902" height="582" loading="lazy" alt="MIDI Command Studio Macro Editor showing an ordered sequence of actions" />
+              <figcaption>Build and reorder the actions that run from a mapped MIDI control.</figcaption>
+            </figure>
+            <figure class="use-case-screenshot">
+              <img src="assets/Shortcut Palette.webp" width="872" height="632" loading="lazy" alt="MIDI Command Studio Shortcut Palette with categorized shortcut choices" />
+              <figcaption>Use the Shortcut Palette when a macro step needs an application or Windows shortcut.</figcaption>
+            </figure>
           </div>
-          <p class="body-copy">
-            MIDI Command Studio is designed so macros can be built inside the app, without writing scripts or setting
-            up a more complex automation chain first. That keeps setup faster and makes macro workflows easier to edit
-            later as your controller setup evolves.
-          </p>
         </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Next Steps</h2>
-            <p>Try macro workflows with your own controller and expand from there.</p>
-          </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="download.html">Download Free Version</a>
-            <a class="btn ghost" href="download.html">Download Details</a>
-            <a class="btn ghost" href="free-vs-full.html">Free vs Full</a>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Send keyboard shortcuts with MIDI</h3>
-              <p>Map buttons, pads, and controls to app shortcuts and global Windows shortcuts.</p>
-              <p><a href="send-midi-shortcuts-windows.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Control Windows volume with MIDI</h3>
-              <p>Use knobs and faders for system or app-specific volume targets.</p>
-              <p><a href="control-windows-volume-with-midi.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Use a MIDI controller with OBS on Windows</h3>
-              <p>See how shortcuts, presets, input control, and workflow mappings fit together.</p>
-              <p><a href="use-midi-controller-with-obs-windows.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Compare the free and full versions</h3>
-              <p>See which macro-related workflow features fit your setup best.</p>
-              <p><a href="free-vs-full.html">Learn more</a></p>
-            </article>
+
+        <section class="use-case-section" aria-labelledby="related-title">
+          <div class="use-case-section-heading"><h2 id="related-title">Related pages</h2></div>
+          <div class="use-case-related-grid use-case-related-grid-compact">
+            <a href="send-midi-shortcuts-windows.html"><span>Foundation</span><strong>MIDI keyboard shortcuts</strong></a>
+            <a href="use-cases.html"><span>Use Cases</span><strong>Browse workflow outcomes</strong></a>
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
-        <div class="footer-links">
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
           <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->

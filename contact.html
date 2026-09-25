@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -14,55 +14,131 @@
     <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="site-logo">MIDI Command Studio</div>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a href="features.html">Features</a>
-          <a href="guides.html">Guides</a>
-          <a href="free-vs-full.html">Free vs Full</a>
-          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
-          <a href="privacy.html">Data &amp; Privacy</a>
-          <a href="faq.html">FAQ</a>
-          <a class="active" href="contact.html">Contact</a>
-          <a href="download.html">Download</a>
-          <a href="download.html">Buy Licence</a>
+  <body class="support-page contact-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html">Guides</a>
+          <details class="site-nav-group site-nav-group-support is-active" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html" aria-current="page">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
         </nav>
-      </header>
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h1>Contact</h1>
-            <p>In-app feedback is the fastest path, but you can also send a website message below.</p>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html">Guides</a>
+            <details class="site-mobile-group is-active" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html" aria-current="page">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
           </div>
-          <p class="body-copy">
-            For app issues, please use <strong>Settings &gt; Feedback</strong> so diagnostics can be included when
-            needed. For general questions, use this contact form.
-          </p>
-          <section class="section support-info" aria-labelledby="support-info-title">
-            <h2 id="support-info-title">Support Info</h2>
-            <p>
-              Use this form for setup help, licensing questions, bug reports, and feature feedback for MIDI Command
-              Studio. For fastest troubleshooting, include your Windows version, MIDI device model, and a short list
-              of steps to reproduce the issue.
-            </p>
-            <p>
-              If a mapping is not behaving as expected, include whether the mapping is global or app-targeted, plus
-              the control type you learned (button, knob, or fader). This helps us identify routing and targeting
-              issues quickly.
-            </p>
-            <p>
-              For immediate self-help, check the
-              <a href="/help/MIDI_Command_Studio_Help.html">Help guide</a> and <a href="/faq.html">FAQ</a>. For
-              download and version details, see <a href="/download.html">Download</a>. For data handling details, see
-              <a href="/privacy.html">Data &amp; Privacy</a>.
-            </p>
-          </section>
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page support-page-shell contact-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Contact</span></li></ol></nav>
+
+        <section class="support-subpage-hero support-subpage-hero-plain contact-hero" aria-labelledby="contact-title">
+          <h1 id="contact-title">Contact MIDI Command Studio support</h1>
+          <p>For app issues, in-app feedback is the fastest route because diagnostics can be included when needed. The website form remains available for general questions and support.</p>
+        </section>
+
+        <section id="contact-support" class="contact-support-layout" aria-labelledby="contact-form-title">
           <div class="contact-card">
-            <h2>Send a Message</h2>
+            <h2 id="contact-form-title">Send a message</h2>
             <form
               class="contact-form"
               action="https://script.google.com/macros/s/AKfycbxZoAbJy1pin8oX2TKt1QJv9eCv4GilHUfmXvMsWcz5WtrqrYhdOPH0Us-dzP4FjEReOw/exec"
@@ -108,13 +184,38 @@
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
-        <div class="footer-links">
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
           <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
     <script>
       (function () {
         var form = document.querySelector(".contact-form");
@@ -280,23 +381,9 @@
           }, 20000);
         });
 
-        if (submitFrame) {
-          submitFrame.addEventListener("load", function () {
-            if (!pending) return;
-            setTimeout(function () {
-              if (!pending) return;
-              finalize(
-                true,
-                "Message sent. Thank you - we will get back to you as soon as we can.",
-                true,
-                true
-              );
-            }, 300);
-          });
-        }
-
         window.addEventListener("message", function (event) {
           if (!pending) return;
+          if (!submitFrame || event.source !== submitFrame.contentWindow) return;
           var data = isContactResultMessage(event);
           if (!data) return;
           if (data.ok) {
@@ -313,5 +400,3 @@
     <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
-
-

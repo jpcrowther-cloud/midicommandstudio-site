@@ -16,6 +16,15 @@
   <style>
     :root {
       color-scheme: dark;
+      --help-bg: #0f1218;
+      --help-panel: #151b25;
+      --help-panel-soft: #101620;
+      --help-text: #e9edf2;
+      --help-muted: #9eaaba;
+      --help-green: #48dc7d;
+      --help-green-strong: #20c966;
+      --help-cyan: #57c8f3;
+      --help-border: rgba(167, 189, 214, 0.18);
     }
 
     *,
@@ -24,165 +33,321 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background-color: #101218;
-      color: #f2f2f2;
-      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 73% 0, rgba(32, 201, 102, 0.065), transparent 30rem),
+        var(--help-bg);
+      color: var(--help-text);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    .help-skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 12px;
+      padding: 10px 14px;
+      border-radius: 7px;
+      background: #fff;
+      color: #07110b;
+      font-weight: 700;
+      transform: translateY(-150%);
+    }
+
+    .help-skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .help-site-header {
+      position: sticky;
+      z-index: 30;
+      top: 0;
+      border-bottom: 1px solid var(--help-border);
+      background: rgba(11, 15, 21, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .help-site-header > div {
+      display: flex;
+      max-width: 1440px;
+      min-height: 68px;
+      margin: 0 auto;
+      padding: 0 30px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .help-brand {
+      display: inline-flex;
+      gap: 11px;
+      align-items: center;
+      color: #f4f6f8;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .help-brand:hover {
+      text-decoration: none;
+    }
+
+    .help-brand-mark {
+      display: block;
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      background: transparent url("../assets/mcs_exact.ico") center / contain no-repeat;
+    }
+
+    .help-brand-mark span {
+      display: none;
+    }
+
+    .help-site-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 19px;
+    }
+
+    .help-site-header nav a {
+      color: #b5bfcc;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .help-site-header nav a:hover {
+      color: #fff;
     }
 
     .help-container {
-      max-width: 960px;
-      margin: 2.5rem auto 3rem;
-      padding: 0 1.75rem;
-      line-height: 1.7;
+      max-width: 1440px;
+      margin: 0 auto 3rem;
+      padding: 42px 30px 0;
+      line-height: 1.72;
+    }
+
+    .help-container > h1 {
+      max-width: 1000px;
+      margin: 0 auto 36px;
     }
 
     .help-layout {
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
     }
 
     .help-sidebar {
-      flex: 0 0 260px;
-      background: #151924;
-      border: 1px solid #242736;
-      border-radius: 10px;
-      padding: 1rem 1.1rem;
       position: sticky;
-      top: 1.5rem;
-      align-self: flex-start;
-      max-height: calc(100vh - 3rem);
+      top: 92px;
+      max-height: calc(100vh - 116px);
       overflow-y: auto;
+      padding: 22px 20px 25px;
+      border: 1px solid var(--help-border);
+      border-radius: 13px;
+      background: rgba(20, 26, 36, 0.96);
+      scrollbar-width: thin;
+      scrollbar-color: #394353 transparent;
     }
 
-    .help-sidebar h2 {
-      margin-top: 0;
+    .help-sidebar nav > h2 {
+      margin: 0 0 18px;
+      padding: 0 0 14px;
+      border-bottom: 1px solid var(--help-border);
+      color: #f3f5f8;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
     }
 
     .help-search {
-      margin: 0 0 0.9rem 0;
+      margin: 0 0 14px;
+    }
+
+    .help-search label {
+      display: block;
+      margin-bottom: 7px;
+      color: #b6c0cc;
+      font-size: 0.76rem;
+      font-weight: 700;
     }
 
     .help-search input {
       width: 100%;
-      padding: 0.45rem 0.6rem;
+      min-height: 43px;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid #354052;
       border-radius: 8px;
-      border: 1px solid #242736;
-      background: #0f131d;
-      color: #f2f2f2;
-      font-size: 0.95rem;
+      outline: none;
+      background: #0d121a;
+      color: #f2f5f8;
+      font: inherit;
+      font-size: 0.9rem;
+    }
+
+    .help-search input:focus {
+      border-color: var(--help-cyan);
+      box-shadow: 0 0 0 3px rgba(87, 200, 243, 0.16);
     }
 
     .help-search small {
       display: block;
-      color: #9aa3b2;
-      margin-top: 0.35rem;
+      min-height: 1.3em;
+      margin-top: 6px;
+      color: var(--help-muted);
+      font-size: 0.74rem;
     }
 
     .help-search-results {
-      margin: 0.6rem 0 0.9rem 0;
-      padding-left: 1.1rem;
+      display: grid;
+      gap: 5px;
+      margin: 8px 0 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .help-search-results a {
+      display: block;
+      padding: 7px 9px;
+      border-radius: 6px;
+      background: rgba(87, 200, 243, 0.06);
+      font-size: 0.75rem;
+      line-height: 1.35;
     }
 
     .help-search-divider {
-      border: none;
-      height: 6px;
-      background: linear-gradient(90deg, #2b303f 0%, #3a4156 50%, #2b303f 100%);
-      border-radius: 999px;
-      margin: 0.7rem 0 0.85rem;
+      height: 1px;
+      margin: 12px 0 16px;
+      border: 0;
+      background: var(--help-border);
     }
 
-    mark {
-      background: #2b6a3d;
-      color: #ffffff;
-      padding: 0 0.15rem;
-      border-radius: 3px;
+    #toc,
+    #toc ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    #toc ul {
+      margin: 5px 0 8px 11px;
+      padding-left: 11px;
+      border-left: 1px solid var(--help-border);
+    }
+
+    #toc li {
+      margin: 0;
+    }
+
+    #toc a {
+      display: block;
+      padding: 5px 7px;
+      border-radius: 5px;
+      color: #aeb8c5;
+      font-size: 0.76rem;
+      line-height: 1.35;
+    }
+
+    #toc a:hover {
+      background: rgba(72, 220, 125, 0.055);
+      color: #fff;
+      text-decoration: none;
     }
 
     .help-main {
-      flex: 1 1 auto;
       min-width: 0;
+      max-width: 940px;
+      padding: clamp(28px, 4vw, 55px);
+      border: 1px solid var(--help-border);
+      border-radius: 14px;
+      background: rgba(18, 24, 33, 0.78);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
     }
 
-    .help-footer {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #242736;
-      color: #9aa3b2;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    .help-sidebar .toc-group {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
+    .help-main > :first-child {
+      margin-top: 0;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
+      color: #edf1f5;
+      font-weight: 650;
       line-height: 1.25;
-      color: #e4e9f2;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    h2.toc-heading,
-    h3.toc-heading,
-    h4.toc-heading {
-      color: #0daa4a;
+      letter-spacing: -0.02em;
     }
 
     h1 {
-      font-size: 2.2rem;
+      color: #f5f7f9;
+      font-size: clamp(2.25rem, 4.5vw, 4.25rem);
+      line-height: 1.02;
       text-align: center;
-      margin-top: 0;
-      margin-bottom: 1.75rem;
+      letter-spacing: -0.05em;
     }
 
     h2 {
-      font-size: 1.6rem;
-      border-bottom: 1px solid #242736;
-      padding-bottom: 0.4rem;
+      margin: 3.2rem 0 1rem;
+      padding: 0 0 0.55rem;
+      border-bottom: 1px solid var(--help-border);
+      font-size: clamp(1.55rem, 2.7vw, 2.05rem);
+    }
+
+    h2.toc-heading,
+    h2.toc-heading[style] {
+      padding-left: 14px;
+      border-left: 3px solid var(--help-green);
+      color: #f3f6f8 !important;
     }
 
     h3 {
-      font-size: 1.25rem;
-      color: #e4e9f2;
+      margin: 2.4rem 0 0.75rem;
+      color: #e8ecf1;
+      font-size: 1.28rem;
+    }
+
+    h3.toc-heading,
+    h3.toc-heading[style] {
+      color: #e8ecf1 !important;
     }
 
     h4 {
-      font-size: 1.05rem;
-      color: #d7dde9;
-      text-transform: none;
-      letter-spacing: 0.01em;
+      margin: 2rem 0 0.65rem;
+      color: #dce2e9;
+      font-size: 1.06rem;
+    }
+
+    h4.toc-heading,
+    h4.toc-heading[style] {
+      color: #dce2e9 !important;
     }
 
     p {
-      margin: 0 0 0.9rem 0;
+      margin: 0 0 0.95rem;
     }
 
     ul, ol {
-      margin: 0 0 0.9rem 1.4rem;
-      padding-left: 1.1rem;
+      margin: 0 0 1rem 1.25rem;
+      padding-left: 1.05rem;
     }
 
     li {
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.28rem;
     }
 
     hr {
-      border: none;
       height: 1px;
-      background: #242736;
-      margin: 1.8rem 0 1.4rem;
+      margin: 2rem 0 1.5rem;
+      border: 0;
+      background: var(--help-border);
     }
 
     a {
-      color: #4ec9ff;
+      color: var(--help-cyan);
       text-decoration: none;
     }
 
@@ -190,56 +355,165 @@
       text-decoration: underline;
     }
 
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--help-cyan);
+      outline-offset: 3px;
+    }
+
     code {
-      font-family: "Consolas", "Fira Code", Menlo, monospace;
-      font-size: 0.9em;
-      background-color: #1b1f2b;
-      color: #f8f8f8;
-      padding: 0.1rem 0.35rem;
+      padding: 0.12rem 0.36rem;
+      border: 1px solid rgba(167, 189, 214, 0.13);
       border-radius: 4px;
+      background: #0c1118;
+      color: #f4f6f8;
+      font-family: "Consolas", "Cascadia Code", monospace;
+      font-size: 0.9em;
+    }
+
+    pre {
+      max-width: 100%;
+      overflow-x: auto;
     }
 
     pre code {
       display: block;
-      padding: 0.75rem 1rem;
-      overflow-x: auto;
+      padding: 0.85rem 1rem;
     }
 
-    @media (max-width: 700px) {
-      .help-container {
-        padding: 0 1rem;
-        margin-top: 1.5rem;
+    mark {
+      padding: 0 0.12rem;
+      border-radius: 3px;
+      background: #2d713f;
+      color: #fff;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    table {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px 10px;
+      border: 1px solid var(--help-border);
+      text-align: left;
+    }
+
+    .help-footer {
+      margin-top: 30px;
+      border-top: 1px solid var(--help-border);
+      background: #0b0f15;
+      color: var(--help-muted);
+      font-size: 0.8rem;
+    }
+
+    .help-footer > div {
+      display: flex;
+      max-width: 1440px;
+      min-height: 74px;
+      margin: 0 auto;
+      padding: 17px 30px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .help-footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+    }
+
+    @media (max-width: 900px) {
+      .help-site-header > div {
+        padding-inline: 18px;
       }
 
       .help-layout {
-        flex-direction: column;
+        grid-template-columns: 1fr;
       }
 
       .help-sidebar {
         position: static;
         width: 100%;
+        max-height: 440px;
       }
 
-      h1 {
-        font-size: 1.8rem;
+      .help-main {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      html {
+        scroll-padding-top: 118px;
       }
 
-      h2 {
-        font-size: 1.4rem;
+      .help-site-header > div {
+        min-height: 0;
+        padding-block: 12px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .help-site-header nav {
+        gap: 13px;
+      }
+
+      .help-container {
+        padding: 28px 14px 0;
+      }
+
+      .help-container > h1 {
+        margin-bottom: 24px;
+        text-align: left;
+      }
+
+      .help-main {
+        padding: 28px 20px;
+      }
+
+      .help-footer > div {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-inline: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
 </head>
 <body>
+  <a class="help-skip-link" href="#what-midi-command-studio-does">Skip to help content</a>
+  <header class="help-site-header">
+    <div>
+      <a class="help-brand" href="../index.html" aria-label="MIDI Command Studio home"><span class="help-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>MIDI Command Studio</span></a>
+      <nav aria-label="Help navigation"><a href="../index.html">Home</a><a href="../guides.html">Guides</a><a href="../devices.html">Devices</a><a href="../faq.html">FAQ</a><a href="../contact.html">Contact</a></nav>
+    </div>
+  </header>
   <div class="help-container">
 <h1 id="midi-command-studio--help">MIDI Command Studio - Help</h1>
 <div class="help-layout">
   <aside class="help-sidebar">
+    <nav aria-label="Help contents">
     <h2 id="contents">Contents</h2>
     <div class="help-search">
-      <input id="help-search" type="search" placeholder="Search help..." aria-label="Search help">
-      <small id="help-search-count"></small>
-      <ul id="help-search-results" class="help-search-results"></ul>
+      <label for="help-search">Search this manual</label>
+      <input id="help-search" type="search" placeholder="Type two or more characters..." aria-label="Search help">
+      <small id="help-search-count" role="status" aria-live="polite" aria-atomic="true"></small>
+      <ul id="help-search-results" class="help-search-results" aria-label="Matching help sections"></ul>
       <hr class="help-search-divider">
     </div>
     <ul id="toc">
@@ -308,24 +582,25 @@
     <li><a href="#settings-feedback">Feedback</a></li>
     </ul>
     </li>
-    <li><a href="#free-vs-full-version">Free vs Full Version</a></li>
+    <li><a href="#free-vs-full-version">Licence options</a></li>
     <li><a href="#activation">Activation</a></li>
     <li><a href="#data-and-privacy">Data and privacy</a></li>
     <li><a href="#feedback-and-error-log">Feedback and error log</a></li>
     <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ul>
+    </nav>
   </aside>
   <main class="help-main">
 <h2 id="what-midi-command-studio-does" class="toc-heading" style="color: #0daa4a;">What MIDI Command Studio Does</h2>
 <p>
-  MIDI Command Studio turns any MIDI controller into a powerful, fully customisable control surface for
-  <strong>any Windows application</strong>. It is designed to be <strong>quick to map</strong>, <strong>easy to use</strong>,
+  MIDI Command Studio turns compatible MIDI controls into a flexible, fully customisable control surface for
+  Windows shortcuts, macros, audio control, and other practical workflows. It is designed to be <strong>quick to map</strong>, <strong>easy to use</strong>,
   and still able to handle more complex tasks.
 </p>
 
 <p><strong>At a glance, you can:</strong></p>
 <ul>
-  <li>Control any app with buttons, pads, encoders, jog wheels, knobs, and faders</li>
+  <li>Control Windows applications with mapped shortcuts, macros, and supported actions using buttons, pads, encoders, jog wheels, knobs, and faders</li>
   <li>Trigger keyboard shortcuts, type text, do mouse actions, run programs, open files, and open Windows shortcuts</li>
   <li>Make shortcuts app-specific so they only go to the app you want</li>
   <li>
@@ -412,8 +687,7 @@
   connect to the MIDI Thru port.
 </p>
 <p>
-  You can always use the free version of MCS to check compatibility with your devices before committing
-  to a full setup.
+  You can always use MCS without a licence to check compatibility with your devices before purchasing.
 </p>
 
 <p>
@@ -603,7 +877,7 @@
 </p>
 
 <h3 id="audio-presets" class="toc-heading" style="color: #0daa4a;">Audio Presets</h3>
-<p>Audio presets and audio mappings are available in the <strong>Full version only</strong>.</p>
+<p>Audio presets and audio mappings <strong>require a licence</strong>.</p>
 <p>
   Audio preset creation is managed in <strong>Settings &rarr; Audio Preset</strong>. Choose a device, enter a preset name,
   and click <strong>Create Audio Preset</strong>. The app switches to the new audio preset automatically.
@@ -1162,8 +1436,9 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </ul>
 
 <hr>
-<h2 id="free-vs-full-version" class="toc-heading" style="color: #0daa4a;">Free vs Full Version</h2>
-<h3 id="free-version">Free version</h3>
+<h2 id="free-vs-full-version" class="toc-heading" style="color: #0daa4a;">Licence options</h2>
+<p>Download MIDI Command Studio once. Use it free, or enter a licence key to unlock all features.</p>
+<h3 id="free-version">Without a licence</h3>
 <ul>
   <li>Up to 2 presets per device</li>
   <li>Up to 6 mappings per preset</li>
@@ -1171,7 +1446,7 @@ Windows can sometimes block background apps from taking focus. Force focus works
   <li>MIDI Thru included (requires a virtual MIDI port)</li>
 </ul>
 
-<h3 id="full-version">Full version</h3>
+<h3 id="full-version">With a licence</h3>
 <ul>
   <li>Multiple devices active at the same time</li>
   <li>Unlimited presets and mappings</li>
@@ -1184,13 +1459,13 @@ Windows can sometimes block background apps from taking focus. Force focus works
 
 <h2 id="activation" class="toc-heading" style="color: #0daa4a;">Activation</h2>
 <p>Activation requires an internet connection.</p>
-<p>A license allows up to 2 activations.</p>
+<p>A licence allows up to 2 activations.</p>
 
 <h3 id="how-to-activate">How to activate</h3>
 <ol>
   <li>Open <strong>Settings</strong>.</li>
   <li>In the <strong>Licensing</strong> panel, click <strong>Activate</strong>.</li>
-  <li>Paste your license key and confirm.</li>
+  <li>Paste your licence key and confirm.</li>
   <li>Restart the app so all changes take effect.</li>
 </ol>
 
@@ -1203,21 +1478,23 @@ Windows can sometimes block background apps from taking focus. Force focus works
 </p>
 <p>
   Go to <strong>Settings</strong> &rarr; <strong>Licensing</strong> &rarr; <strong>Deactivate</strong>.
-  You will be asked to confirm, and the app will switch back to Free mode.
+  You will be asked to confirm. The licence will be removed and the free limits will apply again.
 </p>
 
 <h2 id="data-and-privacy" class="toc-heading" style="color: #0daa4a;">Data and privacy</h2>
 <p>
-  MIDI Command Studio does not send any data automatically. If you choose to send an error log when submitting feedback,
-  the app only sends the contents of <code>error_log.txt</code> (up to 200 KB) to help diagnose issues and support development.
+  MIDI Command Studio does not include general usage analytics or background telemetry, and it does not automatically send
+  MIDI input or user content. Documented online licensing requests, including a licence status check that may run on startup,
+  are the exception. If you choose to send an error log when submitting feedback, the app only sends the contents of
+  <code>error_log.txt</code> (up to 200 KB) to help diagnose issues and support development.
   The log contains timestamps, a short context label, and exception/stack trace details, with your Windows user path
   redacted (e.g., <code>C:\Users\&lt;redacted&gt;\...</code>). The report also includes a non-reversible machine hash used only
-  to correlate reports (it does not expose your actual hardware ID). No license keys, activation data, email address, or MIDI
+  to correlate reports (it does not expose your actual hardware ID). No licence keys, activation data, email address, or MIDI
   input data are sent unless you manually add them to the log.
 </p>
 <p>
   Licensing &amp; activation: The app makes network requests only for licensing actions (activate/status/deactivate). These
-  requests include your license key and non-identifying device/install identifiers used to manage activations. No usage
+  requests include your licence key and non-identifying device/install identifiers used to manage activations. No usage
   tracking, MIDI input, or personal information is transmitted. The app does not send your email address (if Gumroad returns
   an email, it&rsquo;s shown locally only).
 </p>
@@ -1278,8 +1555,8 @@ Windows can sometimes block background apps from taking focus. Force focus works
 <h3 id="activation-troubleshooting">Activation issues</h3>
 <ul>
   <li>Activation requires an internet connection.</li>
-  <li>Check the license key is complete and correct (no missing characters).</li>
-  <li>A license allows up to 2 activations. Deactivate an old machine if you reach the limit.</li>
+  <li>Check the licence key is complete and correct (no missing characters).</li>
+  <li>A licence allows up to 2 activations. Deactivate an old machine if you reach the limit.</li>
   <li>If activation or status fails, try again later or restart the app.</li>
   <li>If the issue continues, contact support via the feedback form.</li>
 </ul>
@@ -1399,7 +1676,7 @@ Windows can sometimes block background apps from taking focus. Force focus works
       });
     })();
   </script>
-  <footer class="help-footer">&copy; 2026 Meltopia. MIDI Command Studio.</footer>
+  <footer class="help-footer"><div><span>&copy; 2026 Meltopia. MIDI Command Studio.</span><nav aria-label="Help footer"><a href="index.html">Help overview</a><a href="../guides.html">Guides</a><a href="../faq.html">FAQ</a><a href="../contact.html">Contact</a><a href="../index.html">Home</a></nav></div></footer>
 </body>
 </html>
 

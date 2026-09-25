@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Korg nanoKONTROL2 Windows 11 Setup and LED Feedback | MIDI Command Studio</title>
+    <title>Korg nanoKONTROL2 Windows Setup | MIDI Command Studio</title>
     <meta
       name="description"
       content="Set up a Korg nanoKONTROL2 with MIDI Command Studio on Windows 11 using recommended CC mode, LED feedback, and Korg's current Windows MIDI guidance."
@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://midicommandstudio.com/korg-nanokontrol2-windows-setup.html" />
     <meta property="og:site_name" content="MIDI Command Studio" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Korg nanoKONTROL2 Windows 11 Setup and LED Feedback | MIDI Command Studio" />
+    <meta property="og:title" content="Korg nanoKONTROL2 Windows Setup | MIDI Command Studio" />
     <meta
       property="og:description"
       content="Set up a Korg nanoKONTROL2 with MIDI Command Studio on Windows 11 using recommended CC mode, LED feedback, and Korg's current Windows MIDI guidance."
@@ -25,33 +25,33 @@
           {
             "@type": "HowTo",
             "@id": "https://midicommandstudio.com/korg-nanokontrol2-windows-setup.html#howto",
-            "name": "Korg nanoKONTROL2 Windows 11 Setup and LED Feedback",
-            "description": "Configure a Korg nanoKONTROL2 for MIDI Command Studio, including LED feedback and the recommended Windows MIDI connection.",
+            "name": "Set up a Korg nanoKONTROL2 with MIDI Command Studio",
+            "description": "Start the Korg nanoKONTROL2 in CC mode, add it to MIDI Command Studio, and map its controls with optional LED feedback.",
             "url": "https://midicommandstudio.com/korg-nanokontrol2-windows-setup.html",
             "step": [
               {
                 "@type": "HowToStep",
                 "position": 1,
-                "name": "Select CC mode",
-                "text": "Use KORG KONTROL EDITOR to set the nanoKONTROL2 to CC mode."
+                "name": "Start the controller in CC mode",
+                "text": "Disconnect the USB cable. Hold the SET MARKER and CYCLE buttons while reconnecting the cable, then release them after the controller starts."
               },
               {
                 "@type": "HowToStep",
                 "position": 2,
-                "name": "Add the nanoKONTROL2",
-                "text": "In MIDI Command Studio, open the Devices panel, choose Add Device, and select nanoKONTROL2."
+                "name": "Configure optional LED feedback",
+                "text": "In KORG KONTROL EDITOR, set LED Mode to External and write the setting to the controller."
               },
               {
                 "@type": "HowToStep",
                 "position": 3,
-                "name": "Enable LED support",
-                "text": "Enable LED support for the nanoKONTROL2."
+                "name": "Add the controller",
+                "text": "In MIDI Command Studio, open Devices, choose Add, select nanoKONTROL2, and enable LED support if required."
               },
               {
                 "@type": "HowToStep",
                 "position": 4,
-                "name": "Learn the controls",
-                "text": "Create a preset and learn the controls you want to use."
+                "name": "Create the mappings",
+                "text": "Create or select a preset, learn each fader, knob, or button, and assign the required action."
               }
             ]
           },
@@ -68,8 +68,8 @@
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Guides",
-                "item": "https://midicommandstudio.com/guides.html"
+                "name": "Devices",
+                "item": "https://midicommandstudio.com/devices.html"
               },
               {
                 "@type": "ListItem",
@@ -84,120 +84,236 @@
     </script>
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="site-logo">MIDI Command Studio</div>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a href="features.html">Features</a>
-          <a href="guides.html">Guides</a>
-          <a href="free-vs-full.html">Free vs Full</a>
-          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
-          <a href="privacy.html">Data &amp; Privacy</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="download.html">Download</a>
-          <a href="download.html">Buy Licence</a>
+  <body class="device-page device-guide-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices is-active" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html" aria-current="page">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html">Guides</a>
+          <details class="site-nav-group site-nav-group-support" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
         </nav>
-      </header>
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h1>Korg nanoKONTROL2 Windows 11 Setup and LED Feedback</h1>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group is-active" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html" aria-current="page">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html">Guides</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
           </div>
-          <p class="body-copy">
-            The nanoKONTROL2 works well with MIDI Command Studio as a compact Windows control surface. Its controls
-            can be mapped to shortcuts, macros, media commands, volume targets, and preset switching.
-            The device supports LED feedback when its LED Mode is set to External, allowing the button lights to
-            reflect the state of mapped actions.
-          </p>
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page device-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="devices.html">Devices</a></li>
+            <li><span aria-current="page">Korg nanoKONTROL2</span></li>
+          </ol>
+        </nav>
+
+        <section class="device-hero" aria-labelledby="device-title">
+          <div class="device-hero-grid device-hero-grid-single">
+            <div>
+              <h1 id="device-title">Korg nanoKONTROL2 Windows setup</h1>
+              <p class="device-hero-intro">
+                The nanoKONTROL2 works well with MIDI Command Studio as a compact Windows control surface. Its controls
+                can be mapped to shortcuts, macros, media commands, volume targets, and preset switching. The device
+                supports LED feedback when its LED Mode is set to External, allowing the button lights to reflect the
+                state of mapped actions.
+              </p>
+            </div>
+          </div>
         </section>
 
-        <section class="section">
-          <div class="section-head">
-            <h2>Set Up the nanoKONTROL2</h2>
+        <section class="device-section" aria-labelledby="setup-title">
+          <div class="device-section-heading">
+            <h2 id="setup-title">Set up the nanoKONTROL2</h2>
             <p>CC mode is recommended for MIDI Command Studio.</p>
           </div>
-          <p class="body-copy">
-            In CC mode, the knobs send straightforward absolute values from 0 to 127 rather than DAW-style encoder
-            messages. This makes them easier to learn and use for MCS mappings. Other modes can work, but their
-            controls are designed for specific DAWs.
-          </p>
           <ol class="use-list">
-            <li>Use <strong>KORG KONTROL EDITOR</strong> to set the nanoKONTROL2 to <strong>CC mode</strong>.</li>
-            <li>In MIDI Command Studio, open the Devices panel, choose <strong>Add Device</strong>, and select <strong>nanoKONTROL2</strong>.</li>
-            <li>Enable LED support for the controller.</li>
-            <li>Create a preset and use Learn to assign the buttons, knobs, or faders you want to use.</li>
+            <li>Disconnect the USB cable. Hold <b>SET MARKER</b> and <b>CYCLE</b> while reconnecting it to start the controller in CC mode.</li>
+            <li>For LED feedback, use <b>KORG KONTROL EDITOR</b> to set <b>LED Mode</b> to <b>External</b> and write the setting to the controller.</li>
+            <li>In MIDI Command Studio, open <b>Devices</b>, choose <b>Add</b>, and select <b>nanoKONTROL2</b>. Enable LED support if you want to use the button lights.</li>
+            <li>Create a preset and use Learn to assign the buttons, knobs, and faders you want to use.</li>
           </ol>
-          <p class="body-copy">
-            Useful starting points include app or system mute buttons with matching LEDs, volume faders, media
-            transport controls, application shortcuts, macros, and buttons that switch between MIDI Command Studio
-            presets.
-          </p>
-          <p class="body-copy">
-            For more information about the controller settings, see Korg's
-            <a href="https://cdn.korg.com/us/support/download/files/c8d0cd6808e12d3672845cadcdbbfe9b.pdf" target="_blank" rel="noopener noreferrer">nanoKONTROL2 Parameter Guide</a>.
+          <p class="device-source-link">
+            See Korg's
+            <a href="https://cdn.korg.com/us/support/download/files/c8d0cd6808e12d3672845cadcdbbfe9b.pdf" target="_blank" rel="noopener noreferrer">nanoKONTROL2 Parameter Guide</a>
+            for the controller settings, or visit the
+            <a href="https://www.korg.com/us/support/download/product/0/159/" target="_blank" rel="noopener noreferrer">Korg download page</a>
+            for KORG KONTROL EDITOR.
           </p>
         </section>
 
-        <section class="section" id="windows-driver">
-          <div class="section-head">
-            <h2>Windows 11 Driver Note</h2>
+        <section id="windows-driver" class="device-section" aria-labelledby="driver-title">
+          <div class="device-section-heading">
+            <h2 id="driver-title">Windows 11 driver information</h2>
             <p>Use the MIDI connection currently recommended by Korg.</p>
           </div>
-          <p class="body-copy">
-            On Windows 11 24H2 or later, Korg advises users to uninstall the legacy Korg USB-MIDI Driver and use
-            Windows MIDI Services. If MIDI Command Studio shows <code>nanoKONTROL2 SLIDER/KNOB</code>, follow Korg's
-            removal instructions, restart Windows, and reconnect the controller. It should then normally appear as
-            <code>nanoKONTROL2</code>.
-          </p>
-          <p class="body-copy">
-            <a href="https://www.korg.com/uk/news/2026/0312/" target="_blank" rel="noopener noreferrer">Read Korg's Windows 11 driver notice and uninstall instructions</a>.
-          </p>
-          <p class="body-copy">
-            Microsoft also documents this conflict, noting that the legacy Korg USB driver can prevent devices from
-            appearing or delay MIDI device detection.
-            <a href="https://devblogs.microsoft.com/windows-music-dev/windows-midi-services-rollout-known-issues-and-workarounds/" target="_blank" rel="noopener noreferrer">Read Microsoft's Windows MIDI Services known issues</a>.
-          </p>
-          <p class="legacy-note">
-            Korg says to ignore or decline prompts from its editor or updater to install the legacy driver on affected Windows 11 systems.
-          </p>
+          <div class="device-prose">
+            <p>
+              On Windows 11 24H2 or later, Korg advises users to uninstall the legacy Korg USB-MIDI Driver and use
+              Windows MIDI Services. If MIDI Command Studio shows <code>nanoKONTROL2 SLIDER/KNOB</code>, follow Korg's
+              removal instructions, restart Windows, and reconnect the controller. It should then normally appear as
+              <code>nanoKONTROL2</code>.
+            </p>
+            <p>
+              <a href="https://www.korg.com/uk/news/2026/0312/" target="_blank" rel="noopener noreferrer">Read Korg's Windows 11 driver notice and uninstall instructions</a>.
+            </p>
+            <p>
+              Microsoft also documents this conflict, noting that the legacy Korg USB driver can prevent devices from
+              appearing or delay MIDI device detection.
+              <a href="https://devblogs.microsoft.com/windows-music-dev/windows-midi-services-rollout-known-issues-and-workarounds/" target="_blank" rel="noopener noreferrer">Read Microsoft's Windows MIDI Services known issues</a>.
+            </p>
+            <p>
+              Korg says to ignore or decline prompts from its editor or updater to install the legacy driver on affected Windows 11 systems.
+            </p>
+          </div>
         </section>
 
-        <section class="section">
-          <div class="section-head">
-            <h2>Related Guides</h2>
+        <section class="device-section" aria-labelledby="related-guides-title">
+          <div class="device-section-heading">
+            <h2 id="related-guides-title">Related guides</h2>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Control Windows volume with MIDI</h3>
-              <p><a href="control-windows-volume-with-midi.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Send shortcuts with MIDI</h3>
-              <p><a href="send-midi-shortcuts-windows.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>MIDI macros for Windows apps</h3>
-              <p><a href="midi-controller-macros-windows.html">Read guide</a></p>
-            </article>
-          </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="download.html"><span>Download Free Version</span></a>
-            <a class="btn ghost" href="download.html">Download Details</a>
-            <a class="btn ghost" href="guides.html">View All Guides</a>
+          <div class="device-prose">
+            <p>
+              Read about
+              <a href="control-windows-volume-with-midi.html">Windows volume control</a>,
+              <a href="send-midi-shortcuts-windows.html">keyboard shortcuts</a>, and
+              <a href="midi-controller-macros-windows.html">macros</a>, or open the
+              <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">full Help file</a>.
+            </p>
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
-        <div class="footer-links">
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
           <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->

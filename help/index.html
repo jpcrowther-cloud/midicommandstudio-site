@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -19,45 +19,63 @@
     <meta property="og:url" content="https://midicommandstudio.com/help/index.html" />
     <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
     <link rel="icon" href="../assets/mcs_exact.ico" />
-    <style>
-      body {
-        margin: 0;
-        background: #101218;
-        color: #f2f2f2;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      }
-
-      .wrap {
-        max-width: 720px;
-        margin: 64px auto;
-        padding: 0 20px;
-        line-height: 1.6;
-      }
-
-      a {
-        color: #8cc7ff;
-      }
-
-      .help-footer {
-        margin-top: 24px;
-        color: #9aa3b2;
-        font-size: 0.9rem;
-      }
-    </style>
+    <link rel="stylesheet" href="../styles.css" />
   </head>
-  <body>
-    <main class="wrap">
-      <h1>MIDI Command Studio Help</h1>
-      <p>
-        Open the full help guide:
-        <a href="MIDI_Command_Studio_Help.html">MIDI Command Studio Help</a>.
-      </p>
-      <p>
-        Back to the main site:
-        <a href="/">Home</a>.
-      </p>
-      <footer class="help-footer">&copy; 2026 Meltopia. MIDI Command Studio.</footer>
-    </main>
+  <body class="help-landing-page">
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="help-landing-header">
+      <div>
+        <a class="site-brand" href="../index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav aria-label="Help navigation">
+          <a href="../index.html">Home</a><a href="../guides.html">Guides</a><a href="../devices.html">Devices</a><a href="../faq.html">FAQ</a><a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="help-landing-shell">
+      <main id="main-content">
+        <nav class="help-landing-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><span aria-current="page">Help</span></li></ol></nav>
+
+        <section class="help-landing-hero help-landing-hero-plain" aria-labelledby="help-landing-title">
+          <h1 id="help-landing-title">MIDI Command Studio Help</h1>
+          <p>The full manual covers getting started, devices, presets, mappings, controls, macros, feedback, MIDI Thru, licensing, data and privacy, and troubleshooting.</p>
+          <div class="help-landing-actions">
+            <a class="help-landing-button help-landing-button-primary" href="MIDI_Command_Studio_Help.html">Open Full Help</a>
+          </div>
+        </section>
+
+        <section class="help-landing-section" aria-labelledby="manual-covers-title">
+          <div class="help-landing-section-heading"><h2 id="manual-covers-title">Browse the manual</h2></div>
+          <div class="help-topic-grid">
+            <a href="MIDI_Command_Studio_Help.html#quick-start"><span>Start</span><strong>Quick start</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#devices"><span>Hardware</span><strong>Devices</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#presets-and-autosave"><span>Layouts</span><strong>Presets</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#mappings-and-the-editor"><span>Controls</span><strong>Mappings + editor</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#faders"><span>Inputs</span><strong>Faders + encoders</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#macros--when-shortcuts-arent-enough"><span>Automation</span><strong>Macros</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#led-feedback"><span>Hardware output</span><strong>Feedback</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#midi-thru--virtual-port-setup"><span>Routing</span><strong>MIDI Thru</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#activation"><span>Licence</span><strong>Activation</strong></a>
+            <a href="MIDI_Command_Studio_Help.html#troubleshooting"><span>Support</span><strong>Troubleshooting</strong></a>
+          </div>
+        </section>
+
+        <section class="help-landing-section" aria-labelledby="other-routes-title">
+          <div class="help-landing-section-heading"><h2 id="other-routes-title">Other support pages</h2></div>
+          <div class="help-route-list">
+            <a href="../devices.html"><span>Controller compatibility and setup</span><strong>Devices</strong></a>
+            <a href="../faq.html"><span>Concise answers to common questions</span><strong>FAQ</strong></a>
+            <a href="../contact.html"><span>Direct support when documentation is not enough</span><strong>Contact</strong></a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="help-landing-footer">
+      <div><span>&copy; 2026 Meltopia. MIDI Command Studio.</span><nav aria-label="Help footer"><a href="../index.html">Home</a><a href="../contact.html">Contact</a><a href="../privacy.html">Data &amp; Privacy</a></nav></div>
+    </footer>
   </body>
 </html>
-

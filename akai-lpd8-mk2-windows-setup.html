@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Akai LPD8 MK2 Setup on Windows | MIDI Command Studio</title>
+    <meta
+      name="description"
+      content="Use the Akai LPD8 MK2 to control Windows volume, shortcuts, macros, media commands, and apps with Note/CC modes and four hardware Programs."
+    />
+    <link rel="canonical" href="https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html" />
+    <meta property="og:site_name" content="MIDI Command Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Akai LPD8 MK2 Setup on Windows | MIDI Command Studio" />
+    <meta
+      property="og:description"
+      content="Use the Akai LPD8 MK2 to control Windows volume, shortcuts, macros, media commands, and apps with Note/CC modes and four hardware Programs."
+    />
+    <meta property="og:url" content="https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html" />
+    <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "HowTo",
+            "@id": "https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html#howto",
+            "name": "Set up an Akai LPD8 MK2 for Windows shortcuts, macros, and volume control",
+            "description": "Connect an Akai LPD8 MK2 to MIDI Command Studio and map its pads and knobs to Windows actions.",
+            "url": "https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Connect the LPD8 MK2",
+                "text": "Connect the class-compliant LPD8 MK2 to the Windows PC by USB."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Add the controller",
+                "text": "Open MIDI Command Studio, choose Add Device, and select the LPD8 MK2."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Select a pad mode",
+                "text": "Select Note or CC mode for the pad mappings you want to use."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Learn and map the controls",
+                "text": "Use Learn for each pad or knob, choose its Windows shortcut, macro, media command, or volume target, then save the mapping."
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://midicommandstudio.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Devices",
+                "item": "https://midicommandstudio.com/devices.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Akai LPD8 MK2 Windows Setup",
+                "item": "https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" href="assets/mcs_exact.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
+  </head>
+  <body class="device-page device-guide-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices is-active" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html" aria-current="page">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html">Guides</a>
+          <details class="site-nav-group site-nav-group-support" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
+        </nav>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group is-active" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html" aria-current="page">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html">Guides</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page device-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="devices.html">Devices</a></li>
+            <li><span aria-current="page">Akai LPD8 MK2</span></li>
+          </ol>
+        </nav>
+
+        <section class="device-hero" aria-labelledby="device-title">
+          <div class="device-hero-grid device-hero-grid-single">
+            <div>
+              <h1 id="device-title">Akai LPD8 MK2 Windows setup</h1>
+              <p class="device-hero-intro">
+                Turn eight pads and eight knobs into a compact Windows control surface for shortcuts, macros,
+                media commands, application actions, and volume control.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <nav class="device-local-nav" aria-label="On this page">
+          <a href="#quick-setup">Quick setup</a>
+          <a href="#note-cc-modes">Note &amp; CC</a>
+          <a href="#hardware-programs">Programs</a>
+          <a href="#layout-examples">Example layout</a>
+        </nav>
+
+        <section class="device-section" aria-labelledby="overview-title">
+          <div class="device-section-heading">
+            <h2 id="overview-title">A small controller with several useful layers.</h2>
+          </div>
+          <div class="device-prose device-prose-columns">
+            <p>
+              MIDI Command Studio lets you use the Akai LPD8 MK2 to control Windows system and application volume,
+              trigger keyboard shortcuts and macros, send media commands, open programs, and run app-specific actions.
+              The controller has eight pads and eight knobs, while its four stored hardware Programs can give those
+              controls different MIDI assignments for different layouts.
+            </p>
+            <p>
+              The LPD8 MK2 is USB-powered and class-compliant, so Windows normally recognises it without a dedicated
+              driver. Akai specifies eight velocity-sensitive RGB pads, eight 270-degree knobs, and four Programs that
+              can be configured with its free editor software. See the
+              <a href="https://www.akaipro.com/lpd8-mk2/" target="_blank" rel="noopener noreferrer">official LPD8 MK2 product information</a>.
+            </p>
+          </div>
+        </section>
+
+        <section id="quick-setup" class="device-section" aria-labelledby="setup-title">
+          <div class="device-section-heading">
+            <h2 id="setup-title">Connect, learn, and test a first mapping.</h2>
+            <p>Select Note or CC mode for the pad mappings you want to use. The knobs send CC messages in either mode.</p>
+          </div>
+          <ol class="device-step-list">
+            <li><span>01</span><div><strong>Connect</strong><p>Connect the LPD8 MK2 to the computer by USB.</p></div></li>
+            <li><span>02</span><div><strong>Add the device</strong><p>Open MIDI Command Studio, choose <b>Add Device</b>, and select the LPD8 MK2.</p></div></li>
+            <li><span>03</span><div><strong>Select a pad mode</strong><p>Press <b>Note</b> or <b>CC</b> on the controller.</p></div></li>
+            <li><span>04</span><div><strong>Learn a control</strong><p>Use the appropriate <b>Learn</b> button, then press a pad or turn a knob.</p></div></li>
+            <li><span>05</span><div><strong>Choose an action</strong><p>Select a shortcut, macro, media command, application action, or volume target.</p></div></li>
+            <li><span>06</span><div><strong>Test</strong><p>Save the mapping and test it from the controller.</p></div></li>
+          </ol>
+        </section>
+
+        <section id="note-cc-modes" class="device-section" aria-labelledby="modes-title">
+          <div class="device-section-heading">
+            <h2 id="modes-title">Understand what the pads and knobs send.</h2>
+            <p>The mode buttons change the messages sent by the pads, not the knobs.</p>
+          </div>
+          <div class="device-capability-grid">
+            <article>
+              <p class="device-card-label">Pad mode</p>
+              <h3>Note mode</h3>
+              <p>The pads send MIDI Note messages. These can be learned and assigned to shortcuts, macros, media commands, and other button actions.</p>
+            </article>
+            <article>
+              <p class="device-card-label">Pad mode</p>
+              <h3>CC mode</h3>
+              <p>The pads send MIDI Control Change messages. These can be used for the same types of button actions or as another pad layer with different assignments.</p>
+            </article>
+            <article>
+              <p class="device-card-label">Continuous control</p>
+              <h3>Knobs</h3>
+              <p>The eight knobs send CC values regardless of the selected pad mode, making them suitable for system, application, and input volume controls.</p>
+            </article>
+          </div>
+          <aside class="device-note">
+            <strong>Program Change mode</strong>
+            <p>The controller also has a Program Change pad mode, but it is not needed for normal MIDI Command Studio mappings. Note and CC are the relevant modes for learned pad actions.</p>
+          </aside>
+        </section>
+
+        <section id="hardware-programs" class="device-section" aria-labelledby="programs-title">
+          <div class="device-section-heading">
+            <h2 id="programs-title">Give the same physical controls four different MIDI layouts.</h2>
+          </div>
+          <div class="device-prose">
+            <p>
+              Hold the <strong>Program</strong> button and press the pad for the Program you want to use. To make each
+              Program operate as a separate bank in MIDI Command Studio, assign different note and CC numbers in the
+              Akai LPD8 MK2 Program Editor. If two Programs send the same MIDI number on the same channel, MIDI Command
+              Studio will treat them as the same control.
+            </p>
+            <p>
+              With unique assignments, the four Programs can provide 32 distinct pad assignments and 32 distinct knob
+              assignments while keeping the physical controller small. Advanced layouts can also configure the Note and
+              CC pad layers separately, although using one main pad mode per Program is easier to remember.
+            </p>
+          </div>
+          <div class="device-definition">
+            <div>
+              <span>Inside the controller</span>
+              <h3>Akai Program</h3>
+              <p>A bank of MIDI numbers stored inside the LPD8 MK2.</p>
+            </div>
+            <div>
+              <span>Inside the application</span>
+              <h3>MCS preset</h3>
+              <p>The Windows actions assigned to MIDI controls. Use hardware Programs within one app preset, or combine both systems for more layouts.</p>
+            </div>
+          </div>
+          <p class="device-source-link">
+            Akai documents how to edit, store, and select the four Programs in its
+            <a href="https://support.akaipro.com/en/support/solutions/articles/69000812407-akai-pro-lpd8-mk2-troubleshooting-guide" target="_blank" rel="noopener noreferrer">LPD8 MK2 editor guide</a>.
+          </p>
+        </section>
+
+        <section id="shortcuts" class="device-section" aria-labelledby="actions-title">
+          <div class="device-section-heading">
+            <h2 id="actions-title">Use pads for direct commands or complete sequences.</h2>
+          </div>
+          <div class="device-detail-rows">
+            <article>
+              <span>Shortcut</span>
+              <div>
+                <h3>Trigger keyboard shortcuts</h3>
+                <p>Learn a pad in Note or CC mode, choose a keyboard shortcut, and optionally target a particular Windows application. Pads can perform commands such as Save, Undo, Copy, Paste, Play/Pause, browser tabs, or software-specific shortcuts.</p>
+                <p>App targeting can reserve a shortcut for one program, while the LPD8 MK2 Programs can separate general Windows, editing, browser, or media layouts.</p>
+              </div>
+            </article>
+            <article id="macros">
+              <span>Macro</span>
+              <div>
+                <h3>Run multi-step actions</h3>
+                <p>A MIDI Command Studio macro can combine shortcuts, waits, text input, mouse actions, and program or file launch steps.</p>
+                <ul>
+                  <li>Open an application and send its first shortcut.</li>
+                  <li>Run a repeated editing sequence with timed steps.</li>
+                  <li>Enter frequently used text or commands.</li>
+                  <li>Launch a program, file, folder, or Windows shortcut.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="layout-examples" class="device-section" aria-labelledby="layout-examples-title">
+          <div class="device-section-heading">
+            <h2 id="layout-examples-title">Example layout</h2>
+          </div>
+          <div class="device-table-wrap" tabindex="0" role="region" aria-label="Example LPD8 MK2 four-Program layout">
+            <table class="device-table">
+              <caption>Example pad and knob roles across four LPD8 MK2 hardware Programs</caption>
+              <thead>
+                <tr><th scope="col">LPD8 Program</th><th scope="col">Pad ideas</th><th scope="col">Knob ideas</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Program 1: Windows</th><td>Media commands, launch apps, common shortcuts</td><td>System, browser, and music volume</td></tr>
+                <tr><th scope="row">Program 2: Editing</th><td>Save, undo, markers, playback, editing macros</td><td>Application and media levels</td></tr>
+                <tr><th scope="row">Program 3: Productivity</th><td>Browser tabs, copy/paste, text macros, file launch</td><td>Communication and background-app volume</td></tr>
+                <tr><th scope="row">Program 4: Audio</th><td>Mute actions, media commands, audio sample triggers</td><td>System, app, microphone, and line-input levels</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="pad-lighting" class="device-section" aria-labelledby="lighting-title">
+          <div class="device-section-heading">
+            <h2 id="lighting-title">Pad lighting is controlled by the LPD8 MK2.</h2>
+          </div>
+          <div class="device-note device-note-caution">
+            <strong>LED feedback is not supported</strong>
+            <p>
+              The LPD8 MK2 controls its own pad lighting and does not support LED feedback from MIDI Command Studio.
+              Pad colours and press behaviour are configured in Akai's Program Editor and stored with each hardware Program.
+            </p>
+          </div>
+          <p class="device-source-link">
+            See Akai's
+            <a href="https://support.akaipro.com/en/support/solutions/articles/69000812405-akai-pro-lpd8-mk2-frequently-asked-questions" target="_blank" rel="noopener noreferrer">LPD8 MK2 FAQ</a>
+            for its description of pad modes, colours, Programs, and class-compliant operation.
+          </p>
+        </section>
+
+        <section class="device-section" aria-label="Related guides">
+          <div class="device-section-heading">
+            <p class="device-section-label">Related guides</p>
+          </div>
+          <div class="device-related-grid">
+            <a href="send-midi-shortcuts-windows.html"><span>Use case</span><strong>Send keyboard shortcuts with MIDI</strong></a>
+            <a href="midi-controller-macros-windows.html"><span>Use case</span><strong>Build MIDI macros for Windows</strong></a>
+            <a href="control-windows-volume-with-midi.html"><span>Use case</span><strong>Control Windows volume with MIDI</strong></a>
+            <a href="devices.html"><span>Devices</span><strong>Browse device setup information</strong></a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
+          <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
+</html>

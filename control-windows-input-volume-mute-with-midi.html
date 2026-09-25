@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -81,8 +81,8 @@
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Guides",
-                "item": "https://midicommandstudio.com/guides.html"
+                "name": "Use Cases",
+                "item": "https://midicommandstudio.com/use-cases.html"
               },
               {
                 "@type": "ListItem",
@@ -98,81 +98,207 @@
     <!-- /Guide structured data -->
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="site-logo">MIDI Command Studio</div>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a href="features.html">Features</a>
-          <a href="guides.html">Guides</a>
-          <a href="free-vs-full.html">Free vs Full</a>
-          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
-          <a href="privacy.html">Data &amp; Privacy</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="download.html">Download</a>
-          <a href="download.html">Buy Licence</a>
+  <body class="use-case-page use-case-input-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases is-active" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html" aria-current="page">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html">Guides</a>
+          <details class="site-nav-group site-nav-group-support" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
         </nav>
-      </header>
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h1>How to Control Windows Input Volume and Mute with MIDI</h1>
-            <p>Map a fader/knob to input level and a button to input mute in Windows.</p>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group is-active" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html" aria-current="page">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html">Guides</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
           </div>
-          <p class="body-copy">
-            This workflow lets you control microphone or line-in input endpoints directly from your MIDI controller.
-            You can target the default Windows input, or select a specific input endpoint.
-          </p>
-          <ol class="use-list">
-            <li>Add and enable your MIDI device in MIDI Command Studio.</li>
-            <li>Click <strong>Learn Fader/Knob</strong> and move the control you want to use.</li>
-            <li>In the mapping editor, set controls to <strong>Volume - Input (Default)</strong>.</li>
-            <li>Optional: to select inputs other than default, in Advanced settings, enable show specific windows input devices. This will allow the controls list to show all windows inputs.</li>
-            <li>Save and move the control to verify input level changes.</li>
-            <li>Choose one mute setup method below, then save and test mute/unmute.</li>
-          </ol>
-          <h2>Two Ways to Map Mute</h2>
-          <ul class="use-list">
-            <li><strong>Paired mute (recommended with input fader):</strong> in the same fader mapping, enable <strong>Add mute control</strong>, click <strong>Learn</strong>, and press the mute button you want to pair.</li>
-            <li><strong>Standalone mute mapping:</strong> learn a button/pad, open its mapping editor, click <strong>Use as mute control...</strong>, then select your input target in the mute dialog.</li>
-          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page use-case-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="use-cases.html">Use Cases</a></li><li><span aria-current="page">Input volume &amp; mute</span></li></ol></nav>
+
+        <section class="use-case-hero use-case-hero-plain" aria-labelledby="use-case-title">
+          <div class="use-case-hero-grid use-case-hero-grid-single">
+            <div>
+              <h1 id="use-case-title">Control Windows input volume and mute with a MIDI controller.</h1>
+              <p class="use-case-hero-intro">Map a fader or knob to a Windows microphone or other input, then assign a button to mute it.</p>
+            </div>
+          </div>
         </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Next Steps</h2>
+
+        <section id="distinction" class="use-case-section" aria-labelledby="distinction-title">
+          <div class="use-case-section-heading"><h2 id="distinction-title">Input volume is separate from Windows and app volume.</h2></div>
+          <div class="use-case-choice-grid">
+            <article><h3>Input volume &amp; mute</h3><p>Control the default Windows input, or choose a specific microphone, line-in, or other input.</p></article>
+            <article><h3>Output &amp; app volume</h3><p>Control the main Windows output or the volume of a selected application.</p><a href="control-windows-volume-with-midi.html">View Windows and app volume</a></article>
           </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="download.html"><span>Download Free Version</span></a>
-            <a class="btn ghost" href="download.html">Download Details</a>
-            <a class="btn ghost" href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Open Help</a>
-            <a class="btn ghost" href="guides.html">View All Guides</a>
+        </section>
+
+        <section id="setup" class="use-case-section" aria-labelledby="setup-title">
+          <div class="use-case-section-heading"><h2 id="setup-title">Map MIDI controls to Windows input volume and mute.</h2></div>
+          <ol class="use-case-step-list">
+            <li><span>01</span><div><strong>Add the device</strong><p>Add and enable your MIDI device in MIDI Command Studio.</p></div></li>
+            <li><span>02</span><div><strong>Learn a level control</strong><p>Click <b>Learn Fader/Knob</b> and move the control you want to use.</p></div></li>
+            <li><span>03</span><div><strong>Choose the default input</strong><p>In the mapping editor, set the control to <b>Volume - Input (Default)</b>.</p></div></li>
+            <li><span>04</span><div><strong>Optional: expose specific inputs</strong><p>In Advanced settings, enable the option to show specific Windows input devices so the controls list can display all Windows inputs.</p></div></li>
+            <li><span>05</span><div><strong>Verify level</strong><p>Save the mapping and move the control to confirm that the Windows input level changes.</p></div></li>
+            <li><span>06</span><div><strong>Add mute</strong><p>Choose one of the mute methods below, then save and test mute and unmute.</p></div></li>
+          </ol>
+        </section>
+
+        <section id="mute" class="use-case-section" aria-labelledby="mute-title">
+          <div class="use-case-section-heading"><h2 id="mute-title">Use a paired or standalone mute control.</h2></div>
+          <div class="use-case-choice-grid">
+            <article><p class="use-case-card-label">Recommended with input fader</p><h3>Paired mute</h3><p>In the same fader mapping, enable <b>Add mute control</b>, choose <b>Learn</b>, and press the button to pair with that input.</p></article>
+            <article><p class="use-case-card-label">Independent button or pad</p><h3>Standalone mute</h3><p>Learn the button, open its mapping editor, select <b>Use as mute control...</b>, and choose the input target in the mute dialog.</p></article>
           </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Use a MIDI controller with OBS on Windows</h3>
-              <p><a href="use-midi-controller-with-obs-windows.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Control Windows output/app volume</h3>
-              <p><a href="control-windows-volume-with-midi.html">Read guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>MIDI macros for Windows apps</h3>
-              <p><a href="midi-controller-macros-windows.html">Learn more</a></p>
-            </article>
+        </section>
+
+        <section id="limitations" class="use-case-section" aria-labelledby="limitations-title">
+          <div class="use-case-section-heading"><h2 id="limitations-title">MIDI Command Studio controls the Windows input level, not hardware gain.</h2></div>
+          <div class="use-case-warning">
+            <p>This mapping does not control hardware preamp gain, audio-interface direct monitoring, or hardware monitor mixes. Some ASIO, exclusive-mode, or vendor-specific paths can bypass Windows input controls, so behaviour depends on how the source is routed.</p>
+          </div>
+        </section>
+
+        <section id="related" class="use-case-section" aria-labelledby="related-title">
+          <div class="use-case-section-heading"><h2 id="related-title">Related pages</h2></div>
+          <div class="use-case-related-grid use-case-related-grid-compact">
+            <a href="control-windows-volume-with-midi.html"><span>Output audio</span><strong>System and application volume</strong></a>
+            <a href="use-midi-controller-with-obs-windows.html"><span>Streaming</span><strong>OBS workflow</strong></a>
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
-        <div class="footer-links">
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
           <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->

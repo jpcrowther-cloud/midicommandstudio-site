@@ -2,86 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://midicommandstudio.com/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/features.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/devices.html</loc>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/use-cases.html</loc>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/guides.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/use-midi-controller-with-obs-windows.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/free-vs-full.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/download.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/update.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/privacy.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/faq.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/contact.html</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/send-midi-shortcuts-windows.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/control-windows-volume-with-midi.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/control-windows-input-volume-mute-with-midi.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/midi-controller-macros-windows.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/midi-audio-sample-playback-windows.html</loc>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://midicommandstudio.com/behringer-x-touch-one-volume-control.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/behringer-x-touch-one-windows-setup.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/korg-nanokontrol2-windows-setup.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-25</lastmod>
+  </url>
+  <url>
+    <loc>https://midicommandstudio.com/akai-lpd8-mk2-windows-setup.html</loc>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/help/index.html</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
   <url>
     <loc>https://midicommandstudio.com/help/MIDI_Command_Studio_Help.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-09-25</lastmod>
   </url>
 </urlset>

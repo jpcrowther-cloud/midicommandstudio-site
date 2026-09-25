@@ -3,98 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mackie/MCU Setup on Windows | MIDI Command Studio</title>
+    <title>MIDI Controllers for Windows | MIDI Command Studio Devices</title>
     <meta
       name="description"
-      content="Set up a Mackie Control Universal (MCU) compatible controller with MIDI Command Studio for Windows shortcuts, macros, volume control, and supported feedback."
+      content="Learn how MIDI controller compatibility works in MIDI Command Studio, browse dedicated Windows setup guides, and test your own controller without a licence."
     />
-    <link rel="canonical" href="https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html" />
+    <link rel="canonical" href="https://midicommandstudio.com/devices.html" />
     <meta property="og:site_name" content="MIDI Command Studio" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Mackie/MCU Setup on Windows | MIDI Command Studio" />
+    <meta property="og:title" content="MIDI Controllers for Windows | MIDI Command Studio Devices" />
     <meta
       property="og:description"
-      content="Set up a Mackie Control Universal (MCU) compatible controller with MIDI Command Studio for Windows shortcuts, macros, volume control, and supported feedback."
+      content="Understand standard MIDI controller compatibility, hardware-dependent feedback, and dedicated MIDI Command Studio device setup guides."
     />
-    <meta property="og:url" content="https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html" />
+    <meta property="og:url" content="https://midicommandstudio.com/devices.html" />
     <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
-    <!-- Guide structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@graph": [
+        "@type": "BreadcrumbList",
+        "@id": "https://midicommandstudio.com/devices.html#breadcrumb",
+        "itemListElement": [
           {
-            "@type": "HowTo",
-            "@id": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html#howto",
-            "name": "How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume",
-            "description": "Set up Mackie Control Universal (MCU) MIDI controllers on Windows with MIDI Command Studio, including mapping, preset switching, LCD text, LED updates, and motorised fader feedback.",
-            "url": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html",
-            "step": [
-              {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Open MIDI Command Studio and add your controller from the Devices panel.",
-                "text": "Open MIDI Command Studio and add your controller from the Devices panel."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "When prompted, set feedback options for that device (LED/LCD/fader as needed).",
-                "text": "When prompted, set feedback options for that device (LED/LCD/fader as needed)."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Set Protocol mode to MCU.",
-                "text": "Set Protocol mode to MCU."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Set MCU layout to match your hardware: Single fader for one-fader controllers, or Multi fader for 8/9-fader controllers.",
-                "text": "Set MCU layout to match your hardware: Single fader for one-fader controllers, or Multi fader for 8/9-fader controllers."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 5,
-                "name": "If you skip setup or want to change it later, use Settings -> Device Feedback for that device.",
-                "text": "If you skip setup or want to change it later, use Settings -> Device Feedback for that device."
-              }
-            ]
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://midicommandstudio.com/"
           },
           {
-            "@type": "BreadcrumbList",
-            "@id": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html#breadcrumb",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://midicommandstudio.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Devices",
-                "item": "https://midicommandstudio.com/devices.html"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume",
-                "item": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html"
-              }
-            ]
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Devices",
+            "item": "https://midicommandstudio.com/devices.html"
           }
         ]
       }
     </script>
-    <!-- /Guide structured data -->
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="site.js"></script>
   </head>
-  <body class="device-page device-protocol-page device-advanced-page">
+  <body class="device-page devices-hub-page">
     <!-- Global site header -->
     <a class="site-skip-link" href="#main-content">Skip to main content</a>
     <header class="global-site-header">
@@ -128,11 +77,11 @@
           <details class="site-nav-group site-nav-group-devices is-active" data-nav-menu>
             <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
             <div id="devices-menu" class="site-nav-panel">
-                  <a href="devices.html">Browse Devices</a>
+                  <a href="devices.html" aria-current="page">Browse Devices</a>
                   <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
                   <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
                   <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
-                  <a href="mackie-mcu-controllers-windows-setup.html" aria-current="page">Mackie / MCU</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
             </div>
           </details>
           <a class="site-nav-direct" href="guides.html">Guides</a>
@@ -178,11 +127,11 @@
             <details class="site-mobile-group is-active" data-nav-menu>
               <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
               <div id="mobile-devices-menu" class="site-mobile-submenu">
-                  <a href="devices.html">Browse Devices</a>
+                  <a href="devices.html" aria-current="page">Browse Devices</a>
                   <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
                   <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
                   <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
-                  <a href="mackie-mcu-controllers-windows-setup.html" aria-current="page">Mackie / MCU</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
               </div>
             </details>
               <a class="site-mobile-direct" href="guides.html">Guides</a>
@@ -210,70 +159,101 @@
         <nav class="site-breadcrumbs" aria-label="Breadcrumb">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li><a href="devices.html">Devices</a></li>
-            <li><span aria-current="page">Mackie / MCU</span></li>
+            <li><span aria-current="page">Devices</span></li>
           </ol>
         </nav>
 
-        <section class="device-hero device-protocol-hero" aria-labelledby="device-title">
-          <div class="device-hero-grid device-hero-grid-single">
+        <section class="devices-hero" aria-labelledby="devices-title">
+          <div class="devices-hero-grid devices-hero-grid-single">
             <div>
-              <h1 id="device-title">Set up Mackie / MCU controllers on Windows.</h1>
-              <p class="device-hero-intro">
-                Configure MCU mode and layout in MIDI Command Studio, map hardware controls to Windows actions,
-                and verify feedback supported by the connected control surface.
+              <h1 id="devices-title">MIDI controllers and setup guides.</h1>
+              <p class="devices-hero-intro">
+                MIDI Command Studio can work with many MIDI controllers that expose suitable controls to Windows.
+                The devices below have dedicated setup guides; they are not a complete compatibility list.
               </p>
+              <p class="devices-test-note">Use MIDI Command Studio free to test MIDI Learn with your own device.</p>
             </div>
           </div>
         </section>
 
-        <nav class="device-local-nav" aria-label="On this page">
-          <a href="#protocol">Protocol</a>
-          <a href="#setup">Setup</a>
-        </nav>
-
-        <section id="protocol" class="device-section" aria-labelledby="protocol-title">
+        <section id="compatibility" class="device-section" aria-labelledby="compatibility-title">
           <div class="device-section-heading">
-            <h2 id="protocol-title">Mackie / MCU protocol</h2>
+            <h2 id="compatibility-title">Standard MIDI mapping and hardware feedback are different.</h2>
           </div>
-          <div class="device-prose device-prose-columns">
-            <p>
-              MIDI Command Studio supports the Mackie Control Universal (MCU) protocol and lets you map faders, knobs,
-              and encoders to shortcuts, macros, and volume control for Windows applications.
-              On supported controllers, MIDI Command Studio can provide LED feedback, display preset names on an LCD,
-              and update motorised fader positions.
-            </p>
-            <p>
-              This guide covers generic Mackie/MCU-compatible controllers. Hardware implementation varies, so use the
-              controller manual for the device-specific method of entering MCU mode.
-            </p>
+          <div class="devices-compatibility-grid devices-compatibility-grid-compact">
+            <article>
+              <p class="device-card-label">Standard mapping</p>
+              <h3>Standard MIDI controls</h3>
+              <p>
+                If MIDI Command Studio can learn a suitable control, it can be mapped to a supported Windows action.
+                This commonly includes buttons, pads, knobs, faders, encoders, and jog wheels.
+              </p>
+              <ul class="devices-marker-list">
+                <li>Keyboard shortcuts and macros</li>
+                <li>System, application, and input volume</li>
+                <li>Application targeting and preset switching</li>
+              </ul>
+            </article>
+            <article class="devices-compatibility-advanced">
+              <p class="device-card-label">Device dependent</p>
+              <h3>Hardware feedback</h3>
+              <p>
+                LED, LCD, and motorised-fader feedback depends on the controller, its selected mode, its MIDI
+                implementation, and any supported protocol behaviour.
+              </p>
+              <ul class="devices-marker-list">
+                <li>LED state feedback</li>
+                <li>LCD or text feedback</li>
+                <li>Motorised fader positioning</li>
+              </ul>
+            </article>
           </div>
-          <aside class="device-note device-note-caution">
-            <strong>Before you start</strong>
-            <p>Put the controller into Mackie / MCU mode—not HUI.</p>
-          </aside>
         </section>
 
-        <section id="setup" class="device-section" aria-labelledby="setup-title">
+        <section id="directory" class="device-section" aria-labelledby="directory-title">
           <div class="device-section-heading">
-            <h2 id="setup-title">Setup</h2>
+            <h2 id="directory-title">Device and protocol setup guides.</h2>
+            <p>Choose a guide for your device or protocol.</p>
           </div>
-          <ol class="device-step-list">
-            <li><span>01</span><div><strong>Add the controller</strong><p>Open MIDI Command Studio and add the controller from the Devices panel.</p></div></li>
-            <li><span>02</span><div><strong>Choose feedback</strong><p>When prompted, set LED, LCD, or fader feedback options as needed for that device.</p></div></li>
-            <li><span>03</span><div><strong>Select MCU</strong><p>Set <b>Protocol mode</b> to <b>MCU</b>.</p></div></li>
-            <li><span>04</span><div><strong>Match the layout</strong><p>Choose <b>Single fader</b> for one-fader hardware or <b>Multi fader</b> for 8/9-fader controllers.</p></div></li>
-            <li><span>05</span><div><strong>Adjust later</strong><p>If setup was skipped or needs changing, use <b>Settings → Device Feedback</b> for that device.</p></div></li>
-          </ol>
+          <div class="device-directory">
+            <article class="device-directory-card device-directory-card-simple">
+              <div class="device-directory-body">
+                <h3>Akai LPD8 MK2</h3>
+                <p>Setup information for its pads, knobs, Note/CC modes, and four hardware Programs.</p>
+              </div>
+              <a href="akai-lpd8-mk2-windows-setup.html" aria-label="Open the Akai LPD8 MK2 setup guide">Open setup guide <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="device-directory-card device-directory-card-simple">
+              <div class="device-directory-body">
+                <h3>Korg nanoKONTROL2</h3>
+                <p>Setup information for its faders, knobs, buttons, External LED mode, and Windows driver requirements.</p>
+              </div>
+              <a href="korg-nanokontrol2-windows-setup.html" aria-label="Open the Korg nanoKONTROL2 setup guide">Open setup guide <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="device-directory-card device-directory-card-simple">
+              <div class="device-directory-body">
+                <h3>Behringer X-Touch One</h3>
+                <p>Setup information for MIDI/MCU modes, LEDs, LCD text, motorised-fader feedback, and preset switching.</p>
+              </div>
+              <a href="behringer-x-touch-one-windows-setup.html" aria-label="Open the Behringer X-Touch One setup guide">Open device guide <span aria-hidden="true">→</span></a>
+            </article>
+
+            <article class="device-directory-card device-directory-card-simple">
+              <div class="device-directory-body">
+                <h3>Mackie / MCU</h3>
+                <p>Protocol setup for compatible single- and multi-fader control surfaces, including supported feedback behaviour.</p>
+              </div>
+              <a href="mackie-mcu-controllers-windows-setup.html" aria-label="Open the Mackie MCU protocol guide">Open protocol guide <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
         </section>
 
-        <section class="device-section" aria-label="Related guides">
+        <section id="unlisted" class="device-section" aria-labelledby="unlisted-title">
           <div class="device-section-heading">
-            <p class="device-section-label">Related guides</p>
-          </div>
-          <div class="device-related-grid">
-            <a href="behringer-x-touch-one-windows-setup.html"><span>Device example</span><strong>X-Touch One setup</strong></a>
-            <a href="devices.html"><span>Devices</span><strong>Browse device setup information</strong></a>
+            <h2 id="unlisted-title">An unlisted MIDI controller may still work.</h2>
+            <p>If Windows exposes suitable MIDI controls that MIDI Command Studio can learn, they may be mapped even when the device does not have a dedicated guide. Use MIDI Command Studio free to test your device.</p>
           </div>
         </section>
       </main>

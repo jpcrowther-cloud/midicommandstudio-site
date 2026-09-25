@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -20,100 +20,236 @@
     <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="site-logo">MIDI Command Studio</div>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a href="features.html">Features</a>
-          <a class="active" href="guides.html">Guides</a>
-          <a href="free-vs-full.html">Free vs Full</a>
-          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
-          <a href="privacy.html">Data &amp; Privacy</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="download.html">Download</a>
-          <a href="download.html">Buy Licence</a>
+  <body class="guides-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html" aria-current="page">Guides</a>
+          <details class="site-nav-group site-nav-group-support" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
         </nav>
-      </header>
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h1>Guides</h1>
-            <p>Practical setup guides for common MIDI workflows on Windows.</p>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html" aria-current="page">Guides</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
           </div>
-          <ul class="guide-list">
-            <li class="guide-list-item">
-              <h3>Use a MIDI controller with OBS on Windows</h3>
-              <p>Understand what MIDI Command Studio can control around OBS, including input levels, hotkeys, presets, and MCU workflows.</p>
-              <p><a href="use-midi-controller-with-obs-windows.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>Send shortcuts with MIDI</h3>
-              <p>Map buttons, pads, and controls to keyboard shortcuts in Windows apps.</p>
-              <p><a href="send-midi-shortcuts-windows.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>Control Windows volume with MIDI</h3>
-              <p>Use knobs and faders for system or app-specific volume targets.</p>
-              <p><a href="control-windows-volume-with-midi.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>Control Windows input volume and mute with MIDI</h3>
-              <p>Use MIDI controls to manage default or selected Windows input endpoints.</p>
-              <p><a href="control-windows-input-volume-mute-with-midi.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>MIDI macros for Windows apps</h3>
-              <p>See what one-button macro workflows can do with shortcuts, mouse actions, text, delays, and launch steps.</p>
-              <p><a href="midi-controller-macros-windows.html">Learn more</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>Play audio samples with MIDI</h3>
-              <p>Set up sample triggers, stop controls, and playback modes.</p>
-              <p><a href="midi-audio-sample-playback-windows.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>Set up Mackie/MCU controllers on Windows</h3>
-              <p>Configure MCU mode, LCD feedback, motorized fader feedback, and troubleshooting checks.</p>
-              <p><a href="mackie-mcu-controllers-windows-setup.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>Korg nanoKONTROL2 Windows 11 setup and LED feedback</h3>
-              <p>Configure recommended CC mode, LED feedback, and the current Windows MIDI driver setup.</p>
-              <p><a href="korg-nanokontrol2-windows-setup.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>X-Touch One one-fader volume control</h3>
-              <p>Control multiple targets with one motorized fader using preset switching.</p>
-              <p><a href="behringer-x-touch-one-volume-control.html">Open guide</a></p>
-            </li>
-            <li class="guide-list-item">
-              <h3>X-Touch One Windows setup and preset switching</h3>
-              <p>Configure MIDI mode, feedback options, and preset workflow setup.</p>
-              <p><a href="behringer-x-touch-one-windows-setup.html">Open guide</a></p>
-            </li>
-          </ul>
-          <div class="hero-actions">
-            <a class="btn primary" href="download.html"><span>Download Free Version</span></a>
-            <a class="btn ghost" href="download.html">Download Details</a>
-            <a class="btn ghost" href="features.html">See Features</a>
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page guides-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb">
+          <ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Guides</span></li></ol>
+        </nav>
+
+        <section class="guides-hero" aria-labelledby="guides-title">
+          <div class="guides-hero-grid">
+            <div>
+              <h1 id="guides-title">MIDI Command Studio guides</h1>
+              <p class="guides-hero-intro">Choose a guide for Windows controls, streaming and audio, or supported controller setups.</p>
+              <div class="guides-actions">
+                <a class="guides-button guides-button-primary" href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Open full Help</a>
+              </div>
+            </div>
+            <nav class="guides-hero-index" aria-label="Guide categories">
+              <p>Guide categories</p>
+              <a href="#getting-started"><span>01</span>Getting Started</a>
+              <a href="#windows-control"><span>02</span>Windows Control</a>
+              <a href="#streaming-audio"><span>03</span>Streaming &amp; Audio</a>
+              <a href="#device-guides"><span>04</span>Device Guides</a>
+            </nav>
+          </div>
+        </section>
+
+        <section id="getting-started" class="guides-section guide-category" aria-labelledby="getting-started-title">
+          <div class="guides-section-heading">
+            <h2 id="getting-started-title">Getting started</h2>
+          </div>
+          <div class="guide-entry-list">
+            <a class="guide-entry" href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener"><div><p class="guide-entry-type">Authoritative setup reference</p><h3>Full MIDI Command Studio Help</h3><p>Follow detailed instructions for device setup, mappings, settings, licensing, troubleshooting, and advanced functions.</p></div><span>Open Help</span></a>
+            <a class="guide-entry" href="send-midi-shortcuts-windows.html"><div><p class="guide-entry-type">First mapping guide</p><h3>Map a MIDI control to a Windows shortcut</h3><p>Learn a button or pad, assign a keyboard shortcut, choose application targeting, save the mapping, and test it.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="control-windows-volume-with-midi.html"><div><p class="guide-entry-type">Practical mapping guide</p><h3>Set up Windows or application volume</h3><p>Assign a fader, knob, or encoder to Windows system output or a selected running application.</p></div><span>Open guide</span></a>
+          </div>
+        </section>
+
+        <section id="windows-control" class="guides-section guide-category" aria-labelledby="windows-control-title">
+          <div class="guides-section-heading">
+            <h2 id="windows-control-title">Windows control</h2>
+          </div>
+          <div class="guide-entry-list">
+            <a class="guide-entry" href="send-midi-shortcuts-windows.html"><div><p class="guide-entry-type">Shortcut guide</p><h3>Send keyboard shortcuts with MIDI</h3><p>Map buttons or pads to Windows and application shortcuts, with optional application targeting.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="control-windows-volume-with-midi.html"><div><p class="guide-entry-type">Output audio guide</p><h3>Control Windows and application volume</h3><p>Set up a fader, knob, or encoder for system output or a selected application's playback level.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="control-windows-input-volume-mute-with-midi.html"><div><p class="guide-entry-type">Input audio guide</p><h3>Control Windows input volume and mute</h3><p>Assign level and mute controls to a suitable Windows microphone or input endpoint and understand the routing limitations.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="midi-controller-macros-windows.html"><div><p class="guide-entry-type">Automation guide</p><h3>Build multi-step MIDI macros</h3><p>Combine shortcuts, waits, text, mouse actions, program launches, and file-opening steps behind one control.</p></div><span>Open guide</span></a>
+          </div>
+          <a class="guides-section-link" href="use-cases.html">Browse workflows by practical outcome</a>
+        </section>
+
+        <section id="streaming-audio" class="guides-section guide-category" aria-labelledby="streaming-audio-title">
+          <div class="guides-section-heading">
+            <h2 id="streaming-audio-title">Streaming and audio</h2>
+          </div>
+          <div class="guide-entry-list">
+            <a class="guide-entry" href="use-midi-controller-with-obs-windows.html"><div><p class="guide-entry-type">OBS workflow guide</p><h3>Use a MIDI controller with OBS on Windows</h3><p>Combine OBS keyboard shortcuts with Windows audio controls, presets, macros, and supported MCU feedback.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="midi-audio-sample-playback-windows.html"><div><p class="guide-entry-type">Audio guide / Licence required</p><h3>Set up MIDI audio sample playback</h3><p>Create an Audio Preset, assign trigger and Stop All controls, select playback modes, and add an Audio Volume fader.</p></div><span>Open guide</span></a>
+          </div>
+        </section>
+
+        <section id="device-guides" class="guides-section guide-category" aria-labelledby="device-guides-title">
+          <div class="guides-section-heading">
+            <h2 id="device-guides-title">Device guides</h2>
+            <p>Setup information for documented controllers and protocols.</p>
+          </div>
+          <div class="guide-entry-list">
+            <a class="guide-entry" href="akai-lpd8-mk2-windows-setup.html"><div><p class="guide-entry-type">Device setup guide</p><h3>Akai LPD8 MK2</h3><p>Map Note/CC pads and knobs, then organise shortcut, macro, and volume layouts with four hardware Programs.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="korg-nanokontrol2-windows-setup.html"><div><p class="guide-entry-type">Device setup guide</p><h3>Korg nanoKONTROL2</h3><p>Configure the recommended CC mode, LED behaviour, and the documented Windows MIDI driver setup.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="behringer-x-touch-one-windows-setup.html"><div><p class="guide-entry-type">Device setup guide</p><h3>Behringer X-Touch One</h3><p>Configure MIDI mode, preset switching, and supported motorised-fader, LCD, and LED feedback.</p></div><span>Open guide</span></a>
+            <a class="guide-entry" href="mackie-mcu-controllers-windows-setup.html"><div><p class="guide-entry-type">Protocol setup guide</p><h3>Mackie / MCU controllers</h3><p>Configure MCU mode, select the controller layout, and set supported feedback options.</p></div><span>Open guide</span></a>
+          </div>
+          <a class="guides-section-link" href="devices.html">Browse all documented Devices</a>
+        </section>
+
+        <section class="guide-help-callout" aria-labelledby="help-title">
+          <div>
+            <h2 id="help-title">Full application reference</h2>
+            <p>Open the Help manual for complete information about settings, mappings, licensing and troubleshooting.</p>
+          </div>
+          <div class="guides-actions">
+            <a class="guides-button guides-button-primary" href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Open full Help</a>
           </div>
         </section>
       </main>
-      <footer class="footer">
-        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
-        <div class="footer-links">
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
           <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
-
-

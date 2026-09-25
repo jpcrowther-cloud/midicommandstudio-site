@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,7 @@
     <title>MIDI Command Studio | Features</title>
     <meta
       name="description"
-      content="Map MIDI controllers to Windows shortcuts, macros, and volume control with app targeting, LED feedback, and per-device presets."
+      content="Explore MIDI Command Studio features for Windows, including MIDI mapping, shortcuts, macros, presets, audio control, MIDI Thru, feedback, and sample playback."
     />
     <link rel="canonical" href="https://midicommandstudio.com/features.html" />
     <meta property="og:site_name" content="MIDI Command Studio" />
@@ -14,192 +14,430 @@
     <meta property="og:title" content="MIDI Command Studio | Features" />
     <meta
       property="og:description"
-      content="Map MIDI controllers to Windows shortcuts, macros, and volume control with app targeting, LED feedback, and per-device presets."
+      content="Explore MIDI Command Studio features for Windows, including MIDI mapping, shortcuts, macros, presets, audio control, MIDI Thru, feedback, and sample playback."
     />
     <meta property="og:url" content="https://midicommandstudio.com/features.html" />
     <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
   </head>
-  <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="site-logo">MIDI Command Studio</div>
-        <nav class="site-nav">
-          <a href="/">Home</a>
-          <a class="active" href="features.html">Features</a>
-          <a href="guides.html">Guides</a>
-          <a href="free-vs-full.html">Free vs Full</a>
-          <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a>
-          <a href="privacy.html">Data &amp; Privacy</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-          <a href="download.html">Download</a>
-          <a href="download.html">Buy Licence</a>
+  <body class="product-page product-features-page">
+    <!-- Global site header -->
+    <a class="site-skip-link" href="#main-content">Skip to main content</a>
+    <header class="global-site-header">
+      <div class="global-header-inner">
+        <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+          <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="site-brand-name">MIDI Command Studio</span>
+        </a>
+        <nav class="site-desktop-nav" aria-label="Primary navigation">
+          <a class="site-nav-direct" href="index.html">Home</a>
+          <details class="site-nav-group site-nav-group-product is-active" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="product-menu">Product</summary>
+            <div id="product-menu" class="site-nav-panel">
+                  <a href="features.html" aria-current="page">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-use-cases" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
+<div id="use-cases-menu" class="site-nav-panel">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+            </div>
+          </details>
+          <details class="site-nav-group site-nav-group-devices" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
+            <div id="devices-menu" class="site-nav-panel">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+            </div>
+          </details>
+          <a class="site-nav-direct" href="guides.html">Guides</a>
+          <details class="site-nav-group site-nav-group-support" data-nav-menu>
+            <summary aria-expanded="false" aria-controls="support-menu">Support</summary>
+<div id="support-menu" class="site-nav-panel">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+            </div>
+          </details>
         </nav>
-      </header>
-      <main>
-        <section class="section">
-          <div class="section-head">
-            <h1>Features</h1>
-            <p>Core capabilities, fast setup, and precise control for Windows.</p>
+        <div class="global-header-actions">
+          <a class="site-buy-link" href="download.html">Buy licence</a>
+          <a class="site-download-link" href="download.html">Download</a>
+        </div>
+        <div class="site-mobile-menu">
+          <button class="site-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-mobile-menu-panel" data-mobile-toggle>Menu</button>
+          <div id="site-mobile-menu-panel" class="site-mobile-panel" hidden>
+            <nav aria-label="Mobile navigation">
+              <a class="site-mobile-direct" href="index.html">Home</a>
+            <details class="site-mobile-group is-active" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-product-menu">Product</summary>
+              <div id="mobile-product-menu" class="site-mobile-submenu">
+                  <a href="features.html" aria-current="page">Features</a>
+                  <a href="free-vs-full.html">Licence options</a>
+                  <a href="download.html">Download</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
+<div id="mobile-use-cases-menu" class="site-mobile-submenu">
+                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
+                  <a href="midi-controller-macros-windows.html">Macros</a>
+                  <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
+                  <a href="control-windows-input-volume-mute-with-midi.html">Input volume/mute</a>
+                  <a href="use-midi-controller-with-obs-windows.html">OBS</a>
+                  <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
+              </div>
+            </details>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
+              <div id="mobile-devices-menu" class="site-mobile-submenu">
+                  <a href="devices.html">Browse Devices</a>
+                  <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
+                  <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
+                  <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+              </div>
+            </details>
+              <a class="site-mobile-direct" href="guides.html">Guides</a>
+            <details class="site-mobile-group" data-nav-menu>
+              <summary aria-expanded="false" aria-controls="mobile-support-menu">Support</summary>
+<div id="mobile-support-menu" class="site-mobile-submenu">
+                  <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Full Help (opens in new tab)</a>
+                  <a href="faq.html">FAQ</a>
+                  <a href="contact.html">Contact</a>
+                  <a href="privacy.html">Data & Privacy</a>
+              </div>
+            </details>
+            </nav>
+            <div class="site-mobile-actions">
+              <a href="download.html">Buy licence</a>
+              <a class="site-mobile-download" href="download.html">Download</a>
+            </div>
           </div>
-          <p class="body-copy">
-            MIDI Command Studio turns a MIDI controller into a dedicated control surface for everyday Windows work.
-            Build mappings quickly, target specific apps, and switch presets without breaking flow.
+        </div>
+      </div>
+    </header>
+    <!-- End global site header -->
+    <div class="page site-page product-page-shell">
+      <main id="main-content">
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><span>Product</span></li>
+            <li><span aria-current="page">Features</span></li>
+          </ol>
+        </nav>
+
+        <section class="product-hero product-hero-plain" aria-labelledby="features-title">
+          <div class="product-hero-layout">
+            <div class="product-hero-copy">
+              <h1 id="features-title">MIDI Command Studio features</h1>
+              <p class="product-hero-intro">
+                Map buttons, pads, knobs, faders, encoders, and jog wheels to shortcuts, macros, Windows audio,
+                app-specific actions, and controller feedback.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="product-section product-feature-summary" aria-labelledby="feature-summary-title">
+          <div class="product-section-heading">
+            <h2 id="feature-summary-title">Features at a glance</h2>
+          </div>
+          <ul class="product-feature-index">
+            <li>
+              <strong>MIDI Learn</strong>
+              <p>Learn buttons, pads, knobs, faders, encoders, jog wheels, and supported touch faders.</p>
+            </li>
+            <li>
+              <strong>Keyboard shortcuts</strong>
+              <p>Capture your own shortcut or choose one from the built-in shortcut palette.</p>
+            </li>
+            <li>
+              <strong>Application targeting</strong>
+              <p>Keep shortcuts global, limit them to a focused app, or bring the selected app forward before sending.</p>
+            </li>
+            <li>
+              <strong>Multi-step macros</strong>
+              <p>Combine shortcuts, waits, mouse actions, text input, and program or file launches with optional arguments.</p>
+            </li>
+            <li>
+              <strong>Windows audio</strong>
+              <p>Control system volume, individual application volume, and supported input volume and mute targets.</p>
+            </li>
+            <li>
+              <strong>Per-device presets</strong>
+              <p>Create different layouts for each controller and switch or cycle through them from the hardware.</p>
+            </li>
+            <li>
+              <strong>Controller feedback</strong>
+              <p>Use LED feedback, plus LCD labels and motorised-fader feedback on supported hardware.</p>
+            </li>
+            <li>
+              <strong>MIDI Thru</strong>
+              <p>Pass unmapped MIDI messages to another application through a configured virtual MIDI port.</p>
+            </li>
+            <li>
+              <strong>Audio sample playback</strong>
+              <p>Trigger and stop samples, choose playback behaviour, and control sample volume. Requires a licence.</p>
+            </li>
+            <li>
+              <strong>Multiple active devices</strong>
+              <p>Use more than one MIDI device at the same time after activating a licence.</p>
+            </li>
+            <li>
+              <strong>Automatic saving</strong>
+              <p>Preset mappings and device settings are saved automatically.</p>
+            </li>
+            <li>
+              <strong>Standard MIDI and MCU</strong>
+              <p>Use ordinary MIDI controls or supported Mackie Control Universal hardware and feedback.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="product-section product-overview" aria-labelledby="overview-title">
+          <div class="product-section-heading">
+            <h2 id="overview-title">Connect devices, create mappings, and switch presets.</h2>
+          </div>
+          <div class="product-overview-grid">
+            <figure class="product-screenshot product-screenshot-main">
+              <img
+                src="assets/Main app.webp"
+                width="1202"
+                height="712"
+                loading="lazy"
+                alt="MIDI Command Studio main window showing connected devices, presets, and mappings"
+              />
+              <figcaption>Main workspace: devices, presets, mappings, and status at a glance.</figcaption>
+            </figure>
+            <div class="product-overview-copy">
+              <p>
+                MIDI Command Studio listens to a connected MIDI controller and translates its controls into useful
+                Windows actions. Learn a physical control, choose what it should do, and save it as part of a preset.
+              </p>
+              <dl class="product-fact-list">
+                <div>
+                  <dt>Map</dt>
+                  <dd>Learn controls quickly with dedicated mapping options for different control types.</dd>
+                </div>
+                <div>
+                  <dt>Target</dt>
+                  <dd>Keep an action global or direct it to a specific Windows application.</dd>
+                </div>
+                <div>
+                  <dt>Recall</dt>
+                  <dd>Switch presets from the app or directly from the controller.</dd>
+                </div>
+                <div>
+                  <dt>Save</dt>
+                  <dd>Presets and device settings are saved automatically.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="product-section" aria-labelledby="mapping-title">
+          <div class="product-section-heading">
+            <h2 id="mapping-title">Map buttons, pads, knobs, faders, encoders, and jog wheels.</h2>
+            <p>
+              Dedicated learn controls make it practical to map buttons, pads, knobs, faders, encoders, and jog wheels.
+            </p>
+          </div>
+          <div class="product-split">
+            <div class="product-capability-list">
+              <article>
+                <h3>Keyboard shortcuts</h3>
+                <p>Capture your own shortcut or choose one from the built-in shortcut palette.</p>
+              </article>
+              <article>
+                <h3>App targeting</h3>
+                <p>Send mappings to a specific application or keep them available globally across Windows.</p>
+              </article>
+            </div>
+            <figure class="product-screenshot product-screenshot-portrait">
+              <img
+                src="assets/Edit Mapping.webp"
+                width="582"
+                height="672"
+                loading="lazy"
+                alt="Edit Mapping window with MIDI input and action options"
+              />
+              <figcaption>Edit a learned control and choose its Windows action.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="product-section" aria-labelledby="automation-title">
+          <div class="product-section-heading">
+            <h2 id="automation-title">Create shortcuts and multi-step macros.</h2>
+            <p>
+              Use the shortcut palette for fast assignments, or build multi-step macros with shortcuts, waits, mouse
+              actions, text input, and program launch.
+            </p>
+          </div>
+          <div class="product-media-pair">
+            <figure class="product-screenshot">
+              <img
+                src="assets/Shortcut Palette.webp"
+                width="872"
+                height="632"
+                loading="lazy"
+                alt="Shortcut Palette with categorized application shortcuts"
+              />
+              <figcaption>Choose from built-in shortcut lists or capture your own combination.</figcaption>
+            </figure>
+            <figure class="product-screenshot">
+              <img
+                src="assets/Macro Editor.webp"
+                width="902"
+                height="582"
+                loading="lazy"
+                alt="Macro Editor showing a sequence of configurable actions"
+              />
+              <figcaption>Build ordered actions without writing a script.</figcaption>
+            </figure>
+          </div>
+          <p class="product-inline-link">
+            <a href="send-midi-shortcuts-windows.html">Explore MIDI shortcuts</a>
+            <a href="midi-controller-macros-windows.html">Explore MIDI macros</a>
           </p>
-          <div class="feature-grid">
-            <div class="feature-card">
-              <h3>Mapping and Control</h3>
-              <p>Dedicated learn buttons for each control type let you assign mappings quickly and accurately.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Presets and Workflow</h3>
-              <p>Create presets and switch quickly during a session.</p>
-              <p>Switch presets from the app or directly from your controller.</p>
-            </div>
-            <div class="feature-card">
-              <h3>LED Feedback</h3>
-              <p>Use always-on, momentary, or toggle LED modes on supported devices.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Mackie/MCU Support</h3>
-              <p>Compatible MCU devices can receive LCD scribble-strip text and motorized fader feedback.</p>
-            </div>
-            <div class="feature-card">
-              <h3>App Targeting</h3>
-              <p>Send mappings to a specific app or keep them global across Windows.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Macros</h3>
-              <p>Build multi-step actions without scripting, including shortcuts, waits, mouse actions, text input, and program launch.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Volume Control</h3>
-              <p>Control system volume or a specific application volume with a fader or knob.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Windows Input Volume &amp; Mute</h3>
-              <p>Control default or selected Windows input endpoints (mic/line-in) from MIDI, with dedicated mute mapping support.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Simple Audio Sample Playback</h3>
-              <p>Trigger samples, stop playback, and control audio level from your MIDI controller.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Shortcut Palette</h3>
-              <p>Pick shortcuts from a built-in library for many apps, or capture your own shortcuts.</p>
-            </div>
-            <div class="feature-card">
+        </section>
+
+        <section class="product-section" aria-labelledby="audio-title">
+          <div class="product-section-heading">
+            <h2 id="audio-title">Control Windows, app, and input volume.</h2>
+          </div>
+          <div class="product-feature-rows">
+            <article>
+              <div>
+                <h3>System volume</h3>
+                <p>Control the main Windows volume with a fader, knob, or encoder.</p>
+              </div>
+            </article>
+            <article>
+              <div>
+                <h3>Per-application volume</h3>
+                <p>Assign controls to the volume of a specific Windows application.</p>
+              </div>
+            </article>
+            <article>
+              <div>
+                <h3>Input volume &amp; mute</h3>
+                <p>Control the default or a selected Windows input endpoint, including dedicated mute mappings.</p>
+              </div>
+            </article>
+          </div>
+          <p class="product-inline-link">
+            <a href="control-windows-volume-with-midi.html">Windows and app volume guide</a>
+            <a href="control-windows-input-volume-mute-with-midi.html">Input volume and mute guide</a>
+          </p>
+        </section>
+
+        <section class="product-section" aria-labelledby="workflow-title">
+          <div class="product-section-heading">
+            <h2 id="workflow-title">Create presets and use supported feedback.</h2>
+          </div>
+          <div class="product-workflow-grid">
+            <article>
+              <h3>Per-device presets</h3>
+              <p>Create different mapping sets for different tasks, then switch from the app or from your controller.</p>
+            </article>
+            <article>
+              <h3>LED modes</h3>
+              <p>Use always-on, momentary, or toggle LED feedback on supported devices.</p>
+            </article>
+            <article>
+              <h3>Mackie / MCU</h3>
+              <p>Compatible MCU hardware can receive LCD scribble-strip text and motorised fader feedback.</p>
+            </article>
+            <article>
+              <h3>Behringer X-Touch One</h3>
+              <p>Use standard MIDI or Mackie mode, including LCD and motorised fader feedback where supported.</p>
+              <a href="behringer-x-touch-one-windows-setup.html">View setup guide</a>
+            </article>
+          </div>
+          <p class="product-hardware-note">
+            Feedback capabilities depend on the connected hardware and its selected operating mode.
+          </p>
+          <p class="product-inline-link">
+            <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU setup</a>
+          </p>
+        </section>
+
+        <section class="product-section" aria-labelledby="midi-title">
+          <div class="product-section-heading">
+            <h2 id="midi-title">Use MIDI Thru and audio sample playback.</h2>
+          </div>
+          <div class="product-dual-panel">
+            <article>
               <h3>MIDI Thru</h3>
-              <p>Pass unmapped MIDI controls through to other apps using a virtual MIDI port.</p>
-            </div>
-            <div class="feature-card">
-              <h3>Autosave</h3>
-              <p>Presets and device settings are saved automatically.</p>
-            </div>
+              <p>Pass unmapped MIDI messages to another application through a correctly configured virtual MIDI port.</p>
+            </article>
+            <article>
+              <p class="product-card-label">Licence required</p>
+              <h3>Simple audio sample playback</h3>
+              <p>Trigger samples, stop playback, choose playback modes, and control sample volume from MIDI.</p>
+              <a href="midi-audio-sample-playback-windows.html">See the playback guide</a>
+            </article>
           </div>
         </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Behringer X-Touch One</h2>
-            <p>Dedicated support in both standard MIDI and MCU workflows.</p>
-          </div>
-          <p class="body-copy">
-            MIDI Command Studio supports the X-Touch One in standard MIDI and also Mackie mode for LCD
-            scribble-strip text and motorized fader feedback.
-          </p>
-          <p class="body-copy">
-            Both workflows are supported, so you can choose the mode that best fits your setup.
-          </p>
-          <p class="body-copy">
-            For a complete setup, see
-            <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One Windows setup guide</a>.
-          </p>
-          <p class="body-copy">
-            For one-fader multi-target volume workflow, see
-            <a href="behringer-x-touch-one-volume-control.html">Behringer X-Touch One: control multiple volumes with one fader</a>.
-          </p>
-        </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Roadmap (Planned)</h2>
-            <p>Current priorities for upcoming development.</p>
-          </div>
-          <div class="feature-card">
-            <ul class="use-list">
-              <li>App certificate to reduce Windows SmartScreen notifications.</li>
-              <li>In-app creation of virtual ports to simplify MIDI Thru, using the new Windows MIDI update.</li>
-              <li>Hybrid Bridge mode (DAW + MCS mappings): allow simultaneous DAW control and custom shortcut/macro mappings from one controller.</li>
-              <li>OBS WebSocket integration.</li>
-            </ul>
-            <p class="legacy-note">Roadmap items are planned priorities and may change.</p>
-          </div>
-        </section>
-        <section class="section">
-          <div class="section-head">
-            <h2>Guides for Common Setups</h2>
-            <p>Practical setup guides for common first-time workflows.</p>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>Use a MIDI controller with OBS on Windows</h3>
-              <p>See how OBS hotkeys, input control, presets, and Mackie/MCU workflows fit together.</p>
-              <p><a href="use-midi-controller-with-obs-windows.html">Open guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>How to send keyboard shortcuts with MIDI</h3>
-              <p>Map buttons, pads, and encoders to shortcut combinations in Windows apps.</p>
-              <p><a href="send-midi-shortcuts-windows.html">Open guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>How to control Windows volume with MIDI</h3>
-              <p>Use one control for system volume or route controls to app-specific volume targets.</p>
-              <p><a href="control-windows-volume-with-midi.html">Open guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>MIDI macros for Windows apps</h3>
-              <p>See how one-button action chains fit into shortcut, preset, and workflow-heavy Windows setups.</p>
-              <p><a href="midi-controller-macros-windows.html">Learn more</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>How to play audio samples with MIDI on Windows</h3>
-              <p>Set up trigger, stop, and playback mode mappings for quick sample playback.</p>
-              <p><a href="midi-audio-sample-playback-windows.html">Open guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>How to set up Mackie/MCU controllers on Windows</h3>
-              <p>Set protocol mode, feedback options, and validate LCD and motorized fader behavior.</p>
-              <p><a href="mackie-mcu-controllers-windows-setup.html">Open guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Behringer X-Touch One one-fader volume control</h3>
-              <p>Switch presets to control multiple app and system volume targets with one fader.</p>
-              <p><a href="behringer-x-touch-one-volume-control.html">Open guide</a></p>
-            </article>
-            <article class="feature-card">
-              <h3>Behringer X-Touch One Windows setup</h3>
-              <p>Set up connection, preset switching, LCD labels, and motorized fader feedback.</p>
-              <p><a href="behringer-x-touch-one-windows-setup.html">Open guide</a></p>
-            </article>
-          </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="download.html">Download Free Version</a>
-            <a class="btn ghost" href="download.html">Download Details</a>
-          </div>
-        </section>
+
+        <p class="product-page-links">
+          Compare <a href="free-vs-full.html">licence options</a>, browse the <a href="guides.html">setup guides</a>,
+          or open the <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">full Help file</a>.
+        </p>
       </main>
-      <footer class="footer">
-        <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
-        <div class="footer-links">
+    </div>
+    <!-- Global site footer -->
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-grid">
+          <div class="site-footer-brand">
+            <a class="site-brand" href="index.html" aria-label="MIDI Command Studio home">
+              <span class="site-brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+              <span class="site-brand-name">MIDI Command Studio</span>
+            </a>
+            <p>Physical MIDI controls for practical Windows workflows.</p>
+          </div>
+          <div class="site-footer-column"><h2>Product</h2><nav aria-label="Product links">
+            <a href="features.html">Features</a><a href="free-vs-full.html">Licence options</a><a href="download.html">Download</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Explore</h2><nav aria-label="Explore links">
+            <a href="use-cases.html">Browse Use Cases</a><a href="guides.html">Guides</a><a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a><a href="control-windows-volume-with-midi.html">Windows volume</a><a href="midi-controller-macros-windows.html">MIDI macros</a><a href="use-midi-controller-with-obs-windows.html">OBS workflows</a>
+          </nav></div>
+          <div class="site-footer-column"><h2>Devices</h2><nav aria-label="Device links">
+            <a href="devices.html">Browse Devices</a><a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a><a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a><a href="behringer-x-touch-one-windows-setup.html">X-Touch One</a><a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
+          </nav></div>
+<div class="site-footer-column"><h2>Support</h2><nav aria-label="Support and legal links">
+            <a href="help/MIDI_Command_Studio_Help.html" target="_blank" rel="noopener">Help</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Data & Privacy</a>
+          </nav></div>
+        </div>
+        <div class="site-footer-bottom">
+          <span>&copy; 2026 Meltopia. MIDI Command Studio.</span>
           <a href="https://github.com/jpcrowther-cloud/midi-command-studio-docs" target="_blank" rel="noopener noreferrer">Documentation on GitHub</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+    <!-- End global site footer -->
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
-
-

@@ -3,98 +3,31 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mackie/MCU Setup on Windows | MIDI Command Studio</title>
-    <meta
-      name="description"
-      content="Set up a Mackie Control Universal (MCU) compatible controller with MIDI Command Studio for Windows shortcuts, macros, volume control, and supported feedback."
-    />
-    <link rel="canonical" href="https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html" />
+    <title>MIDI Controller Use Cases for Windows | MIDI Command Studio</title>
+    <meta name="description" content="Explore practical ways to use a MIDI controller for Windows shortcuts, macros, system and app volume, input mute, OBS workflows, and audio samples." />
+    <link rel="canonical" href="https://midicommandstudio.com/use-cases.html" />
     <meta property="og:site_name" content="MIDI Command Studio" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Mackie/MCU Setup on Windows | MIDI Command Studio" />
-    <meta
-      property="og:description"
-      content="Set up a Mackie Control Universal (MCU) compatible controller with MIDI Command Studio for Windows shortcuts, macros, volume control, and supported feedback."
-    />
-    <meta property="og:url" content="https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html" />
+    <meta property="og:title" content="MIDI Controller Use Cases for Windows | MIDI Command Studio" />
+    <meta property="og:description" content="Explore practical ways to use a MIDI controller for Windows shortcuts, macros, volume, OBS workflows, and audio samples." />
+    <meta property="og:url" content="https://midicommandstudio.com/use-cases.html" />
     <meta property="og:image" content="https://midicommandstudio.com/assets/social-card.jpg" />
-    <!-- Guide structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "HowTo",
-            "@id": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html#howto",
-            "name": "How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume",
-            "description": "Set up Mackie Control Universal (MCU) MIDI controllers on Windows with MIDI Command Studio, including mapping, preset switching, LCD text, LED updates, and motorised fader feedback.",
-            "url": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html",
-            "step": [
-              {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Open MIDI Command Studio and add your controller from the Devices panel.",
-                "text": "Open MIDI Command Studio and add your controller from the Devices panel."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "When prompted, set feedback options for that device (LED/LCD/fader as needed).",
-                "text": "When prompted, set feedback options for that device (LED/LCD/fader as needed)."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Set Protocol mode to MCU.",
-                "text": "Set Protocol mode to MCU."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Set MCU layout to match your hardware: Single fader for one-fader controllers, or Multi fader for 8/9-fader controllers.",
-                "text": "Set MCU layout to match your hardware: Single fader for one-fader controllers, or Multi fader for 8/9-fader controllers."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 5,
-                "name": "If you skip setup or want to change it later, use Settings -> Device Feedback for that device.",
-                "text": "If you skip setup or want to change it later, use Settings -> Device Feedback for that device."
-              }
-            ]
-          },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html#breadcrumb",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://midicommandstudio.com/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Devices",
-                "item": "https://midicommandstudio.com/devices.html"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "How to Set Up Mackie Control Universal (MCU) on Windows for Shortcuts, Macros, and Volume",
-                "item": "https://midicommandstudio.com/mackie-mcu-controllers-windows-setup.html"
-              }
-            ]
-          }
+        "@type": "BreadcrumbList",
+        "@id": "https://midicommandstudio.com/use-cases.html#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://midicommandstudio.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://midicommandstudio.com/use-cases.html"}
         ]
       }
     </script>
-    <!-- /Guide structured data -->
     <link rel="icon" href="assets/mcs_exact.ico" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="site.js"></script>
   </head>
-  <body class="device-page device-protocol-page device-advanced-page">
+  <body class="use-case-page use-cases-hub-page">
     <!-- Global site header -->
     <a class="site-skip-link" href="#main-content">Skip to main content</a>
     <header class="global-site-header">
@@ -113,10 +46,10 @@
                   <a href="download.html">Download</a>
             </div>
           </details>
-          <details class="site-nav-group site-nav-group-use-cases" data-nav-menu>
+          <details class="site-nav-group site-nav-group-use-cases is-active" data-nav-menu>
             <summary aria-expanded="false" aria-controls="use-cases-menu">Use Cases</summary>
 <div id="use-cases-menu" class="site-nav-panel">
-                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="use-cases.html" aria-current="page">Browse Use Cases</a>
                   <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
                   <a href="midi-controller-macros-windows.html">Macros</a>
                   <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
@@ -125,14 +58,14 @@
                   <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
             </div>
           </details>
-          <details class="site-nav-group site-nav-group-devices is-active" data-nav-menu>
+          <details class="site-nav-group site-nav-group-devices" data-nav-menu>
             <summary aria-expanded="false" aria-controls="devices-menu">Devices</summary>
             <div id="devices-menu" class="site-nav-panel">
                   <a href="devices.html">Browse Devices</a>
                   <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
                   <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
                   <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
-                  <a href="mackie-mcu-controllers-windows-setup.html" aria-current="page">Mackie / MCU</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
             </div>
           </details>
           <a class="site-nav-direct" href="guides.html">Guides</a>
@@ -163,10 +96,10 @@
                   <a href="download.html">Download</a>
               </div>
             </details>
-            <details class="site-mobile-group" data-nav-menu>
+            <details class="site-mobile-group is-active" data-nav-menu>
               <summary aria-expanded="false" aria-controls="mobile-use-cases-menu">Use Cases</summary>
 <div id="mobile-use-cases-menu" class="site-mobile-submenu">
-                  <a href="use-cases.html">Browse Use Cases</a>
+                  <a href="use-cases.html" aria-current="page">Browse Use Cases</a>
                   <a href="send-midi-shortcuts-windows.html">MIDI shortcuts</a>
                   <a href="midi-controller-macros-windows.html">Macros</a>
                   <a href="control-windows-volume-with-midi.html">Windows/app volume</a>
@@ -175,14 +108,14 @@
                   <a href="midi-audio-sample-playback-windows.html">Audio samples</a>
               </div>
             </details>
-            <details class="site-mobile-group is-active" data-nav-menu>
+            <details class="site-mobile-group" data-nav-menu>
               <summary aria-expanded="false" aria-controls="mobile-devices-menu">Devices</summary>
               <div id="mobile-devices-menu" class="site-mobile-submenu">
                   <a href="devices.html">Browse Devices</a>
                   <a href="akai-lpd8-mk2-windows-setup.html">Akai LPD8 MK2</a>
                   <a href="korg-nanokontrol2-windows-setup.html">Korg nanoKONTROL2</a>
                   <a href="behringer-x-touch-one-windows-setup.html">Behringer X-Touch One</a>
-                  <a href="mackie-mcu-controllers-windows-setup.html" aria-current="page">Mackie / MCU</a>
+                  <a href="mackie-mcu-controllers-windows-setup.html">Mackie / MCU</a>
               </div>
             </details>
               <a class="site-mobile-direct" href="guides.html">Guides</a>
@@ -205,77 +138,30 @@
       </div>
     </header>
     <!-- End global site header -->
-    <div class="page site-page device-page-shell">
+    <div class="page site-page use-case-page-shell">
       <main id="main-content">
-        <nav class="site-breadcrumbs" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="devices.html">Devices</a></li>
-            <li><span aria-current="page">Mackie / MCU</span></li>
-          </ol>
-        </nav>
+        <nav class="site-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Use Cases</span></li></ol></nav>
 
-        <section class="device-hero device-protocol-hero" aria-labelledby="device-title">
-          <div class="device-hero-grid device-hero-grid-single">
+        <section class="use-case-hero use-case-hero-plain use-cases-hub-hero" aria-labelledby="use-cases-title">
+          <div class="use-case-hero-grid use-case-hero-grid-single">
             <div>
-              <h1 id="device-title">Set up Mackie / MCU controllers on Windows.</h1>
-              <p class="device-hero-intro">
-                Configure MCU mode and layout in MIDI Command Studio, map hardware controls to Windows actions,
-                and verify feedback supported by the connected control surface.
-              </p>
+              <h1 id="use-cases-title">Use your MIDI controller with Windows applications.</h1>
+              <p class="use-case-hero-intro">Turn buttons, pads, knobs, faders, encoders, and jog wheels into practical controls for everyday Windows software.</p>
             </div>
           </div>
         </section>
 
-        <nav class="device-local-nav" aria-label="On this page">
-          <a href="#protocol">Protocol</a>
-          <a href="#setup">Setup</a>
-        </nav>
-
-        <section id="protocol" class="device-section" aria-labelledby="protocol-title">
-          <div class="device-section-heading">
-            <h2 id="protocol-title">Mackie / MCU protocol</h2>
-          </div>
-          <div class="device-prose device-prose-columns">
-            <p>
-              MIDI Command Studio supports the Mackie Control Universal (MCU) protocol and lets you map faders, knobs,
-              and encoders to shortcuts, macros, and volume control for Windows applications.
-              On supported controllers, MIDI Command Studio can provide LED feedback, display preset names on an LCD,
-              and update motorised fader positions.
-            </p>
-            <p>
-              This guide covers generic Mackie/MCU-compatible controllers. Hardware implementation varies, so use the
-              controller manual for the device-specific method of entering MCU mode.
-            </p>
-          </div>
-          <aside class="device-note device-note-caution">
-            <strong>Before you start</strong>
-            <p>Put the controller into Mackie / MCU mode—not HUI.</p>
-          </aside>
-        </section>
-
-        <section id="setup" class="device-section" aria-labelledby="setup-title">
-          <div class="device-section-heading">
-            <h2 id="setup-title">Setup</h2>
-          </div>
-          <ol class="device-step-list">
-            <li><span>01</span><div><strong>Add the controller</strong><p>Open MIDI Command Studio and add the controller from the Devices panel.</p></div></li>
-            <li><span>02</span><div><strong>Choose feedback</strong><p>When prompted, set LED, LCD, or fader feedback options as needed for that device.</p></div></li>
-            <li><span>03</span><div><strong>Select MCU</strong><p>Set <b>Protocol mode</b> to <b>MCU</b>.</p></div></li>
-            <li><span>04</span><div><strong>Match the layout</strong><p>Choose <b>Single fader</b> for one-fader hardware or <b>Multi fader</b> for 8/9-fader controllers.</p></div></li>
-            <li><span>05</span><div><strong>Adjust later</strong><p>If setup was skipped or needs changing, use <b>Settings → Device Feedback</b> for that device.</p></div></li>
-          </ol>
-        </section>
-
-        <section class="device-section" aria-label="Related guides">
-          <div class="device-section-heading">
-            <p class="device-section-label">Related guides</p>
-          </div>
-          <div class="device-related-grid">
-            <a href="behringer-x-touch-one-windows-setup.html"><span>Device example</span><strong>X-Touch One setup</strong></a>
-            <a href="devices.html"><span>Devices</span><strong>Browse device setup information</strong></a>
+        <section id="directory" class="use-case-section" aria-label="Workflows">
+          <div class="use-case-directory-grid">
+            <a class="use-case-directory-card" href="send-midi-shortcuts-windows.html"><div><p class="use-case-card-label">Buttons and pads</p><h3>Send keyboard shortcuts</h3><p>Put application commands and global Windows hotkeys on dedicated physical controls.</p><strong>Explore MIDI shortcuts <span aria-hidden="true">&rarr;</span></strong></div></a>
+            <a class="use-case-directory-card" href="midi-controller-macros-windows.html"><div><p class="use-case-card-label">Buttons and pads</p><h3>Run multi-step macros</h3><p>Combine shortcuts, waits, text, mouse actions, and launch steps into one repeatable sequence.</p><strong>Explore MIDI macros <span aria-hidden="true">&rarr;</span></strong></div></a>
+            <a class="use-case-directory-card" href="control-windows-volume-with-midi.html"><div><p class="use-case-card-label">Faders, knobs, encoders</p><h3>Control Windows and app volume</h3><p>Keep the system output or a specific running application's playback level under your hand.</p><strong>Explore output volume <span aria-hidden="true">&rarr;</span></strong></div></a>
+            <a class="use-case-directory-card" href="control-windows-input-volume-mute-with-midi.html"><div><p class="use-case-card-label">Faders, knobs, buttons</p><h3>Control input volume and mute</h3><p>Adjust a Windows microphone or input endpoint and pair it with a physical mute control.</p><strong>Explore input control <span aria-hidden="true">&rarr;</span></strong></div></a>
+            <a class="use-case-directory-card" href="use-midi-controller-with-obs-windows.html"><div><p class="use-case-card-label">Buttons, faders, control surfaces</p><h3>Build an OBS workflow</h3><p>Use OBS hotkeys, Windows input control, presets, and compatible MCU feedback in a wider streaming setup.</p><strong>Explore OBS workflows <span aria-hidden="true">&rarr;</span></strong></div></a>
+            <a class="use-case-directory-card" href="midi-audio-sample-playback-windows.html"><div><p class="use-case-card-label">Pads, buttons, fader / Licence required</p><h3>Trigger audio samples</h3><p>Play sound effects or stingers, add Stop All, and control overall sample playback level.</p><strong>Explore audio samples <span aria-hidden="true">&rarr;</span></strong></div></a>
           </div>
         </section>
+
       </main>
     </div>
     <!-- Global site footer -->
@@ -312,5 +198,5 @@
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "9a9147fbf46b4111bfa38201e43bf1e1"}'></script>
     <!-- End Cloudflare Web Analytics -->
-  </body>
+    </body>
 </html>
