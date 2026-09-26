@@ -224,6 +224,7 @@
         var turnstilePlaceholder = "PASTE_TURNSTILE_SITE_KEY_HERE";
         var status = document.getElementById("contact-status");
         var submit = form.querySelector(".contact-submit");
+        var submitDefaultLabel = submit ? submit.textContent : "Send Message";
         var widget = form.querySelector(".cf-turnstile");
         var submitFrame = document.getElementById("contact-submit-frame");
         var siteKey = (widget && widget.getAttribute("data-sitekey")) || "";
@@ -266,7 +267,10 @@
         }
 
         function formatCooldown(ms) {
-          return Math.max(1, Math.ceil(ms / 1000));
+          var totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+          var minutes = Math.floor(totalSeconds / 60);
+          var seconds = totalSeconds % 60;
+          return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
         }
 
         function setCooldownStatus() {
@@ -274,10 +278,7 @@
           if (pending) return;
           if (remaining > 0) {
             setSubmitEnabled(false);
-            setStatus("Please wait " + formatCooldown(remaining) + " seconds before sending another message.", "is-pending");
-          } else if (status && status.classList.contains("is-pending")) {
-            setSubmitEnabled(true);
-            setStatus("", "");
+            if (submit) submit.textContent = submitDefaultLabel + " (" + formatCooldown(remaining) + ")";
           } else {
             setSubmitEnabled(true);
           }
@@ -309,6 +310,7 @@
         function setSubmitEnabled(enabled) {
           if (!submit) return;
           submit.disabled = !enabled;
+          if (enabled) submit.textContent = submitDefaultLabel;
         }
 
         function clearFormAndReset() {

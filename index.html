@@ -191,68 +191,81 @@
             </div>
           </div>
 
-          <figure
-            class="home-product-figure home-product-carousel"
-            aria-label="MIDI Command Studio interface screenshots"
-            tabindex="0"
-            data-product-carousel
-          >
-            <div class="home-product-carousel-viewport">
-              <div class="home-product-carousel-slide is-active" aria-hidden="false" data-product-slide="0">
-                <img
-                  src="assets/main app.png"
-                  alt="MIDI Command Studio main window showing connected MIDI devices, a Firefox preset, MIDI Learn controls and assigned mappings"
-                  width="1196"
-                  height="707"
-                  loading="eager"
-                  fetchpriority="high"
-                  decoding="async"
-                />
-              </div>
-              <div class="home-product-carousel-slide" aria-hidden="true" data-product-slide="1" hidden>
-                <img
-                  src="assets/Mapping Editor.png"
-                  alt="MIDI Command Studio Mapping Editor showing MIDI input, action, application targeting and control behaviour settings"
-                  width="582"
-                  height="672"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="home-product-carousel-slide" aria-hidden="true" data-product-slide="2" hidden>
-                <img
-                  src="assets/Shortcut Palette.png"
-                  alt="MIDI Command Studio Shortcut Palette showing built-in shortcut categories and commands"
-                  width="872"
-                  height="632"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="home-product-carousel-slide" aria-hidden="true" data-product-slide="3" hidden>
-                <img
-                  src="assets/Macro Editor.webp"
-                  alt="MIDI Command Studio Macro Editor showing an ordered sequence of actions"
-                  width="902"
-                  height="582"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <button class="home-product-carousel-arrow home-product-carousel-prev" type="button" aria-label="Previous screenshot" data-product-prev>
-                <span aria-hidden="true">&#8249;</span>
-              </button>
-              <button class="home-product-carousel-arrow home-product-carousel-next" type="button" aria-label="Next screenshot" data-product-next>
-                <span aria-hidden="true">&#8250;</span>
-              </button>
+          <figure class="home-product-figure home-product-overview" aria-labelledby="home-product-overview-caption">
+            <div class="home-product-overview-main">
+              <img
+                src="assets/Volume Control.png"
+                alt="MIDI Command Studio main window showing the Volume Control preset with mappings for Windows audio inputs and individual applications"
+                width="1202"
+                height="712"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <span>Main window &middot; Volume Control preset</span>
             </div>
-            <div class="home-product-carousel-dots" aria-label="Choose an interface screenshot">
-              <button type="button" aria-label="Show screenshot 1 of 4" aria-current="true" data-product-dot="0"></button>
-              <button type="button" aria-label="Show screenshot 2 of 4" aria-current="false" data-product-dot="1"></button>
-              <button type="button" aria-label="Show screenshot 3 of 4" aria-current="false" data-product-dot="2"></button>
-              <button type="button" aria-label="Show screenshot 4 of 4" aria-current="false" data-product-dot="3"></button>
+
+            <div class="home-product-overview-tools" aria-label="Additional MIDI Command Studio windows">
+              <div class="home-product-overview-card">
+                <div class="home-product-overview-media">
+                  <img
+                    src="assets/Mapping Editor.png"
+                    alt="Mapping Editor with MIDI input, action, application targeting and control behaviour settings"
+                    width="577"
+                    height="667"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span>Mapping Editor</span>
+              </div>
+
+              <div class="home-product-overview-card">
+                <div class="home-product-overview-media">
+                  <img
+                    src="assets/Shortcut Palette.png"
+                    alt="Shortcut Palette with built-in application categories and commands"
+                    width="869"
+                    height="629"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span>Shortcut Palette</span>
+              </div>
+
+              <div class="home-product-overview-card">
+                <div class="home-product-overview-media">
+                  <img
+                    src="assets/Macro Editor.webp"
+                    alt="Macro Editor showing an ordered sequence of actions"
+                    width="902"
+                    height="582"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span>Macro Editor</span>
+              </div>
+
+              <div class="home-product-overview-card">
+                <div class="home-product-overview-media">
+                  <img
+                    src="assets/Settings.webp"
+                    alt="Settings window showing preset switching, controller display feedback and licensing controls"
+                    width="1152"
+                    height="652"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span>Settings</span>
+              </div>
             </div>
-            <span class="site-visually-hidden" aria-live="polite" data-product-status>Screenshot 1 of 4</span>
+
+            <figcaption id="home-product-overview-caption" class="site-visually-hidden">
+              MIDI Command Studio main application and supporting editor windows
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -261,7 +274,7 @@
         <div class="home-shell">
           <div class="home-section-heading home-section-heading-centered">
             <h2 id="how-title">Easy MIDI mapping.</h2>
-            <p>Move or press a control, then choose the shortcut, macro, volume target, or other action it should perform.</p>
+            <p>Move or press a control, then assign it a shortcut, macro, volume target, or other action.</p>
           </div>
 
           <div class="home-editor-showcase">
@@ -303,8 +316,8 @@
               <h2 id="workflows-title">Switch your controller between apps and workflows.</h2>
             </div>
             <p>
-              Create your own presets for the apps and workflows you use&mdash;such as browsing, streaming, editing,
-              media, or Windows audio.
+              Create presets for different apps and workflows, such as browsing, streaming, editing, media, or Windows
+              audio.
             </p>
           </div>
 
@@ -462,11 +475,11 @@
       <section class="home-section home-free" aria-labelledby="free-title">
         <div class="home-shell home-free-panel">
           <div class="home-free-copy">
-            <p class="home-kicker">Free to use, not a timer</p>
-            <h2 id="free-title">Test the workflow with your own controller.</h2>
+            <p class="home-kicker">Free version</p>
+            <h2 id="free-title">Try it with your own controller.</h2>
             <p>
-              Use MIDI Command Studio free with no time limit and no email sign-up. Connect your hardware, build a
-              practical preset, and decide from your own setup whether a licence would be useful.
+              The free version has no time limit and does not require an email sign-up. Connect your MIDI controller,
+              create your own mappings and presets, and see how MIDI Command Studio works with your setup.
             </p>
           </div>
           <div class="home-free-details">
@@ -485,6 +498,111 @@
         <div class="home-shell">
           <div class="home-section-heading home-section-heading-centered">
             <p class="home-kicker">Reviews and listings</p>
+          </div>
+          <div
+            class="home-review-carousel"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Customer reviews"
+            tabindex="0"
+            data-review-carousel
+          >
+            <ol class="home-review-list">
+              <li
+                class="home-review-slide is-active"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="1 of 4"
+                aria-hidden="false"
+                data-review-slide="0"
+              >
+                <article>
+                  <p class="home-review-rating">
+                    <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                  </p>
+                  <blockquote>
+                    <p>Using this with Behringer Xtouch to control X32Rack via Ethernet, then also OBS and Powerpoint for streaming. It's working perfectly!</p>
+                  </blockquote>
+                  <p class="home-review-source">Reviewed on Gumroad</p>
+                </article>
+              </li>
+              <li
+                class="home-review-slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="2 of 4"
+                aria-hidden="true"
+                data-review-slide="1"
+                hidden
+              >
+                <article>
+                  <p class="home-review-rating">
+                    <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                  </p>
+                  <blockquote>
+                    <p>So damn cool! Run MATLAB with a drum pad!!</p>
+                  </blockquote>
+                  <p class="home-review-source">Reviewed on Gumroad</p>
+                </article>
+              </li>
+              <li
+                class="home-review-slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="3 of 4"
+                aria-hidden="true"
+                data-review-slide="2"
+                hidden
+              >
+                <article>
+                  <p class="home-review-rating">
+                    <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                  </p>
+                  <blockquote>
+                    <p>I was able to assign every single audio input to a fader. This gives me a mixing console right in front of me, where I can control any audio-related action.</p>
+                  </blockquote>
+                  <p class="home-review-source">Reviewed on KVR Audio</p>
+                </article>
+              </li>
+              <li
+                class="home-review-slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="4 of 4"
+                aria-hidden="true"
+                data-review-slide="3"
+                hidden
+              >
+                <article>
+                  <p class="home-review-rating">
+                    <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                  </p>
+                  <blockquote>
+                    <p>MCS is exactly what I've always been looking for when using a Korg nanoKontrol2 board. I can use it to control every button, slider, and even every LED.</p>
+                  </blockquote>
+                  <p class="home-review-source">Reviewed on KVR Audio</p>
+                </article>
+              </li>
+            </ol>
+            <div class="home-review-controls" aria-label="Choose a customer review">
+              <button class="home-review-arrow" type="button" aria-label="Previous review" data-review-prev>
+                <span aria-hidden="true">&#8249;</span>
+              </button>
+              <div class="home-review-dots">
+                <button type="button" aria-label="Show review 1 of 4" aria-current="true" data-review-dot="0"></button>
+                <button type="button" aria-label="Show review 2 of 4" aria-current="false" data-review-dot="1"></button>
+                <button type="button" aria-label="Show review 3 of 4" aria-current="false" data-review-dot="2"></button>
+                <button type="button" aria-label="Show review 4 of 4" aria-current="false" data-review-dot="3"></button>
+              </div>
+              <button class="home-review-arrow" type="button" aria-label="Next review" data-review-next>
+                <span aria-hidden="true">&#8250;</span>
+              </button>
+            </div>
+            <span class="site-visually-hidden" aria-live="off" data-review-status>Review 1 of 4</span>
           </div>
           <div class="home-trust-links">
             <a class="home-trust-item home-trust-item-text" href="https://www.kvraudio.com/product/midi-command-studio-by-meltopia" target="_blank" rel="noopener">
@@ -553,18 +671,20 @@
 
     <script>
       (function () {
-        var carousel = document.querySelector("[data-product-carousel]");
+        var carousel = document.querySelector("[data-review-carousel]");
         if (!carousel) return;
 
-        var slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-product-slide]"));
-        var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-product-dot]"));
-        var previous = carousel.querySelector("[data-product-prev]");
-        var next = carousel.querySelector("[data-product-next]");
-        var status = carousel.querySelector("[data-product-status]");
+        var slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-review-slide]"));
+        var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-review-dot]"));
+        var previous = carousel.querySelector("[data-review-prev]");
+        var next = carousel.querySelector("[data-review-next]");
+        var status = carousel.querySelector("[data-review-status]");
         var current = 0;
         var touchStartX = null;
+        var timer = null;
+        var autoRotating = true;
 
-        function showSlide(index) {
+        function showReview(index, announce) {
           current = (index + slides.length) % slides.length;
           slides.forEach(function (slide, slideIndex) {
             var active = slideIndex === current;
@@ -575,24 +695,52 @@
           dots.forEach(function (dot, dotIndex) {
             dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
           });
-          status.textContent = "Screenshot " + (current + 1) + " of " + slides.length;
+          if (announce) {
+            status.setAttribute("aria-live", "polite");
+            status.textContent = "Review " + (current + 1) + " of " + slides.length;
+          }
+        }
+
+        function clearRotation() {
+          if (timer !== null) {
+            window.clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        function startRotation() {
+          clearRotation();
+          if (!autoRotating || document.hidden) return;
+          timer = window.setInterval(function () {
+            showReview(current + 1, false);
+          }, 7000);
+        }
+
+        function stopRotation() {
+          autoRotating = false;
+          clearRotation();
+        }
+
+        function selectReview(index) {
+          stopRotation();
+          showReview(index, true);
         }
 
         previous.addEventListener("click", function () {
-          showSlide(current - 1);
+          selectReview(current - 1);
         });
         next.addEventListener("click", function () {
-          showSlide(current + 1);
+          selectReview(current + 1);
         });
         dots.forEach(function (dot, index) {
           dot.addEventListener("click", function () {
-            showSlide(index);
+            selectReview(index);
           });
         });
         carousel.addEventListener("keydown", function (event) {
           if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
           event.preventDefault();
-          showSlide(current + (event.key === "ArrowRight" ? 1 : -1));
+          selectReview(current + (event.key === "ArrowRight" ? 1 : -1));
         });
         carousel.addEventListener("touchstart", function (event) {
           touchStartX = event.changedTouches[0].clientX;
@@ -602,8 +750,16 @@
           var distance = event.changedTouches[0].clientX - touchStartX;
           touchStartX = null;
           if (Math.abs(distance) < 45) return;
-          showSlide(current + (distance < 0 ? 1 : -1));
+          selectReview(current + (distance < 0 ? 1 : -1));
         }, { passive: true });
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            clearRotation();
+          } else {
+            startRotation();
+          }
+        });
+        startRotation();
       })();
 
       (function () {
@@ -612,26 +768,81 @@
 
         var tabs = Array.prototype.slice.call(gallery.querySelectorAll("[data-gallery-tab]"));
         var panels = Array.prototype.slice.call(gallery.querySelectorAll("[data-gallery-panel]"));
+        var current = 0;
+        var timer = null;
+        var transitionTimer = null;
+        var autoRotating = true;
 
-        function showPanel(index, moveFocus) {
+        function finishTransition() {
+          if (transitionTimer !== null) {
+            window.clearTimeout(transitionTimer);
+            transitionTimer = null;
+          }
+          gallery.classList.remove("is-moving-next", "is-moving-prev");
+          panels.forEach(function (panel, panelIndex) {
+            var active = panelIndex === current;
+            panel.classList.toggle("is-active", active);
+            panel.classList.remove("is-entering", "is-exiting");
+            panel.hidden = !active;
+            panel.setAttribute("aria-hidden", active ? "false" : "true");
+          });
+        }
+
+        function showPanel(index, moveFocus, direction) {
           var normalized = (index + tabs.length) % tabs.length;
+          finishTransition();
+          if (normalized === current) {
+            if (moveFocus) tabs[normalized].focus();
+            return;
+          }
+
+          var previous = current;
+          var movement = direction || (normalized < current ? "prev" : "next");
+          current = normalized;
+          gallery.classList.add(movement === "prev" ? "is-moving-prev" : "is-moving-next");
           tabs.forEach(function (tab, tabIndex) {
             var active = tabIndex === normalized;
             tab.classList.toggle("is-active", active);
             tab.setAttribute("aria-selected", active ? "true" : "false");
             tab.setAttribute("tabindex", active ? "0" : "-1");
           });
-          panels.forEach(function (panel, panelIndex) {
-            var active = panelIndex === normalized;
-            panel.classList.toggle("is-active", active);
-            panel.hidden = !active;
-          });
+
+          panels[previous].hidden = false;
+          panels[previous].classList.remove("is-active");
+          panels[previous].classList.add("is-exiting");
+          panels[previous].setAttribute("aria-hidden", "true");
+          panels[current].hidden = false;
+          panels[current].classList.add("is-active", "is-entering");
+          panels[current].setAttribute("aria-hidden", "false");
+
           if (moveFocus) tabs[normalized].focus();
+          transitionTimer = window.setTimeout(finishTransition, 2020);
+        }
+
+        function clearRotation() {
+          if (timer !== null) {
+            window.clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        function startRotation() {
+          clearRotation();
+          if (!autoRotating || document.hidden) return;
+          timer = window.setInterval(function () {
+            showPanel(current + 1, false, "next");
+          }, 7000);
+        }
+
+        function stopRotation() {
+          autoRotating = false;
+          clearRotation();
         }
 
         tabs.forEach(function (tab, index) {
           tab.addEventListener("click", function () {
-            showPanel(index, false);
+            stopRotation();
+            showPanel(index, false, index < current ? "prev" : "next");
           });
           tab.addEventListener("keydown", function (event) {
             var next = null;
@@ -641,9 +852,20 @@
             if (event.key === "End") next = tabs.length - 1;
             if (next === null) return;
             event.preventDefault();
-            showPanel(next, true);
+            stopRotation();
+            showPanel(next, true, event.key === "ArrowLeft" || event.key === "Home" ? "prev" : "next");
           });
         });
+        gallery.addEventListener("focusin", stopRotation);
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) {
+            clearRotation();
+          } else {
+            startRotation();
+          }
+        });
+        finishTransition();
+        startRotation();
       })();
     </script>
     <!-- Cloudflare Web Analytics -->

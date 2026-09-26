@@ -1430,6 +1430,89 @@ body {
   margin-inline: auto;
 }
 
+.home-product-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(320px, 0.85fr);
+  align-items: center;
+  gap: 14px;
+}
+
+.home-product-overview-main,
+.home-product-overview-card {
+  min-width: 0;
+}
+
+.home-product-overview-main {
+  padding: 0;
+}
+
+.home-product-overview-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.home-product-overview-main > span,
+.home-product-overview-card > span {
+  display: block;
+  color: var(--home-muted);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  letter-spacing: 0.035em;
+}
+
+.home-product-overview-main > span {
+  margin-top: 14px;
+}
+
+.home-product-overview-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.home-product-overview-card {
+  padding: 0;
+}
+
+.home-product-overview-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.home-product-overview-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-product-overview-card > span {
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .home-product-overview {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 900px;
+  }
+
+  .home-product-overview-tools {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .home-product-overview-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .home-product-carousel {
   outline: none;
 }
@@ -1440,30 +1523,87 @@ body {
 }
 
 .home-product-carousel-viewport {
+  --home-product-inset: clamp(24px, 4vw, 42px);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   aspect-ratio: 1196 / 707;
-  background: transparent;
+  border: 1px solid var(--home-line-strong);
+  border-radius: 12px;
+  background: #0d1016;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+  box-sizing: border-box;
   touch-action: pan-y;
 }
 
 .home-product-carousel-slide {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: var(--home-product-inset);
+  min-width: 0;
+  min-height: 0;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 .home-product-carousel-slide[hidden] {
   display: none;
 }
 
+.home-product-carousel-slide.is-entering {
+  z-index: 2;
+}
+
+.home-product-carousel-slide.is-exiting {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-product-carousel.is-moving-next .home-product-carousel-slide.is-entering {
+  animation: home-product-enter-next 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+.home-product-carousel.is-moving-next .home-product-carousel-slide.is-exiting {
+  animation: home-product-exit-next 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+.home-product-carousel.is-moving-prev .home-product-carousel-slide.is-entering {
+  animation: home-product-enter-prev 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+.home-product-carousel.is-moving-prev .home-product-carousel-slide.is-exiting {
+  animation: home-product-exit-prev 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+@keyframes home-product-enter-next {
+  from { transform: translateX(120%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes home-product-exit-next {
+  from { transform: translateX(0); }
+  to { transform: translateX(-120%); }
+}
+
+@keyframes home-product-enter-prev {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes home-product-exit-prev {
+  from { transform: translateX(0); }
+  to { transform: translateX(120%); }
+}
+
 .home-product-carousel-slide img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: auto;
   max-width: 100%;
   height: auto;
   max-height: 100%;
+  margin: auto;
+  object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 18px 46px rgba(0, 0, 0, 0.3);
 }
@@ -1471,7 +1611,7 @@ body {
 .home-product-carousel-arrow {
   position: absolute;
   top: 50%;
-  z-index: 2;
+  z-index: 4;
   width: 42px;
   height: 42px;
   display: grid;
@@ -1511,24 +1651,37 @@ body {
 }
 
 .home-product-carousel-dots {
-  min-height: 32px;
+  min-height: 42px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 9px;
+  gap: 2px;
 }
 
 .home-product-carousel-dots button {
-  width: 8px;
-  height: 8px;
+  position: relative;
+  width: 30px;
+  height: 30px;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: #59616e;
+  background: transparent;
   cursor: pointer;
 }
 
-.home-product-carousel-dots button[aria-current="true"] {
+.home-product-carousel-dots button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #59616e;
+  transform: translate(-50%, -50%);
+}
+
+.home-product-carousel-dots button[aria-current="true"]::before {
   background: var(--home-green-light);
 }
 
@@ -1760,14 +1913,82 @@ body {
   color: var(--home-text);
 }
 
+.home-workflow-panels {
+  display: grid;
+  overflow: hidden;
+}
+
 .home-workflow-panel {
+  grid-area: 1 / 1;
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.45fr);
   align-items: stretch;
+  background: var(--home-bg-deep);
 }
 
 .home-workflow-panel[hidden] {
   display: none;
+}
+
+.home-workflow-panel.is-entering {
+  z-index: 2;
+}
+
+.home-workflow-panel.is-exiting {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-workflow-gallery.is-moving-next .home-workflow-panel.is-entering {
+  animation: home-workflow-enter-next 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+.home-workflow-gallery.is-moving-next .home-workflow-panel.is-exiting {
+  animation: home-workflow-exit-next 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+.home-workflow-gallery.is-moving-prev .home-workflow-panel.is-entering {
+  animation: home-workflow-enter-prev 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+.home-workflow-gallery.is-moving-prev .home-workflow-panel.is-exiting {
+  animation: home-workflow-exit-prev 2000ms cubic-bezier(0.42, 0, 0.58, 1) both;
+}
+
+@keyframes home-workflow-enter-next {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes home-workflow-exit-next {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes home-workflow-enter-prev {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes home-workflow-exit-prev {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .home-workflow-image {
@@ -1992,6 +2213,167 @@ body {
 
 .home-trust .home-section-heading {
   margin-bottom: 36px;
+}
+
+.home-review-carousel {
+  width: min(100%, 860px);
+  margin: 0 auto 46px;
+  outline: none;
+  touch-action: pan-y;
+}
+
+.home-review-carousel:focus-visible {
+  outline: 3px solid var(--home-blue);
+  outline-offset: 6px;
+}
+
+.home-review-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-review-slide {
+  min-height: 260px;
+  padding: 28px clamp(20px, 6vw, 72px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.home-review-slide.is-active {
+  animation: home-review-enter 280ms ease both;
+}
+
+.home-review-slide[hidden] {
+  display: none;
+}
+
+.home-review-slide article {
+  width: 100%;
+}
+
+.home-review-rating {
+  margin: 0;
+  color: var(--home-green-light);
+  font-size: 1.18rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+}
+
+.home-review-slide blockquote {
+  max-width: 700px;
+  margin: 20px auto 22px;
+}
+
+.home-review-slide blockquote p {
+  margin: 0;
+  color: var(--home-text);
+  font-size: clamp(1.08rem, 2.1vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.58;
+  text-wrap: balance;
+}
+
+.home-review-slide blockquote p::before {
+  content: "\201C";
+}
+
+.home-review-slide blockquote p::after {
+  content: "\201D";
+}
+
+.home-review-source {
+  margin: 0;
+  color: var(--home-muted);
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-review-controls {
+  min-height: 52px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px;
+}
+
+.home-review-arrow {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--home-line-strong);
+  border-radius: 50%;
+  background: var(--home-bg-deep);
+  color: var(--home-text);
+  cursor: pointer;
+}
+
+.home-review-arrow:hover {
+  border-color: rgba(71, 207, 122, 0.6);
+  color: var(--home-green-light);
+}
+
+.home-review-arrow:focus-visible,
+.home-review-dots button:focus-visible {
+  outline: 3px solid var(--home-blue);
+  outline-offset: 3px;
+}
+
+.home-review-arrow span {
+  margin-top: -3px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.home-review-dots {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-review-dots button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.home-review-dots button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #59616e;
+  transform: translate(-50%, -50%);
+}
+
+.home-review-dots button[aria-current="true"]::before {
+  background: var(--home-green-light);
+}
+
+@keyframes home-review-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-trust-links {
@@ -2481,6 +2863,15 @@ body {
     padding: 15px;
   }
 
+  .home-review-carousel {
+    margin-bottom: 38px;
+  }
+
+  .home-review-slide {
+    min-height: 300px;
+    padding: 26px 14px;
+  }
+
   .home-final-actions {
     width: 100%;
     align-items: stretch;
@@ -2530,8 +2921,13 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .home-skip-link,
-  .home-button {
+  .home-button,
+  .home-review-arrow {
     transition: none;
+  }
+
+  .home-review-slide.is-active {
+    animation: none;
   }
 
   .home-button:hover {
@@ -2562,10 +2958,17 @@ body {
 }
 
 .global-site-header {
-  position: relative;
-  z-index: 50;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   border-bottom: 1px solid rgba(53, 60, 75, 0.72);
-  background: rgba(11, 14, 19, 0.97);
+  background: rgba(11, 14, 19, 0.94);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+main [id] {
+  scroll-margin-top: 92px;
 }
 
 .global-header-inner {
