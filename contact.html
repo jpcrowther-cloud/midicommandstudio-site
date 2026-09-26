@@ -234,6 +234,7 @@
         var COOLDOWN_KEY = "mcs_contact_cooldown_until";
         var pending = false;
         var fallbackTimer = null;
+        var frameLoadTimer = null;
         var cooldownTicker = null;
         function isContactResultMessage(event) {
           if (!event) return null;
@@ -334,6 +335,10 @@
             clearTimeout(fallbackTimer);
             fallbackTimer = null;
           }
+          if (frameLoadTimer) {
+            clearTimeout(frameLoadTimer);
+            frameLoadTimer = null;
+          }
           if (clearForm) {
             clearFormAndReset();
           } else {
@@ -382,6 +387,24 @@
             );
           }, 20000);
         });
+
+        if (submitFrame) {
+          submitFrame.addEventListener("load", function () {
+            if (!pending) return;
+            try {
+              if (!submitFrame.contentWindow.location.href || submitFrame.contentWindow.location.href === "about:blank") {
+                return;
+              }
+            } catch (_e) {
+              // A cross-origin location means the form endpoint returned a response.
+            }
+            if (frameLoadTimer) clearTimeout(frameLoadTimer);
+            frameLoadTimer = setTimeout(function () {
+              if (!pending) return;
+              finalize(true, "Message sent.", true, true);
+            }, 500);
+          });
+        }
 
         window.addEventListener("message", function (event) {
           if (!pending) return;
