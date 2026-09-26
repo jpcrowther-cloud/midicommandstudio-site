@@ -202,7 +202,6 @@
                 fetchpriority="high"
                 decoding="async"
               />
-              <span>Main window &middot; Volume Control preset</span>
             </div>
 
             <div class="home-product-overview-tools" aria-label="Additional MIDI Command Studio windows">
@@ -217,7 +216,6 @@
                     decoding="async"
                   />
                 </div>
-                <span>Mapping Editor</span>
               </div>
 
               <div class="home-product-overview-card">
@@ -231,7 +229,6 @@
                     decoding="async"
                   />
                 </div>
-                <span>Shortcut Palette</span>
               </div>
 
               <div class="home-product-overview-card">
@@ -245,7 +242,6 @@
                     decoding="async"
                   />
                 </div>
-                <span>Macro Editor</span>
               </div>
 
               <div class="home-product-overview-card">
@@ -259,7 +255,6 @@
                     decoding="async"
                   />
                 </div>
-                <span>Settings</span>
               </div>
             </div>
 
@@ -374,27 +369,24 @@
                 decoding="async"
               />
             </div>
-            <figcaption>Add, order, edit and reuse steps without writing a script.</figcaption>
+            <figcaption>Add, order, edit, and reuse steps within a macro.</figcaption>
           </figure>
         </div>
       </section>
 
       <section id="capabilities" class="home-section home-capabilities" aria-labelledby="capabilities-title">
         <div class="home-shell">
-          <div class="home-section-heading home-section-heading-split">
+          <div class="home-section-heading">
             <div>
               <h2 id="capabilities-title">Main features</h2>
             </div>
-            <p>
-              Build presets for different apps and workflows, then switch between them directly from your controller.
-            </p>
           </div>
 
           <div class="home-capability-list">
             <article class="home-capability-item">
               <div>
                 <h3>Windows audio</h3>
-                <p>Use physical knobs or faders for system, application and supported input volume targets.</p>
+                <p>Use your MIDI device to control system volume, application volume, and supported Windows audio inputs.</p>
                 <a href="control-windows-volume-with-midi.html">Explore volume control</a>
               </div>
             </article>
@@ -408,14 +400,14 @@
             <article class="home-capability-item">
               <div>
                 <h3>Multi-step macros</h3>
-                <p>Combine shortcuts, waits, mouse actions, text input and program or file launch without scripting.</p>
+                <p>Combine shortcuts, waits, mouse actions, text input, and program or file launches into a single macro.</p>
                 <a href="midi-controller-macros-windows.html">Understand macros</a>
               </div>
             </article>
             <article class="home-capability-item">
               <div>
                 <h3>Preset-based workflows</h3>
-                <p>Repurpose the same controls for browsers, streaming, editing, media and everyday desktop work.</p>
+                <p>Switch presets directly from your MIDI controller to use different control layouts for different apps, tasks, and workflows.</p>
                 <a href="use-cases.html">Explore use cases</a>
               </div>
             </article>
@@ -670,6 +662,34 @@
     <!-- End global site footer -->
 
     <script>
+      (function () {
+        var workspace = document.querySelector(".home-product-overview");
+        if (!workspace) return;
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        workspace.classList.add("is-animation-pending");
+
+        function revealWorkspace() {
+          workspace.classList.remove("is-animation-pending");
+          workspace.classList.add("is-animation-visible");
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          revealWorkspace();
+          return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+          if (!entries[0].isIntersecting) return;
+          observer.disconnect();
+          window.setTimeout(function () {
+            window.requestAnimationFrame(revealWorkspace);
+          }, 300);
+        }, { threshold: 0.12, rootMargin: "0px 0px -12% 0px" });
+
+        observer.observe(workspace);
+      })();
+
       (function () {
         var carousel = document.querySelector("[data-review-carousel]");
         if (!carousel) return;
