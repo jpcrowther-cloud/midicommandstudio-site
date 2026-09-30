@@ -1425,6 +1425,26 @@ body {
   background: var(--home-green);
 }
 
+.home-hero-free-note {
+  margin: 12px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--home-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.home-hero-free-note::before,
+.home-hero-free-note::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: var(--home-green);
+}
+
 .home-product-figure,
 .home-editor-showcase figure,
 .home-macro-figure {
