@@ -511,7 +511,7 @@
                 <article>
                   <p class="home-review-rating">
                     <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                    <span class="site-visually-hidden">Rated 5 out of 5 stars</span>
                   </p>
                   <blockquote>
                     <p>Using this with Behringer Xtouch to control X32Rack via Ethernet, then also OBS and Powerpoint for streaming. It's working perfectly!</p>
@@ -531,7 +531,7 @@
                 <article>
                   <p class="home-review-rating">
                     <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                    <span class="site-visually-hidden">Rated 5 out of 5 stars</span>
                   </p>
                   <blockquote>
                     <p>So damn cool! Run MATLAB with a drum pad!!</p>
@@ -551,7 +551,7 @@
                 <article>
                   <p class="home-review-rating">
                     <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                    <span class="site-visually-hidden">Rated 5 out of 5 stars</span>
                   </p>
                   <blockquote>
                     <p>I was able to assign every single audio input to a fader. This gives me a mixing console right in front of me, where I can control any audio-related action.</p>
@@ -571,7 +571,7 @@
                 <article>
                   <p class="home-review-rating">
                     <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                    <span class="site-visually-hidden">5 out of 5 stars</span>
+                    <span class="site-visually-hidden">Rated 5 out of 5 stars</span>
                   </p>
                   <blockquote>
                     <p>MCS is exactly what I've always been looking for when using a Korg nanoKontrol2 board. I can use it to control every button, slider, and even every LED.</p>
@@ -707,22 +707,55 @@
         var current = 0;
         var touchStartX = null;
         var timer = null;
+        var transitionTimer = null;
         var autoRotating = true;
 
-        function showReview(index, announce) {
-          current = (index + slides.length) % slides.length;
+        function finishReviewTransition() {
+          if (transitionTimer !== null) {
+            window.clearTimeout(transitionTimer);
+            transitionTimer = null;
+          }
+          carousel.classList.remove("is-moving-next", "is-moving-prev");
           slides.forEach(function (slide, slideIndex) {
             var active = slideIndex === current;
             slide.classList.toggle("is-active", active);
+            slide.classList.remove("is-entering", "is-exiting");
             slide.hidden = !active;
             slide.setAttribute("aria-hidden", active ? "false" : "true");
           });
+        }
+
+        function showReview(index, announce, direction) {
+          var normalized = (index + slides.length) % slides.length;
+          finishReviewTransition();
+          if (normalized === current) return;
+
+          var previousIndex = current;
+          var movement = direction || (normalized < current ? "prev" : "next");
+          current = normalized;
+          carousel.classList.add(movement === "prev" ? "is-moving-prev" : "is-moving-next");
+
           dots.forEach(function (dot, dotIndex) {
             dot.setAttribute("aria-current", dotIndex === current ? "true" : "false");
           });
+
+          slides[previousIndex].hidden = false;
+          slides[previousIndex].classList.remove("is-active");
+          slides[previousIndex].classList.add("is-exiting");
+          slides[previousIndex].setAttribute("aria-hidden", "true");
+          slides[current].hidden = false;
+          slides[current].classList.add("is-active", "is-entering");
+          slides[current].setAttribute("aria-hidden", "false");
+
           if (announce) {
             status.setAttribute("aria-live", "polite");
             status.textContent = "Review " + (current + 1) + " of " + slides.length;
+          }
+
+          if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            finishReviewTransition();
+          } else {
+            transitionTimer = window.setTimeout(finishReviewTransition, 820);
           }
         }
 
@@ -737,7 +770,7 @@
           clearRotation();
           if (!autoRotating || document.hidden) return;
           timer = window.setInterval(function () {
-            showReview(current + 1, false);
+            showReview(current + 1, false, "next");
           }, 7000);
         }
 
@@ -746,26 +779,26 @@
           clearRotation();
         }
 
-        function selectReview(index) {
+        function selectReview(index, direction) {
           stopRotation();
-          showReview(index, true);
+          showReview(index, true, direction);
         }
 
         previous.addEventListener("click", function () {
-          selectReview(current - 1);
+          selectReview(current - 1, "prev");
         });
         next.addEventListener("click", function () {
-          selectReview(current + 1);
+          selectReview(current + 1, "next");
         });
         dots.forEach(function (dot, index) {
           dot.addEventListener("click", function () {
-            selectReview(index);
+            selectReview(index, index < current ? "prev" : "next");
           });
         });
         carousel.addEventListener("keydown", function (event) {
           if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
           event.preventDefault();
-          selectReview(current + (event.key === "ArrowRight" ? 1 : -1));
+          selectReview(current + (event.key === "ArrowRight" ? 1 : -1), event.key === "ArrowRight" ? "next" : "prev");
         });
         carousel.addEventListener("touchstart", function (event) {
           touchStartX = event.changedTouches[0].clientX;
@@ -775,7 +808,7 @@
           var distance = event.changedTouches[0].clientX - touchStartX;
           touchStartX = null;
           if (Math.abs(distance) < 45) return;
-          selectReview(current + (distance < 0 ? 1 : -1));
+          selectReview(current + (distance < 0 ? 1 : -1), distance < 0 ? "next" : "prev");
         }, { passive: true });
         document.addEventListener("visibilitychange", function () {
           if (document.hidden) {
@@ -784,6 +817,7 @@
             startRotation();
           }
         });
+        finishReviewTransition();
         startRotation();
       })();
 
